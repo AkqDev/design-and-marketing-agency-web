@@ -1,5 +1,16 @@
-/* index.css or App.css */
 @import "tailwindcss";
+
+/* IMPORTANT: Place your .ttf files in: public/fonts/ 
+  If files are missing, it will fall back to 'Impact' or 'serif'
+*/
+@font-face { font-family: 'Planet Kosmos'; src: url('/fonts/planet-kosmos.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Vermin Vibes'; src: url('/fonts/vermin-vibes.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Anarchy'; src: url('/fonts/anarchy.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Iron Maiden'; src: url('/fonts/iron-maiden.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'BN Machine'; src: url('/fonts/bn-machine.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Goth Chic'; src: url('/fonts/goth-chic.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Y2K Neophyte'; src: url('/fonts/y2k-neophyte.ttf') format('truetype'); font-display: swap; }
+@font-face { font-family: 'Metal Lord'; src: url('/fonts/metal-lord.ttf') format('truetype'); font-display: swap; }
 
 * {
   margin: 0;
@@ -7,158 +18,38 @@
   box-sizing: border-box;
 }
 
-/* Optional: Add global styles */
 body {
   background-color: #000;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
-}
-
-/* Custom font classes for navbar */
-.font-logo {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.font-nav {
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
-.font-button {
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  letter-spacing: 0.01em;
-}
+.font-logo { font-family: 'Poppins', sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+.font-nav { font-family: 'Inter', sans-serif; font-weight: 500; }
+.font-button { font-family: 'Inter', sans-serif; font-weight: 600; }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 8px;
-}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #1a1a1a; }
+::-webkit-scrollbar-thumb { background: #D61921; border-radius: 4px; }
 
-::-webkit-scrollbar-track {
-  background: #1a1a1a;
-}
+html { scroll-behavior: smooth; }
 
-::-webkit-scrollbar-thumb {
-  background: #D61921;
-  border-radius: 4px;
-}
+::selection { background-color: #D61921; color: white; }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #b91c1c;
-}
+/* Custom Animations */
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+@keyframes pulse-glow { 0%, 100% { box-shadow: 0 0 20px rgba(214, 25, 33, 0.3); } 50% { box-shadow: 0 0 40px rgba(214, 25, 33, 0.6); } }
 
-/* Smooth scrolling */
-html {
-  scroll-behavior: smooth;
-}
+.animate-fadeInUp { animation: fadeInUp 0.6s ease-out; }
+.animate-float { animation: float 3s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 2s ease-in-out infinite; }
 
-/* Selection color */
-::selection {
-  background-color: #D61921;
-  color: white;
-}
-
-/* Focus styles for accessibility */
-button:focus,
-input:focus,
-textarea:focus,
-select:focus {
-  outline: 2px solid #D61921;
-  outline-offset: 2px;
-}
-
-/* Custom animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes pulse-glow {
-  0%, 100% {
-    box-shadow: 0 0 20px rgba(214, 25, 33, 0.3);
-  }
-  50% {
-    box-shadow: 0 0 40px rgba(214, 25, 33, 0.6);
-  }
-}
-
-.animate-fadeInUp {
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.animate-float {
-  animation: float 3s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulse-glow 2s ease-in-out infinite;
-}
-
-/* Enhanced text shadows for headings */
-.text-shadow-sm {
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-.text-shadow-md {
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.text-shadow-lg {
-  text-shadow: 0 8px 16px rgba(0, 0, 0, 0.7), 0 4px 8px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.text-shadow-xl {
-  text-shadow: 0 12px 24px rgba(0, 0, 0, 0.8), 0 6px 12px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-.text-shadow-red {
-  text-shadow: 0 0 10px rgba(214, 25, 33, 0.5), 0 0 20px rgba(214, 25, 33, 0.3), 0 4px 8px rgba(0, 0, 0, 0.6);
-}
-
-/* Gradient text effect */
 .gradient-text {
   background: linear-gradient(135deg, #D61921, #ff4757, #D61921);
   background-size: 200% 200%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  background-clip: text;
   animation: gradient-shift 3s ease infinite;
 }
 
-@keyframes gradient-shift {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* Interactive hover effects */
-.hover-lift {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hover-lift:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
+@keyframes gradient-shift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
