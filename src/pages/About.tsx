@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import AboutLogo from '../assets/AboutLogo.png';
-import VisionMission from '../components/Vision';
+import VisionMission from '../components/VisionMission';
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
@@ -124,7 +124,7 @@ const About = () => {
           ref={imageRef}
           className="relative flex justify-center lg:justify-start"
         >
-          <div className="w-full max-w-[340px] aspect-[3/4] overflow-hidden shadow-2xl rounded-2xl">
+          <div className="w-full max-w-[400px] max-h-[430px] aspect-[3/4] overflow-hidden shadow-2xl rounded-2xl">
             <img 
               src={AboutLogo} 
               alt="Designer working at desk" 
@@ -137,7 +137,7 @@ const About = () => {
         <div className="flex flex-col !space-y-12 lg:!pl-12">
           <motion.h1 
             ref={titleRef}
-            className="text-6xl md:text-7xl font-black tracking-[-0.03em] uppercase leading-[0.75] text-[#E7000B] font-sans antialiased"
+            className="text-6xl md:text-7xl font-black tracking-[-0.03em] leading-[0.75] text-[#9D0A0A] font-sans antialiased "
             style={{ 
               fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
               fontWeight: '900',
@@ -160,16 +160,17 @@ const About = () => {
             }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            ABOUT US!
+            About Us !
           </motion.h1>
 
           <motion.div 
             ref={contentRef}
-            className="max-w-2xl !space-y-6 text-sm md:text-base leading-relaxed text-gray-100 font-light"
+            className="max-w-3xl !space-y-6 text-sm md:text-base leading-relaxed text-gray-100 font-light"
           >
             <motion.p
               whileHover={{ x: 10, color: "#f3f4f6" }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="font-[poppins]"
             >We are a professional Printing & Advertising company, providing
             innovative signage and advertising solutions that help brands stand out
              and create a strong visual impact.
@@ -178,6 +179,7 @@ const About = () => {
             <motion.p
               whileHover={{ x: 10, color: "#f3f4f6" }}
               transition={{ type: "spring", stiffness: 400, damping: 25 }}
+              className="font-[poppins]"
             >With a strong focus on creativity, precision, and durability, we deliver customized printing and advertising services tailored to each client’s needs. From indoor and outdoor signage to promotional materials and corporate branding, we combine modern technology with expert craftsmanship to ensure outstanding results.
             </motion.p>
           </motion.div>
@@ -185,7 +187,7 @@ const About = () => {
           {/* Bottom Accent Line */}
           <motion.div 
             ref={accentLineRef}
-            className="w-20 h-1 bg-[#E7000B] !mt-12 self-end rounded-full"
+            className="w-20 h-1 bg-[#9D0A0A] !mt-12 self-end rounded-full"
           />
         </div>
       </div>
