@@ -11,14 +11,14 @@ const Trust = () => {
   const brandRefs = useRef<(HTMLDivElement | null)[]>([]);
 
   const brands = [
-    { name: "Stars Smiles", font: "'Planet Kosmos', Impact, sans-serif" },
-    { name: "Marten king", font: "'Vermin Vibes', sans-serif" },
-    { name: "Green Future", font: "'Anarchy', serif" },
-    { name: "Almarai", font: "'Iron Maiden', sans-serif" },
-    { name: "RTCO", font: "'BN Machine', monospace" },
-    { name: "Ashraf HVAC", font: "'Goth Chic', cursive" },
-    { name: "Al Shaheq", font: "'Y2K Neophyte', sans-serif" },
-    { name: "DCP", font: "'Metal Lord', fantasy" }
+    { name: "Stars Smiles" },
+    { name: "Marten king" },
+    { name: "Green Future" },
+    { name: "Almarai" },
+    { name: "RTCO" },
+    { name: "Ashraf HVAC" },
+    { name: "Al Shaheq" },
+    { name: "DCP" }
   ];
 
   const duplicatedBrands = [...brands, ...brands];
@@ -107,8 +107,7 @@ const Trust = () => {
               className="flex items-center justify-center min-w-[220px] md:min-w-[280px] h-32 px-12 cursor-pointer rounded-lg transition-all duration-300"
             >
               <span 
-                className="text-gray-400 font-bold text-2xl md:text-4xl tracking-tighter uppercase hover:text-white hover:drop-shadow-[0_0_10px_rgba(220,38,38,0.8)] transition-all duration-500 relative block text-center whitespace-nowrap"
-                style={{ fontFamily: brand.font }}
+                className="text-gray-400 font-bold text-2xl md:text-4xl tracking-tighter uppercase hover:text-white hover:drop-shadow-[0_0_10px_rgba(220,38,38,0.8)] transition-all duration-500 relative block text-center whitespace-nowrap font-[Poppins]"
               >
                 {brand.name}
               </span>

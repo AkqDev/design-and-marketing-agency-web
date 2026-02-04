@@ -1,17 +1,5 @@
 @import "tailwindcss";
 
-/* IMPORTANT: Place your .ttf files in: public/fonts/ 
-  If files are missing, it will fall back to 'Impact' or 'serif'
-*/
-@font-face { font-family: 'Planet Kosmos'; src: url('/fonts/planet-kosmos.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Vermin Vibes'; src: url('/fonts/vermin-vibes.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Anarchy'; src: url('/fonts/anarchy.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Iron Maiden'; src: url('/fonts/iron-maiden.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'BN Machine'; src: url('/fonts/bn-machine.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Goth Chic'; src: url('/fonts/goth-chic.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Y2K Neophyte'; src: url('/fonts/y2k-neophyte.ttf') format('truetype'); font-display: swap; }
-@font-face { font-family: 'Metal Lord'; src: url('/fonts/metal-lord.ttf') format('truetype'); font-display: swap; }
-
 * {
   margin: 0;
   padding: 0;
