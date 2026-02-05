@@ -59,8 +59,8 @@ const VisionMission: React.FC = () => {
 
         {/* RIGHT SIDE (Desktop) | FIRST (Mobile): Image */}
         <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2">
-          <div className="relative w-full max-w-sm !p-6 rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.02] duration-500">
-            <div className="w-full overflow-hidden rounded-2xl">
+          <div className="relative w-full max-w-[400px] !p-6 rounded-[2rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.1)] transition-transform hover:scale-[1.02] duration-500">
+            <div className="max-w-[400px]  overflow-hidden rounded-2xl">
               <img 
                 src={mission}
                 alt="Mission and Vision Img"

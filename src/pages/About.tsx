@@ -137,11 +137,8 @@ const About = () => {
         <div className="flex flex-col !space-y-12 lg:!pl-12">
           <motion.h1 
             ref={titleRef}
-            className="text-6xl md:text-7xl font-black tracking-[-0.03em] leading-[0.75] text-[#9D0A0A] font-sans antialiased "
+            className="text-6xl md:text-7xl font-black tracking-[-0.03em] leading-[0.75] text-[#9D0A0A] font-[poppins] antialiased text-center md:text-left !mt-3 md:mt-0"
             style={{ 
-              fontFamily: 'Inter, system-ui, -apple-system, sans-serif',
-              fontWeight: '900',
-              letterSpacing: '-0.03em',
               textShadow: `
                 0 0 10px rgba(231, 0, 11, 0.5),
                 0 0 20px rgba(231, 0, 11, 0.3),
@@ -160,12 +157,12 @@ const About = () => {
             }}
             transition={{ type: "spring", stiffness: 300, damping: 15 }}
           >
-            About Us !
+            About Us
           </motion.h1>
 
           <motion.div 
             ref={contentRef}
-            className="max-w-3xl !space-y-6 text-sm md:text-base leading-relaxed text-gray-100 font-light"
+            className="max-w-3xl !space-y-6 text-sm md:text-base leading-relaxed text-gray-100 font-light text-center md:text-left"
           >
             <motion.p
               whileHover={{ x: 10, color: "#f3f4f6" }}
