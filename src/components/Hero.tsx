@@ -90,7 +90,7 @@ const Hero = () => {
   }, [isMobile]);
 
   return (
-    <div ref={heroRef} className="relative min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+    <div ref={heroRef} className="relative min-h-[80vh] md:min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
       {/* Background Pattern for Desktop */}
       {!isMobile && (
         <div ref={backgroundRef}>
@@ -139,7 +139,7 @@ const Hero = () => {
           {/* Subtitle with Shadow */}
           <p
             ref={subtitleRef}
-            className="text-lg md:text-xl text-gray-300 font-nav max-w-3xl mx-auto mb-12 leading-relaxed text-shadow-md"
+            className="text-lg md:text-xl text-gray-300 font-nav max-w-3xl mx-auto mb-12 leading-relaxed text-shadow-md !my-3 !px-3"
           >
             Create stunning, professional signage that captures attention and drives results. 
             From concept to installation, we bring your brand to life with cutting-edge design and premium materials.
