@@ -156,11 +156,11 @@ const AboutSection = () => {
         </div>
 
         {/* Image Content - Displays first on mobile due to flex-col-reverse */}
-        <div  className="relative !mt-10 md:mt-0 ">
+        <div  className="relative !mt-10 md:mt-0 h-100 md:h-130 ">
           <img
             src={AboutLogo}
             alt="Ayyan SignAge img"
-            className="w-full h-80 md:h-130 object-contain relative z-10 transition-transform duration-500 cursor-pointer rounded-2xl"
+            className="w-full h-full object-contain relative z-10 transition-transform duration-500 cursor-pointer rounded-2xl"
           />
         </div>
       </div>
