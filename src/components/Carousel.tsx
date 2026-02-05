@@ -83,7 +83,7 @@ const Carousel = () => {
         <div className="flex items-center gap-2 bg-[#FFF1F1] text-[#E7000B] !px-4 md:!px-6 !py-2 rounded-full border border-[#FFE4E4] !mb-6 md:!mb-8">
           <span className="text-xs md:text-sm font-bold tracking-[0.2em] font-[poppins]">Brand Development</span>
         </div>
-        <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-center tracking-tighter uppercase italic text-white/90 max-w-4xl">
+        <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90 max-w-4xl">
           Concept To<span className="text-red-600"> Reality.</span>
         </h2>
       </div>
