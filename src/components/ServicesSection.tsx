@@ -1,11 +1,6 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/effect-fade';
-
 import ads from '../assets/ads.png';
 import marketing from '../assets/marketing.png';
 import seo from '../assets/seo.png';

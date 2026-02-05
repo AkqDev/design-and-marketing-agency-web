@@ -1,7 +1,5 @@
 import { useEffect, useRef } from "react";
-import { motion } from "framer-motion";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import herovideo from '../assets/herovideo.mp4';
 import { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
