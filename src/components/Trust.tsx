@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -103,7 +103,7 @@ const Trust = () => {
           {duplicatedBrands.map((brand, index) => (
             <div
               key={index}
-              ref={el => brandRefs.current[index] = el}
+              ref={el => { brandRefs.current[index] = el; }}
               className="flex items-center justify-center min-w-[220px] md:min-w-[280px] h-32 px-12 cursor-pointer rounded-lg transition-all duration-300"
             >
               <span 

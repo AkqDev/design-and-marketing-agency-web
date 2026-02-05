@@ -14,7 +14,7 @@ const AboutSection = () => {
   const subtitleRef = useRef<HTMLHeadingElement>(null);
   const textRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
+
 
   const flipWords = ["Ayyan SignAge", "Ayyan SignAge", "Ayyan SignAge"];
 

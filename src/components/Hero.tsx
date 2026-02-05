@@ -1,8 +1,10 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight } from "react-icons/fi";
-import herovideo from '../assets/herovideo.mp4';
-import { useState, useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import herovideo from '../assets/herovideo.mp4';
+import { useState } from "react";
+import { FiArrowRight } from "react-icons/fi";
 
 const WHATSAPP_LINK = "https://wa.me/966563203251";
 
