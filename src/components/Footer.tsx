@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
               <img
                 src={logo}
                 alt="logo"
-                className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
+                className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !my-3"
               />
               <div className="flex flex-col leading-none !ml-2">
                 <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed opacity-90 !pl-5 !mt-3">
+            <p className="text-sm leading-relaxed opacity-90 md:!pl-5 !mt-3">
               We are a professional printing and advertising company, delivering
               creative, precise, and durable signage and branding solutions.
               From indoor and outdoor signage to promotional materials, we
@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
         viewport={{ once: true }}
         className="max-w-[1400px] flex-col md:flex-row mx-auto flex justify-between items-center !mt-4 !px-4 md:!px-10 bg-[#161616] rounded-3xl !py-4"
       >
-        <div className="text-sm text-white opacity-80">
+        <div className="text-sm text-white opacity-80 text-center md:text-left">
           &copy; {new Date().getFullYear()} Ayyan SignAge | Designed & Developed
           by Akbar Qureshi
         </div>
