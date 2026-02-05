@@ -33,7 +33,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 3000);
+    }, 2000); // Reduced from 3000ms to 2000ms for faster transitions
     return () => clearInterval(interval);
   }, []);
 
@@ -43,7 +43,7 @@ const Carousel = () => {
     
     // Responsive radius based on screen size
     const isMobile = windowWidth < 768;
-    const radius = isMobile ? 200 : 350; // Smaller radius for mobile
+    const radius = isMobile ? 220 : 380; // Increased radius for better side visibility
     
     // Calculate position on circle
     const x = Math.sin((angle * Math.PI) / 180) * radius;
@@ -54,21 +54,34 @@ const Carousel = () => {
     
     // Scale based on distance from center (active item)
     const distanceFromCenter = Math.abs(index - activeIndex);
-    const scale = distanceFromCenter > 3 ? (isMobile ? 0.7 : 0.85) : (isMobile ? 0.8 : 0.95);
-    const opacity = distanceFromCenter > 4 ? 0.3 : 0.8;
+    const normalizedDistance = Math.min(distanceFromCenter, total - distanceFromCenter);
+    
+    // Improved scaling for smoother transitions
+    let scale = 1;
+    if (normalizedDistance === 0) scale = isMobile ? 1 : 1.1; // Active item
+    else if (normalizedDistance === 1) scale = isMobile ? 0.85 : 0.95; // Adjacent items
+    else if (normalizedDistance === 2) scale = isMobile ? 0.75 : 0.85; // Second adjacent
+    else scale = isMobile ? 0.65 : 0.75; // Far items
+    
+    // Improved opacity for better visibility of side items
+    let opacity = 1;
+    if (normalizedDistance === 0) opacity = 1; // Active item
+    else if (normalizedDistance === 1) opacity = 0.9; // Adjacent items
+    else if (normalizedDistance === 2) opacity = 0.7; // Second adjacent
+    else opacity = 0.4; // Far items
     
     return {
       transform: `translateX(${x}px) translateZ(${z}px) rotateY(${rotationY}deg) scale(${scale})`,
-      zIndex: 100 - Math.abs(index - activeIndex),
+      zIndex: 100 - normalizedDistance,
       opacity: opacity,
     };
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-sans overflow-hidden py-8 md:py-16">
+    <div className="flex flex-col items-center justify-center min-h-screen font-sans overflow-hidden !py-8">
       {/* Header Section */}
-      <div className="flex flex-col items-center mb-8 md:mb-12 z-10 px-4">
-        <div className="flex items-center gap-2 bg-[#FFF1F1] text-[#E7000B] px-4 md:px-6 py-2 rounded-full border border-[#FFE4E4] mb-6 md:mb-8">
+      <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4">
+        <div className="flex items-center gap-2 bg-[#FFF1F1] text-[#E7000B] !px-4 md:!px-6 !py-2 rounded-full border border-[#FFE4E4] !mb-6 md:!mb-8">
           <span className="text-xs md:text-sm font-bold tracking-[0.2em] font-[poppins]">Brand Development</span>
         </div>
         <h2 className="text-3xl md:text-5xl lg:text-7xl font-black text-center tracking-tighter uppercase italic text-white/90 max-w-4xl">
@@ -91,7 +104,7 @@ const Carousel = () => {
           <div
             key={index}
             onClick={() => setActiveIndex(index)}
-            className="absolute transition-all duration-1000 ease-out cursor-pointer group"
+            className="absolute transition-all duration-700 ease-in-out cursor-pointer group"
             style={{
               width: windowWidth < 768 ? "180px" : "240px",
               height: windowWidth < 768 ? "270px" : "360px",
@@ -110,7 +123,7 @@ const Carousel = () => {
             <img 
               src={src} 
               alt={`Slide ${index}`} 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 select-none"
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 select-none"
               draggable="false"
             />
             {/* Gradient overlay */}
