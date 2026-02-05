@@ -50,10 +50,10 @@ const Footer: React.FC = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="md:bg-[#000] bg-[#161616] border-t rounded-2xl md:border-0 text-white w-full h-auto !py-10 !px-2 md:!px-4 md:!px-10 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+      className="md:bg-[#000] bg-[#0B0A0A] border-t rounded-2xl md:border-0 text-white w-full h-auto !py-10 !px-2 md:!px-4 md:!px-10 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
     >
       {/* TOP FOOTER */}
-      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start bg-[#161616] rounded-3xl !p-2 md:!p-8 gap-10">
+      <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start bg-[#0B0A0A] rounded-3xl !p-2 md:!p-8 gap-10">
         {/* LEFT */}
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -158,7 +158,7 @@ const Footer: React.FC = () => {
         whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6, delay: 0.3 }}
         viewport={{ once: true }}
-        className="max-w-[1400px] flex-col md:flex-row mx-auto flex justify-between items-center !mt-4 !px-4 md:!px-10 bg-[#161616] rounded-3xl !py-4"
+        className="max-w-[1400px] flex-col md:flex-row mx-auto flex justify-between items-center !mt-4 !px-4 md:!px-10 bg-[#0B0A0A] rounded-3xl !py-4"
       >
         <div className="text-sm text-white opacity-80 text-center md:text-left">
           &copy; {new Date().getFullYear()} Ayyan SignAge | Designed & Developed
