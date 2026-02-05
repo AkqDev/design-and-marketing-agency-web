@@ -64,11 +64,11 @@ const ServicesSection = () => {
                   </div>
 
                   {/* Center: Main Image (Floating Target) */}
-                  <div className="z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[400px] md:max-w-[500px] lg:max-w-[600px] flex justify-center pointer-events-none">
+                  <div className="z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] flex justify-center pointer-events-none">
                     <img 
                       src={service.img} 
                       alt={service.title} 
-                      className="w-[60%] md:w-full object-cover animate-pulse-slow drop-shadow-[0_0_50px_rgba(220,38,38,0.4)]"
+                      className="w-[90%] md:w-[60%] md:w-full h-[180px] md:h-[300px] animate-pulse-slow drop-shadow-[0_0_50px_rgba(220,38,38,0.4)]"
                     />
                   </div>
 
