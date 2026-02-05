@@ -90,7 +90,7 @@ const Hero = () => {
   }, [isMobile]);
 
   return (
-    <div ref={heroRef} className="relative min-h-[80vh] md:min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
+    <div ref={heroRef} className="relative h-[80vh] md:min-h-screen bg-gradient-to-br from-black via-gray-900 to-black overflow-hidden">
       {/* Background Pattern for Desktop */}
       {!isMobile && (
         <div ref={backgroundRef}>
@@ -120,7 +120,7 @@ const Hero = () => {
         </div>
       )}
 
-      <div className="relative z-10 flex items-center justify-center min-h-screen px-6 md:px-16">
+      <div className="relative z-10 flex items-center justify-center min-h-[80vh] md:min-h-screen px-6 md:px-16">
         <div className="max-w-6xl mx-auto text-center">
 
           {/* Main Heading with Enhanced Shadows */}
@@ -131,7 +131,7 @@ const Hero = () => {
             <span className="block text-shadow-xl hover:text-shadow-red transition-all duration-500">
               Transform Your
             </span>
-            <span className="block text-[#D5171C] text-shadow-red gradient-text">
+            <span className="block text-[#9D0A0A] text-shadow-red gradient-text">
               Brand Vision
             </span>
           </h1>
