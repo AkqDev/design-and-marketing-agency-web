@@ -126,7 +126,7 @@ const Hero = () => {
           {/* Main Heading with Enhanced Shadows */}
           <h1
             ref={titleRef}
-            className="text-4xl md:text-7xl lg:text-8xl font-logo font-bold text-white mb-6 leading-tight"
+            className="text-6xl md:text-7xl lg:text-8xl font-logo font-bold text-white mb-6 leading-tight"
           >
             <span className="block text-shadow-xl hover:text-shadow-red transition-all duration-500">
               Transform Your
