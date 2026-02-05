@@ -21,7 +21,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Navbar variants for smooth fade + slide
+  // Navbar animation
   const navVariants = {
     hidden: { y: -20, opacity: 0 },
     visible: { y: 0, opacity: 1, transition: { duration: 0.5 } },
@@ -39,32 +39,32 @@ const Navbar = () => {
       {/* NAVBAR */}
       <motion.div
         ref={navRef}
-        className="w-full relative top-0 left-0 z-50 transition-all duration-500bg-transparent"
+        className="w-full relative top-0 left-0 z-50 transition-all duration-500 bg-transparent"
         variants={navVariants}
         initial="hidden"
         animate="visible"
       >
         <div className="flex justify-between md:justify-around items-center my-5 md:my-3 px-6 md:px-16">
           {/* LOGO */}
-           <Link
-                to="/"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 group"
-              >
-                <img
-                  src={logo}
-                  alt="logo"
-                  className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
-                />
-                <div className="flex flex-col leading-none !ml-2">
-                  <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
-                    Ayyan
-                  </h1>
-                  <span className="text-white text-base font-logo font-bold tracking-wider uppercase -mt-1 text-shadow-sm">
-                    SignAge
-                  </span>
-                </div>
-              </Link>
+          <Link
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className="flex items-center space-x-3 group"
+          >
+            <img
+              src={logo}
+              alt="logo"
+              className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
+            />
+            <div className="flex flex-col leading-none !ml-2">
+              <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
+                Ayyan
+              </h1>
+              <span className="text-white text-base font-logo font-bold tracking-wider uppercase -mt-1 text-shadow-sm">
+                SignAge
+              </span>
+            </div>
+          </Link>
 
           {/* DESKTOP MENU */}
           <div className="hidden md:flex items-center justify-between !p-5 !px-10 text-white">
@@ -121,7 +121,7 @@ const Navbar = () => {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
-            className="relative top-0 right-0 w-full h-screen bg-black/95 backdrop-blur-md z-50 flex flex-col"
+            className="fixed top-0 right-0 w-full h-screen bg-black/95 backdrop-blur-md z-50 flex flex-col"
           >
             {/* HEADER */}
             <div className="flex justify-between items-center !p-6">
@@ -199,5 +199,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-

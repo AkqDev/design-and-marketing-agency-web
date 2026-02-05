@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiMail, FiPhone, FiMapPin } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
 import {
   FaWhatsapp,
   FaInstagram,
@@ -38,9 +38,9 @@ const Footer: React.FC = () => {
       link: "tel:+966563203251",
     },
     {
-      icon: <FiMapPin size={18} />,
-      text: "Bawadi District | Jeddah KSA | 23320",
-      link: "https://www.google.com/maps/place/Al+Bawadi,+Jeddah+Saudi+Arabia/@21.5985531,39.1455573,14z/data=!3m1!4b1!4m6!3m5!1s0x15c3d097356f1535:0x34f93ce2092bfd1f!8m2!3d21.5994271!4d39.1657128!16s%2Fg%2F11dxd0k01q?entry=ttu&g_ep=EgoyMDI2MDEyOC4wIKXMDSoASAFQAw%3D%3D",
+      icon: <FaWhatsapp size={18} />,
+      text: "+966 56 320 3251",
+      link: "https://wa.me/966563203251", // ✅ FIXED
     },
   ];
 
@@ -63,28 +63,29 @@ const Footer: React.FC = () => {
           className="md:w-1/3 flex justify-start"
         >
           <div className="text-left space-y-4">
-                      {/* LOGO */}
-           <Link
-                to="/"
-                onClick={() => setIsOpen(false)}
-                className="flex items-center space-x-3 group"
-              >
-                <img
-                  src={logo}
-                  alt="logo"
-                  className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
-                />
-                <div className="flex flex-col leading-none !ml-2">
-                  <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
-                    Ayyan
-                  </h1>
-                  <span className="text-white text-base font-logo font-bold tracking-wider uppercase !mt-1 text-shadow-sm">
-                    SignAge
-                  </span>
-                </div>
-              </Link>
+            {/* LOGO */}
+            <Link to="/" className="flex items-center space-x-3 group">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
+              />
+              <div className="flex flex-col leading-none !ml-2">
+                <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
+                  Ayyan
+                </h1>
+                <span className="text-white text-base font-logo font-bold tracking-wider uppercase !mt-1 text-shadow-sm">
+                  SignAge
+                </span>
+              </div>
+            </Link>
+
             <p className="text-sm leading-relaxed opacity-90 !pl-5 !mt-3">
-              We are a professional printing and advertising company, delivering creative, precise, and durable signage and branding solutions. From indoor and outdoor signage to promotional materials, we combine modern technology with expert craftsmanship to help brands stand out.
+              We are a professional printing and advertising company, delivering
+              creative, precise, and durable signage and branding solutions.
+              From indoor and outdoor signage to promotional materials, we
+              combine modern technology with expert craftsmanship to help
+              brands stand out.
             </p>
           </div>
         </motion.div>
@@ -130,7 +131,10 @@ const Footer: React.FC = () => {
           className="md:w-1/3 flex justify-end"
         >
           <div className="space-y-4 w-full md:max-w-sm">
-            <h1 className="font-bold text-lg !mb-3 md:hidden">Contact Us</h1>
+            <h1 className="font-bold text-lg !mb-3 md:hidden">
+              Contact Us
+            </h1>
+
             {contactLinks.map((item, i) => (
               <motion.a
                 key={i}
@@ -148,6 +152,7 @@ const Footer: React.FC = () => {
         </motion.div>
       </div>
 
+      {/* BOTTOM */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -178,7 +183,7 @@ const Footer: React.FC = () => {
 
       {/* WHATSAPP FLOATING BUTTON */}
       <motion.a
-        href="https://wa.me/+966563203251"
+        href="https://wa.me/966563203251"
         target="_blank"
         rel="noopener noreferrer"
         initial={{ scale: 0 }}

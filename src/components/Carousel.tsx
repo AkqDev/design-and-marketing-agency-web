@@ -15,7 +15,6 @@ const images = [
   "https://images.unsplash.com/photo-1491553895911-0055eca6402d",
   "https://images.unsplash.com/photo-1560343090-f0409e92791a",
   "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
 ];
 
 const Carousel = () => {
