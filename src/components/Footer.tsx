@@ -50,7 +50,7 @@ const Footer: React.FC = () => {
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
-      className="md:bg-[#000] bg-[#0B0A0A] border-t rounded-2xl md:border-0 text-white w-full h-auto !py-10 !px-2 md:!px-4 md:!px-10 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
+      className="md:bg-[#000] bg-[#0B0A0A] border-t border-[#9D0A0A] rounded-2xl md:border-0 text-white w-full h-auto !py-10 !px-2 md:!px-4 md:!px-10 shadow-[0_-4px_10px_rgba(0,0,0,0.2)]"
     >
       {/* TOP FOOTER */}
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row justify-between items-start bg-[#0B0A0A] rounded-3xl !p-2 md:!p-8 gap-10">

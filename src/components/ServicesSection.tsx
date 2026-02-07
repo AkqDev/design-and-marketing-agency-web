@@ -1,118 +1,74 @@
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination, EffectFade } from 'swiper/modules';
-
-import ads from '../assets/ads.png';
-import marketing from '../assets/marketing.png';
-import seo from '../assets/seo.png';
-import social from '../assets/social.png';
-import web from '../assets/web.png';
+import React from 'react';
+import { motion } from 'framer-motion';
 
 const services = [
-  { id: 1, title: 'SEO', fullName: 'SEARCH ENGINE OPTIMIZATION', img: seo },
-  { id: 2, title: 'ADS', fullName: 'ADVERTISING & PPC', img: ads },
-  { id: 3, title: 'WEB', fullName: 'WEB DEVELOPMENT', img: web },
-  { id: 4, title: 'SOCIAL', fullName: 'SOCIAL MEDIA MARKETING', img: social },
-  { id: 5, title: 'MARKETING', fullName: 'DIGITAL MARKETING', img: marketing },
+  {
+    title: "UX/UI design",
+    description: "UX/UI design focuses on enhancing user experiences and creating intuitive interfaces that connect people with digital products and services...",
+    img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
+    color: "bg-[#1a1a1a]"
+  },
+  {
+    title: "Framer developer",
+    description: "A Framer developer specializes in building interactive and visually stunning digital experiences using the power of Framer's no-code and code tools...",
+    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
+    color: "bg-[#111111]"
+  },
+  {
+    title: "Web Development",
+    description: "Building responsive, high-performance websites with clean code and modern frameworks to ensure your brand stands out online...",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
+    color: "bg-[#0a0a0a]"
+  }
 ];
 
 const ServicesSection = () => {
   return (
-    <section className="w-full bg-black text-white !py-20  h-screen">
-      <div className="h-full max-w-8xl mx-auto !px-4 flex flex-col">
-        {/* Fixed Header */}
-        <div className="!pt-8 !pb-4 md:!pt-12 md:!pb-10">
+    <section className="bg-black !pt-20 !px-4 md:!px-10 min-h-screen flex flex-col items-center justify-center">
+      {/* Heading Section */}
+      <div className="!pb-8 md:!pb-16">
           <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90">
-            Our <span className="text-red-600">Services</span>
+            Our<span className="text-red-600">Services</span>
           </h2>
-        </div>
-
-        {/* Full Screen Swiper Container */}
-        <div className="flex-1 w-full !pb-8">
-          <Swiper
-            modules={[Autoplay, Pagination, EffectFade]}
-            effect={'fade'}
-            spaceBetween={0}
-            slidesPerView={1}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            pagination={{ clickable: true }}
-            className="h-full rounded-3xl overflow-hidden"
-          >
-            {services.map((service) => (
-              <SwiperSlide key={service.id}>
-                <div className="relative w-full h-full flex flex-col md:flex-row items-center justify-between !p-8 md:!p-16 lg:!p-24 bg-[#0a0a0a] border border-white/5 shadow-2xl">
-                  
-                  {/* 1. Background "Smoke/Glow" Effect */}
-                  <div className="absolute inset-0 bg-radial-gradient from-red-900/10 via-transparent to-transparent opacity-50" />
-                  
-                  {/* 2. Floating Icon Cluster (Decorative) */}
-                  <div className="absolute left-6 lg:left-10 top-1/2 -translate-y-1/2 opacity-20 hidden lg:block select-none">
-                     <div className="grid grid-cols-3 gap-3 -rotate-12">
-                        {[...Array(9)].map((_, i) => (
-                           <div key={i} className="w-12 lg:w-16 h-12 lg:h-16 bg-gradient-to-br from-red-600 to-transparent rounded-xl rotate-45" />
-                        ))}
-                     </div>
-                  </div>
-
-                  {/* Left Content: The BIG Title */}
-                  <div className="z-20 w-full md:w-1/2 flex flex-col items-start">
-                    <p className="text-red-600 font-bold tracking-[0.3em] !mb-4 text-sm md:text-base">
-                      {service.fullName}
-                    </p>
-                    <h3 className="text-[40px] md:text-[50px] font-black text-red-600 italic leading-[0.8] tracking-tighter drop-shadow-2xl">
-                      {service.title}
-                    </h3>
-                  </div>
-
-                  {/* Center: Main Image (Floating Target) */}
-                  <div className="z-10 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[600px] flex justify-center pointer-events-none">
-                    <img 
-                      src={service.img} 
-                      alt={service.title} 
-                      className="w-[90%] md:w-[60%] md:w-full h-[180px] md:h-[300px] animate-pulse-slow drop-shadow-[0_0_50px_rgba(220,38,38,0.4)]"
-                    />
-                  </div>
-
-                  {/* Right Content: Catchy Tagline */}
-                  <div className="z-20 w-full md:w-1/3 text-left md:text-right flex flex-col items-start md:items-end !mt-12 md:!mt-0 !mb-10 md:!mb-0">
-                    <h4 className="text-xl md:text-2xl lg:text-4xl font-bold uppercase leading-tight">
-                      Improve Your <br /> Visibility
-                    </h4>
-                    <p className="text-4xl md:text-5xl lg:text-7xl font-black text-red-600 uppercase italic my-2 drop-shadow-md">
-                      Boost
-                    </p>
-                    <h4 className="text-xl md:text-2xl lg:text-4xl font-bold uppercase leading-tight">
-                      Your Authority
-                    </h4>
-                  </div>
-
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
       </div>
+      <div className="max-w-7xl mx-auto flex flex-col gap-20">
+        {services.map((service, index) => (
+          <div 
+            key={index}
+            className="sticky top-24 w-full"
+            style={{ paddingTop: `${index * 20}px` }} 
+          >
+            <motion.div 
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className={`${service.color} border border-white/10 rounded-3xl !p-8 md:!p-12 min-h-[450px] shadow-2xl flex flex-col md:flex-row gap-10 items-center overflow-hidden`}
+            >
+              {/* Text Content */}
+              <div className="flex-1 space-y-6">
+                <h2 className="text-4xl md:text-5xl font-serif text-white !mb-6">
+                  {service.title}
+                </h2>
+                <div className="h-[1px] bg-white/20 w-full !mb-4" />
+                <p className="text-gray-400 text-lg leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
 
-      <style>{`
-        .swiper-pagination-bullet { 
-          width: 12px; 
-          height: 12px; 
-          background: #333 !important; 
-          opacity: 1; 
-          transition: all 0.3s ease;
-        }
-        .swiper-pagination-bullet-active { 
-          background: #dc2626 !important; 
-          width: 40px; 
-          border-radius: 6px; 
-        }
-        .animate-pulse-slow {
-          animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-        @keyframes pulse {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-20px); }
-        }
-      `}</style>
+              {/* Image Content */}
+              <div className="flex-1 w-full h-full">
+                <img 
+                  src={service.img} 
+                  alt={service.title}
+                  className="rounded-2xl w-full h-[300px] object-cover border border-white/5"
+                />
+              </div>
+            </motion.div>
+          </div>
+        ))}
+      </div>
+      {/* Removed the extra h-screen div that was causing the bottom spacing */}
     </section>
   );
 };

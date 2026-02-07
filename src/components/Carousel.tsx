@@ -84,7 +84,7 @@ const Carousel = () => {
           <span className="text-xs md:text-sm font-bold tracking-[0.2em] font-[poppins]">Brand Development</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90 max-w-4xl">
-          Concept To<span className="text-red-600"> Reality.</span>
+          Concept To<span className="text-red-600">Reality.</span>
         </h2>
       </div>
 
