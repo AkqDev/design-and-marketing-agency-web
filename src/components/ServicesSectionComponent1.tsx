@@ -38,7 +38,7 @@ import broucher4 from '../assets/broucher4.png';
 const ServicesSectionComponent1 = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const autoPlayRef = useRef<NodeJS.Timeout | null>(null);
+  const autoPlayRef = useRef<number | null>(null); // Changed from NodeJS.Timeout to number
 
   const services = [
     {
@@ -162,22 +162,22 @@ const ServicesSectionComponent1 = () => {
   // Auto-play functionality
   useEffect(() => {
     if (isAutoPlaying) {
-      autoPlayRef.current = setInterval(() => {
+      autoPlayRef.current = window.setInterval(() => { // Use window.setInterval
         nextSlide();
       }, 3000);
     }
 
     return () => {
-      if (autoPlayRef.current) {
-        clearInterval(autoPlayRef.current);
+      if (autoPlayRef.current !== null) {
+        window.clearInterval(autoPlayRef.current); // Use window.clearInterval
       }
     };
   }, [isAutoPlaying, currentSlide]);
 
   const handleMouseEnter = () => {
     setIsAutoPlaying(false);
-    if (autoPlayRef.current) {
-      clearInterval(autoPlayRef.current);
+    if (autoPlayRef.current !== null) {
+      window.clearInterval(autoPlayRef.current); // Use window.clearInterval
     }
   };
 
