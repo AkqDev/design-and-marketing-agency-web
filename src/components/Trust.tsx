@@ -106,7 +106,9 @@ const Trust = () => {
           {duplicatedBrands.map((brand, index) => (
             <div
               key={index}
-              ref={(el) => (brandRefs.current[index] = el)}
+              ref={(el) => {
+                brandRefs.current[index] = el;
+              }}
               className="flex items-center justify-center min-w-[150px] md:min-w-[180px] h-32 px-12 cursor-pointer transition-all duration-300"
             >
               <span className="flex items-center justify-center w-full h-full">
