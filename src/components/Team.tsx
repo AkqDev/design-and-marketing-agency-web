@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 // Asset Imports
@@ -12,10 +11,17 @@ import shamsa from '../assets/shamsa.png';
 import arslan from '../assets/arslan.png';
 import zulqarnain from '../assets/zulqarnain.png';
 
+interface Instructor {
+  img: string;
+  name: string;
+  role: string;
+  featured?: boolean; // Added optional featured property
+}
+
 const Team = () => {
-  const instructors = [
+  const instructors: Instructor[] = [
     { img: ayyan, name: 'Adnan Malick', role: 'CEO | Managing Director' },
-    { img: ashraf, name: 'Malik Ashraf Nawaz', role: 'Brand Ambassador'},
+    { img: ashraf, name: 'Malik Ashraf Nawaz', role: 'Brand Ambassador' },
     { img: khalid, name: 'M. Khalid Fareed', role: 'Senior Business Strategy Planner' },
     { img: Amina, name: 'Amina Gulzar', role: 'Branding Specialist' },
     { img: akbar, name: 'Akbar Qureshi', role: 'Full-Stack Developer' },
@@ -41,13 +47,13 @@ const Team = () => {
       opacity: 0, 
       y: 30,
     },
-    visible: (i) => ({
+    visible: (i: number) => ({
       opacity: 1,
       y: 0,
       transition: {
         delay: i * 0.1,
         duration: 0.5,
-        ease: 'easeOut',
+        ease: 'easeOut' as const,
       },
     }),
     hover: {
@@ -67,7 +73,7 @@ const Team = () => {
       opacity: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut",
+        ease: "easeOut" as const,
       },
     },
     hover: {
