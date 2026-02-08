@@ -15,7 +15,7 @@ interface Instructor {
   img: string;
   name: string;
   role: string;
-  featured?: boolean; // Added optional featured property
+  featured?: boolean;
 }
 
 const Team = () => {
@@ -59,7 +59,7 @@ const Team = () => {
     hover: {
       y: -5,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 300,
         damping: 15,
       },
@@ -79,7 +79,7 @@ const Team = () => {
     hover: {
       scale: 1.05,
       transition: {
-        type: "spring",
+        type: "spring" as const,
         stiffness: 200,
         damping: 10,
       },
