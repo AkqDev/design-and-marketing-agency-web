@@ -95,8 +95,8 @@ const Hero = () => {
       {!isMobile && (
         <div ref={backgroundRef}>
           <div className="absolute inset-0 opacity-10">
-            <div className="bg-blur floating-element absolute top-20 left-10 w-72 h-72 bg-[#D61921] rounded-full blur-3xl"></div>
-            <div className="bg-blur floating-element absolute bottom-20 right-10 w-96 h-96 bg-[#D61921] rounded-full blur-3xl"></div>
+            <div className="bg-blur floating-element absolute top-20 left-10 w-72 h-72 bg-[#9D0A0A] rounded-full blur-3xl"></div>
+            <div className="bg-blur floating-element absolute bottom-20 right-10 w-96 h-96 bg-[#9D0A0A] rounded-full blur-3xl"></div>
             <div className="bg-blur floating-element absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-white rounded-full blur-3xl opacity-5"></div>
           </div>
           <div className="absolute inset-0 bg-[linear-gradient(rgba(214,25,33,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(214,25,33,0.03)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
@@ -154,7 +154,7 @@ const Hero = () => {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-[#D61921] text-white !px-8 !py-4 rounded-full font-button text-base hover:bg-black hover:border hover:border-[#D61921] hover:text-[#D61921] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2 !mt-3 hover-lift animate-pulse-glow"
+              className="group bg-[#9D0A0A] text-white !px-8 !py-4 rounded-full font-button text-base hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105 flex items-center gap-2 !mt-3 hover-lift animate-pulse-glow"
               onMouseEnter={(e) => {
                 gsap.to(e.currentTarget, {
                   scale: 1.1,

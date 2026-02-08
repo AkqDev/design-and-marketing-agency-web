@@ -70,12 +70,12 @@ const Footer: React.FC = () => {
                 alt="logo"
                 className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !my-3"
               />
-              <div className="flex flex-col leading-none !ml-2">
-                <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
-                  Ayyan
+              <div className="flex flex-col leading-none !ml-3">
+                <h1 className="text-[#9D0A0A] text-xl font-logo font-black tracking-tighter text-shadow-md uppercase">
+                  Ayyan SignAge
                 </h1>
-                <span className="text-white text-base font-logo font-bold tracking-wider uppercase !mt-1 text-shadow-sm">
-                  SignAge
+                <span className="text-white text-base font-logo font-bold tracking-wider text-shadow-sm">
+                  Printing And Advertising
                 </span>
               </div>
             </Link>

@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -19,7 +18,13 @@ const services = [
     description: "Building responsive, high-performance websites with clean code and modern frameworks to ensure your brand stands out online...",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop",
     color: "bg-[#0a0a0a]"
-  }
+  },
+    {
+    title: "UX/UI design",
+    description: "UX/UI design focuses on enhancing user experiences and creating intuitive interfaces that connect people with digital products and services...",
+    img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
+    color: "bg-[#1a1a1a]"
+  },
 ];
 
 const ServicesSection = () => {
@@ -28,7 +33,7 @@ const ServicesSection = () => {
       {/* Heading Section */}
       <div className="!pb-8 md:!pb-16">
           <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90">
-            Our<span className="text-red-600">Services</span>
+            Our<span className="text-[#9D0A0A] !ml-2">Services</span>
           </h2>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col gap-20">

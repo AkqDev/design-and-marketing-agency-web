@@ -1,7 +1,9 @@
+import ServicesSectionComponent1 from "../components/ServicesSectionComponent1"
+
 const Services = () => {
   return (
     <div>
-      hello
+      <ServicesSectionComponent1/>
     </div>
   )
 }

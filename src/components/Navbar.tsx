@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
-
+import { FaWhatsapp } from "react-icons/fa";
 const WHATSAPP_LINK = "https://wa.me/966563203251";
 
 const Navbar = () => {
@@ -56,11 +56,11 @@ const Navbar = () => {
               className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
             />
             <div className="flex flex-col leading-none !ml-2">
-              <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
-                Ayyan
+              <h1 className="text-[#9D0A0A] text-xl font-logo font-black tracking-tighter text-shadow-md uppercase">
+                Ayyan SignAge
               </h1>
-              <span className="text-white text-base font-logo font-bold tracking-wider uppercase -mt-1 text-shadow-sm">
-                SignAge
+              <span className="text-white text-base font-logo font-bold tracking-wider -mt-1 text-shadow-sm">
+                Printing And Advertising 
               </span>
             </div>
           </Link>
@@ -75,13 +75,13 @@ const Navbar = () => {
                       to={item.path}
                       className={`!px-4 !py-2 relative font-nav text-base transition-colors duration-300 text-shadow-sm ${
                         location.pathname === item.path
-                          ? "text-[#D61921]"
+                          ? "text-[#9D0A0A]"
                           : "hover:text-gray-200"
                       }`}
                     >
                       {item.label}
                       <span
-                        className={`absolute bottom-0 left-0 h-0.5 bg-[#D61921] transition-all duration-300 ${
+                        className={`absolute bottom-0 left-0 h-0.5 bg-[#9D0A0A] transition-all duration-300 ${
                           location.pathname === item.path ? "w-full" : "w-0"
                         }`}
                       ></span>
@@ -96,8 +96,9 @@ const Navbar = () => {
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="!ml-10 bg-[#D61921] text-white !py-4 !px-8 rounded-full inline-block font-button text-sm hover:bg-black hover:border hover:border-[#D61921] hover:text-[#D61921] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="!ml-10 bg-[#9D0A0A] text-white !py-4 !px-8 rounded-full inline-block font-button text-sm hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
+              <FaWhatsapp className="!mr-2 inline-block" size={22}/>
               Book an Appointment
             </a>
           </div>
@@ -135,11 +136,11 @@ const Navbar = () => {
                   className="w-16 h-auto transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="flex flex-col leading-none !ml-3">
-                  <h1 className="text-[#D61921] text-xl font-logo font-black tracking-tighter text-shadow-md">
-                    Ayyan
+                  <h1 className="text-[#9D0A0A] text-xl font-logo font-black tracking-tighter uppercase text-shadow-md">
+                    Ayyan SignAge
                   </h1>
-                  <span className="text-white text-base font-logo font-bold tracking-wider uppercase -mt-1 text-shadow-sm">
-                    SignAge
+                  <span className="text-white text-base font-logo font-bold tracking-wider -mt-1 text-shadow-sm">
+                    Printing And Advertising
                   </span>
                 </div>
               </Link>
@@ -166,8 +167,8 @@ const Navbar = () => {
                     onClick={() => setIsOpen(false)}
                     className={`font-nav text-xl transition-colors duration-300 text-shadow-md hover:scale-110 transform ${
                       location.pathname === item.path
-                        ? "text-[#D61921]"
-                        : "hover:text-[#D61921]"
+                        ? "text-[#9D0A0A]"
+                        : "hover:text-[#9D0A0A]"
                     }`}
                   >
                     {item.label}
@@ -180,13 +181,14 @@ const Navbar = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="!mt-8 bg-[#D61921] text-white !px-8 !py-4 rounded-full font-button hover:bg-black hover:border hover:border-[#D61921] hover:text-[#D61921] transition-all duration-300 shadow-lg"
+                className="!mt-8 bg-[#9D0A0A] text-white !px-8 !py-4 rounded-full font-button hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
+                <FaWhatsapp className="!mr-2 inline-block" size={22} />
                 Book an Appointment
               </motion.a>
             </nav>
