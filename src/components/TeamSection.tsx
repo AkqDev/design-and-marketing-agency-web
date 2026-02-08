@@ -31,7 +31,7 @@ const members: TeamMember[] = [
   { name: "Shamsa Andleeb Akhtar", role: "Graphics Designer", image: shamsa, bgColor: "#9D0A0A" },
 ];
 
-// Animation Variants
+// Animation Variants with proper typing
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
@@ -42,7 +42,14 @@ const containerVariants = {
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  visible: { 
+    opacity: 1, 
+    y: 0, 
+    transition: { 
+      duration: 0.5, 
+      ease: "easeOut" as const  // Use const assertion for string literals
+    } 
+  },
 };
 
 const TeamSection: React.FC = () => {
