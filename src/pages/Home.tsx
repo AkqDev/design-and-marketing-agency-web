@@ -4,7 +4,7 @@ import Stats from "../components/Stats";
 import Trust from '../components/Trust'
 import ServicesSection from '../components/ServicesSection';
 import Carousel from '../components/Carousel';
-import Team from '../components/Team';
+import TeamSection from '../components/TeamSection';
 
 const Home = () => {
   return (
@@ -15,7 +15,7 @@ const Home = () => {
        <ServicesSection/>
        <Trust/>
        <Carousel/>
-       <Team/>
+       <TeamSection/>
     </div>
   )
 }

@@ -100,7 +100,7 @@ const Trust = () => {
         {/* Scrolling Brands Container */}
         <div
           ref={scrollContainerRef}
-          className="flex items-center gap-16 md:gap-24 !py-4 bg-white h-65"
+          className="flex items-center gap-16 md:gap-24 !py-4 bg-white/90 h-65"
           style={{ width: "max-content" }}
         >
           {duplicatedBrands.map((brand, index) => (

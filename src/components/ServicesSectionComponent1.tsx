@@ -38,7 +38,7 @@ import broucher4 from '../assets/broucher4.png';
 const ServicesSectionComponent1 = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const autoPlayRef = useRef<number | null>(null); // Changed from NodeJS.Timeout to number
+  const autoPlayRef = useRef<number | null>(null);
 
   const services = [
     {
@@ -164,7 +164,7 @@ const ServicesSectionComponent1 = () => {
     if (isAutoPlaying) {
       autoPlayRef.current = window.setInterval(() => { // Use window.setInterval
         nextSlide();
-      }, 3000);
+      }, 5000);
     }
 
     return () => {
