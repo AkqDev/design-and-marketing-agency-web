@@ -120,7 +120,7 @@ const TeamSection: React.FC = () => {
                 <div className="relative !mb-[-20px]">
                   {/* White Circular Backdrop/Border effect */}
                   <div 
-                    className="w-63 h-70 rounded-full p-1 bg-white/10 backdrop-blur-sm shadow-2xl"
+                    className="w-63 h-60 md:h-70 rounded-full p-1 bg-white/10 backdrop-blur-sm shadow-2xl"
                     style={{ boxShadow: "0px 10px 25px rgba(0,0,0,0.4)" }}
                   >
                     <div className="w-full h-full rounded-full overflow-hidden border-4 border-transparent">
@@ -185,7 +185,7 @@ const TeamSection: React.FC = () => {
                 <div className="relative !mb-[-20px]">
                   {/* White Circular Backdrop/Border effect */}
                   <div 
-                    className="w-63 h-70 rounded-full p-1 bg-white/10 backdrop-blur-sm shadow-2xl"
+                    className="w-63 h-60 md:h-70 rounded-full p-1 bg-white/10 backdrop-blur-sm shadow-2xl"
                     style={{ boxShadow: "0px 10px 25px rgba(0,0,0,0.4)" }}
                   >
                     <div className="w-full h-full rounded-full overflow-hidden border-4 border-transparent">
