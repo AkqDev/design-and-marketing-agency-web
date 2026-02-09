@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Import all your images (keeping your existing imports)
 import visitingcard1 from '../assets/visitingcard1.png';
@@ -36,6 +37,7 @@ import broucher3 from '../assets/broucher3.png';
 import broucher4 from '../assets/broucher4.png';
 
 const ServicesSectionComponent1 = () => {
+  const { t } = useLanguage();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef<number | null>(null);
@@ -192,15 +194,14 @@ const ServicesSectionComponent1 = () => {
         <div className="text-center !mb-16">
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter uppercase italic !mb-4">
             <span className="text-white">
-              Our
+              {t.servicesPage.our}
             </span>
             <span className="text-[#9D0A0A] !ml-2 drop-shadow-[0_2px_4px_rgba(157,10,10,0.5)]">
-              Services
+              {t.servicesPage.services}
             </span>
           </h2>
           <p className="text-gray-300 text-lg md:text-xl max-w-3xl !mx-auto text-center">
-            Professional advertising and printing solutions for businesses of all sizes. 
-            From concept to completion, we deliver exceptional quality and innovative designs.
+            {t.servicesPage.description}
           </p>
         </div>
 

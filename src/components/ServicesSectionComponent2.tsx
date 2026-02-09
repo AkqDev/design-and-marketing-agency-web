@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 import cladding1 from '../assets/cladding1.png';
 import cladding2 from '../assets/cladding2.png';
 import cladding3 from '../assets/cladding3.png';
@@ -12,12 +13,14 @@ const services = [
 ];
 
 const ServicesSectionComponent2 = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="bg-black min-h-screen flex flex-col items-center justify-center !p-4 md:!p-10">
       {/* Heading Section */}
       <div className="!pb-8 md:!pb-16">
         <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90">
-          Wall<span className="text-[#9D0A0A] !ml-2">Cladding</span>
+          {t.servicesPage.wall}<span className="text-[#9D0A0A] !ml-2">{t.servicesPage.cladding}</span>
         </h2>
       </div>
 

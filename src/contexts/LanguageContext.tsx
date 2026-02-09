@@ -29,6 +29,13 @@ interface Translations {
     ourServices: string;
     services: string;
   };
+  servicesPage: {
+    our: string;
+    services: string;
+    description: string;
+    wall: string;
+    cladding: string;
+  };
   trust: {
     brandsThat: string;
     trustUs: string;
@@ -92,6 +99,13 @@ const translations: Record<Language, Translations> = {
       ourServices: "Our",
       services: "Services",
     },
+    servicesPage: {
+      our: "Our",
+      services: "Services",
+      description: "Professional advertising and printing solutions for businesses of all sizes. From concept to completion, we deliver exceptional quality and innovative designs.",
+      wall: "Wall",
+      cladding: "Cladding",
+    },
     trust: {
       brandsThat: "Brands That",
       trustUs: "Trust Us",
@@ -152,6 +166,13 @@ const translations: Record<Language, Translations> = {
     services: {
       ourServices: "خدماتنا",
       services: "",
+    },
+    servicesPage: {
+      our: "خدماتنا",
+      services: "",
+      description: "حلول إعلانية وطباعة احترافية للشركات من جميع الأحجام. من المفهوم إلى الإنجاز، نقدم جودة استثنائية وتصاميم مبتكرة.",
+      wall: "كسوة",
+      cladding: "الجدران",
     },
     trust: {
       brandsThat: "العلامات التجارية التي",
