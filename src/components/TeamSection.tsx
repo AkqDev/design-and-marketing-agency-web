@@ -99,7 +99,7 @@ const TeamSection: React.FC = () => {
                 }}
               >
                 {/* Name & Role Container */}
-                <div className="!my-5 text-center !px-6">
+                <div className="!my-5 text-center !px-6 !pt-4">
                   <h3
                     className="text-xl text-white font-bold font-[poppins] drop-shadow-md"
                     style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.5)" }}
@@ -164,7 +164,7 @@ const TeamSection: React.FC = () => {
                 }}
               >
                 {/* Name & Role Container */}
-                <div className="!my-5 text-center !px-6">
+                <div className="!my-5 text-center !px-6 !pt-4">
                   <h3
                     className="text-xl text-white font-bold font-[poppins] drop-shadow-md"
                     style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.5)" }}
