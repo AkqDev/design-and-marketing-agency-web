@@ -9,8 +9,11 @@ import {
 } from "react-icons/fa";
 import { motion } from "framer-motion";
 import logo from "../assets/logo.png";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+  
   const socialLinks = [
     {
       icon: FaInstagram,
@@ -100,14 +103,14 @@ const Footer: React.FC = () => {
         >
           <div className="space-y-4">
             <h3 className="font-bold text-lg !mb-3 text-center">
-              Quick Links
+              {t.footer.quickLinks}
             </h3>
             <ul className="space-y-2 md:text-center">
               {[
-                { name: "Home", path: "/" },
-                { name: "About", path: "/about" },
-                { name: "Services", path: "/services" },
-                { name: "Contact Us", path: "/contact" },
+                { name: t.footer.home, path: "/" },
+                { name: t.footer.about, path: "/about" },
+                { name: t.footer.services, path: "/services" },
+                { name: t.footer.contactUs, path: "/contact" },
               ].map((item) => (
                 <li key={item.name}>
                   <Link

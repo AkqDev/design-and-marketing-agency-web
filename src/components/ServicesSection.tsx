@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
+import { useLanguage } from '../contexts/LanguageContext';
 
 const services = [
   {
@@ -33,12 +34,14 @@ const services = [
 ];
 
 const ServicesSection = () => {
+  const { t } = useLanguage();
+  
   return (
     <section className="bg-black !pt-20 !px-4 md:!px-10 min-h-screen flex flex-col items-center justify-center">
       {/* Heading Section */}
       <div className="!pb-8 md:!pb-16">
         <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90">
-          Our<span className="text-[#9D0A0A] !ml-2">Services</span>
+          {t.services.ourServices}<span className="text-[#9D0A0A] !ml-2">{t.services.services}</span>
         </h2>
       </div>
       <div className="max-w-7xl mx-auto flex flex-col gap-20">

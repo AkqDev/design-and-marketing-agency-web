@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const images = [
   "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
@@ -18,6 +19,7 @@ const images = [
 ];
 
 const Carousel = () => {
+  const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(7);
   const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1024);
 
@@ -81,10 +83,10 @@ const Carousel = () => {
       {/* Header Section */}
       <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4">
         <div className="flex items-center gap-2 bg-[#FFF1F1] text-[#9D0A0A] !px-4 md:!px-6 !py-2 rounded-full border border-[#FFE4E4] !mb-6 md:!mb-8">
-          <span className="text-xs md:text-sm font-bold tracking-[0.2em] font-[poppins]">Brand Development</span>
+          <span className="text-xs md:text-sm font-bold tracking-[0.2em] font-[poppins]">{t.carousel.brandDevelopment}</span>
         </div>
         <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90 max-w-4xl">
-          Concept To<span className="text-[#9D0A0A] !ml-2">Reality.</span>
+          {t.carousel.conceptTo}<span className="text-[#9D0A0A] !ml-2">{t.carousel.reality}</span>
         </h2>
       </div>
 

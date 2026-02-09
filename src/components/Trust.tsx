@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useLanguage } from "../contexts/LanguageContext";
 
 import alAman from "../assets/alAman.png";
 import bias from "../assets/bias.png";
@@ -14,6 +15,7 @@ import rkan from "../assets/rkan.png";
 gsap.registerPlugin(ScrollTrigger);
 
 const Trust = () => {
+  const { t } = useLanguage();
   const containerRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -87,7 +89,7 @@ const Trust = () => {
           ref={titleRef}
           className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90"
         >
-          Brands That <span className="text-[#9D0A0A]">Trust Us</span>
+          {t.trust.brandsThat} <span className="text-[#9D0A0A]">{t.trust.trustUs}</span>
         </h2>
       </div>
 

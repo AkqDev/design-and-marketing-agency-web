@@ -25,6 +25,30 @@ interface Translations {
     description: string;
     button: string;
   };
+  services: {
+    ourServices: string;
+    services: string;
+  };
+  trust: {
+    brandsThat: string;
+    trustUs: string;
+  };
+  carousel: {
+    brandDevelopment: string;
+    conceptTo: string;
+    reality: string;
+  };
+  team: {
+    our: string;
+    team: string;
+  };
+  footer: {
+    quickLinks: string;
+    home: string;
+    about: string;
+    services: string;
+    contactUs: string;
+  };
 }
 
 const translations: Record<Language, Translations> = {
@@ -51,6 +75,30 @@ const translations: Record<Language, Translations> = {
       description: "We are a professional Printing & Advertising company, providing innovative signage and advertising solutions that help brands stand out and create a strong visual impact.",
       button: "More About Us",
     },
+    services: {
+      ourServices: "Our",
+      services: "Services",
+    },
+    trust: {
+      brandsThat: "Brands That",
+      trustUs: "Trust Us",
+    },
+    carousel: {
+      brandDevelopment: "Brand Development",
+      conceptTo: "Concept To",
+      reality: "Reality.",
+    },
+    team: {
+      our: "Our",
+      team: "Team",
+    },
+    footer: {
+      quickLinks: "Quick Links",
+      home: "Home",
+      about: "About",
+      services: "Services",
+      contactUs: "Contact Us",
+    },
   },
   ar: {
     navbar: {
@@ -74,6 +122,30 @@ const translations: Record<Language, Translations> = {
       promise: "في أيان سيجنيج، نعدك بالنتائج.",
       description: "نحن شركة طباعة وإعلان محترفة، نقدم حلول لافتات وإعلانات مبتكرة تساعد العلامات التجارية على التميز وخلق تأثير بصري قوي.",
       button: "المزيد عنا",
+    },
+    services: {
+      ourServices: "خدماتنا",
+      services: "",
+    },
+    trust: {
+      brandsThat: "العلامات التجارية التي",
+      trustUs: "تثق بنا",
+    },
+    carousel: {
+      brandDevelopment: "تطوير العلامة التجارية",
+      conceptTo: "من المفهوم إلى",
+      reality: "الواقع.",
+    },
+    team: {
+      our: "فريقنا",
+      team: "",
+    },
+    footer: {
+      quickLinks: "روابط سريعة",
+      home: "الرئيسية",
+      about: "من نحن",
+      services: "الخدمات",
+      contactUs: "اتصل بنا",
     },
   },
 };

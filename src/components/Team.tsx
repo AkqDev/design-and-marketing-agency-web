@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../contexts/LanguageContext';
 
 // Asset Imports
 import ayyan from '../assets/ayyan.png';
@@ -17,6 +18,15 @@ interface Instructor {
   role: string;
   featured?: boolean;
 }
+
+const TeamHeading = () => {
+  const { t } = useLanguage();
+  return (
+    <>
+      {t.team.our} <span className="text-[#9D0A0A]">{t.team.team || "Team"}</span>
+    </>
+  );
+};
 
 const Team = () => {
   const instructors: Instructor[] = [
@@ -111,7 +121,7 @@ const Team = () => {
           transition={{ duration: 0.6 }}
         >
           <h2 className="text-4xl md:text-6xl font-black tracking-tight uppercase italic text-gray-900">
-            Our <span className="text-[#9D0A0A]">Team</span>
+            <TeamHeading />
           </h2>
         </motion.div>
 
