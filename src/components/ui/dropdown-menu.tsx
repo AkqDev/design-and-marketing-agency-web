@@ -27,7 +27,7 @@ DropdownMenuTrigger.displayName = "DropdownMenuTrigger";
 
 const DropdownMenuContent = React.forwardRef<
   HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement> & { isOpen: boolean }
+  Omit<React.HTMLAttributes<HTMLDivElement>, 'onDrag' | 'onDragStart' | 'onDragEnd'> & { isOpen: boolean }
 >(({ className, children, isOpen, ...props }, ref) => {
   return (
     <AnimatePresence>
