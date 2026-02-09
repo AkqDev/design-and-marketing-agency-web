@@ -2,10 +2,13 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useLanguage } from '../contexts/LanguageContext';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact: React.FC = () => {
+  const { t } = useLanguage();
+  
   // State to handle form inputs
   const [formData, setFormData] = useState({
     name: '',
@@ -150,8 +153,7 @@ const Contact: React.FC = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           >
-            We are a professional printing and advertising company, delivering creative, precise, and durable signage and branding solutions. 
-            From indoor and outdoor signage to promotional materials, we help brands stand out through expert craftsmanship.
+            {t.contact.description}
           </motion.p>
         </motion.div>
 
@@ -176,14 +178,14 @@ const Contact: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.5 }}
               >
-                Full Name
+                {t.contact.fullName}
               </motion.label>
               <motion.input 
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 type="text"
-                placeholder="Enter Your Name"
+                placeholder={t.contact.namePlaceholder}
                 className="w-full !p-5 rounded-3xl !bg-[#202020] text-white focus:ring-2 focus:ring-[#9D0A0A] focus:!bg-[#202020] hover:!bg-[#202020] active:!bg-[#202020] outline-none transition-all font-[poppins] shadow-lg hover:shadow-xl focus:shadow-2xl"
                 style={{ 
                   backgroundColor: '#202020',
@@ -208,14 +210,14 @@ const Contact: React.FC = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 }}
               >
-                Phone Number
+                {t.contact.phoneNumber}
               </motion.label>
               <motion.input 
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 type="text"
-                placeholder="Phone"
+                placeholder={t.contact.phonePlaceholder}
                 className="w-full !p-5 rounded-3xl !bg-[#202020] text-white focus:ring-2 focus:ring-[#9D0A0A] focus:!bg-[#202020] hover:!bg-[#202020] active:!bg-[#202020] outline-none transition-all font-[poppins] shadow-lg hover:shadow-xl focus:shadow-2xl"
                 style={{ 
                   backgroundColor: '#202020',
@@ -237,13 +239,13 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.5 }}
             whileHover={{ scale: 1.01 }}
           >
-            <label className="text-[#9D0A0A] font-[poppins] font-semibold !ml-2 !mt-2">Email Address</label>
+            <label className="text-[#9D0A0A] font-[poppins] font-semibold !ml-2 !mt-2">{t.contact.emailAddress}</label>
             <input 
               name="email"
               value={formData.email}
               onChange={handleChange}
               type="email"
-              placeholder="Enter Your Email"
+              placeholder={t.contact.emailPlaceholder}
               className="w-full !p-5 rounded-3xl !bg-[#202020] text-white focus:ring-2 focus:ring-[#9D0A0A] focus:!bg-[#202020] hover:!bg-[#202020] active:!bg-[#202020] outline-none transition-all font-[poppins] shadow-lg hover:shadow-xl focus:shadow-2xl"
               style={{ 
                 backgroundColor: '#202020',
@@ -260,13 +262,13 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6, delay: 0.6 }}
             whileHover={{ scale: 1.01 }}
           >
-            <label className="text-[#9D0A0A] font-[poppins] font-semibold !ml-2 !mt-2">Your Message</label>
+            <label className="text-[#9D0A0A] font-[poppins] font-semibold !ml-2 !mt-2">{t.contact.yourMessage}</label>
             <textarea 
               name="message"
               value={formData.message}
               onChange={handleChange}
               rows={4}
-              placeholder="How can we help you?"
+              placeholder={t.contact.messagePlaceholder}
               className="w-full !p-5 text-white rounded-3xl !bg-[#202020] focus:ring-2 focus:ring-[#9D0A0A] focus:!bg-[#202020] hover:!bg-[#202020] active:!bg-[#202020] outline-none transition-all font-[poppins] resize-none shadow-lg hover:shadow-xl focus:shadow-2xl"
               style={{ 
                 backgroundColor: '#202020',
@@ -298,7 +300,7 @@ const Contact: React.FC = () => {
             }}
             whileTap={{ scale: 0.98 }}
           >
-            Submit Message via WhatsApp
+            {t.contact.submitButton}
           </motion.button>
         </div>
 

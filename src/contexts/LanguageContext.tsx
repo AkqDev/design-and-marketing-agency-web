@@ -49,6 +49,19 @@ interface Translations {
     services: string;
     contactUs: string;
   };
+  contact: {
+    contactUs: string;
+    description: string;
+    fullName: string;
+    phoneNumber: string;
+    emailAddress: string;
+    yourMessage: string;
+    namePlaceholder: string;
+    phonePlaceholder: string;
+    emailPlaceholder: string;
+    messagePlaceholder: string;
+    submitButton: string;
+  };
 }
 
 const translations: Record<Language, Translations> = {
@@ -99,6 +112,19 @@ const translations: Record<Language, Translations> = {
       services: "Services",
       contactUs: "Contact Us",
     },
+    contact: {
+      contactUs: "Contact Us",
+      description: "We are a professional printing and advertising company, delivering creative, precise, and durable signage and branding solutions. From indoor and outdoor signage to promotional materials, we help brands stand out through expert craftsmanship.",
+      fullName: "Full Name",
+      phoneNumber: "Phone Number",
+      emailAddress: "Email Address",
+      yourMessage: "Your Message",
+      namePlaceholder: "Enter Your Name",
+      phonePlaceholder: "Phone",
+      emailPlaceholder: "Enter Your Email",
+      messagePlaceholder: "How can we help you?",
+      submitButton: "Submit Message via WhatsApp",
+    },
   },
   ar: {
     navbar: {
@@ -146,6 +172,19 @@ const translations: Record<Language, Translations> = {
       about: "من نحن",
       services: "الخدمات",
       contactUs: "اتصل بنا",
+    },
+    contact: {
+      contactUs: "اتصل بنا",
+      description: "نحن شركة طباعة وإعلان محترفة، نقدم حلول لافتات وعلامات تجارية إبداعية ودقيقة ومتينة. من اللافتات الداخلية والخارجية إلى المواد الترويجية، نساعد العلامات التجارية على التميز من خلال الحرفية المتخصصة.",
+      fullName: "الاسم الكامل",
+      phoneNumber: "رقم الهاتف",
+      emailAddress: "عنوان البريد الإلكتروني",
+      yourMessage: "رسالتك",
+      namePlaceholder: "أدخل اسمك",
+      phonePlaceholder: "الهاتف",
+      emailPlaceholder: "أدخل بريدك الإلكتروني",
+      messagePlaceholder: "كيف يمكننا مساعدتك؟",
+      submitButton: "إرسال الرسالة عبر واتساب",
     },
   },
 };
