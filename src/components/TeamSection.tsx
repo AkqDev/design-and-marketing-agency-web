@@ -88,7 +88,7 @@ const TeamSection: React.FC = () => {
               key={`first-${index}`}
               variants={cardVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="relative w-64 h-[400px] md:h-[330px] flex flex-col items-center"
+              className="relative w-64 h-[380px] md:h-[330px] flex flex-col items-center"
             >
               {/* Main Pill Background */}
               <div
@@ -116,7 +116,7 @@ const TeamSection: React.FC = () => {
               </div>
 
               {/* Image Container */}
-              <div className="absolute bottom-5 w-full flex justify-center">
+              <div className="absolute bottom-3 md:bottom-5 w-full flex justify-center">
                 <div className="relative !mb-[-20px]">
                   {/* White Circular Backdrop/Border effect */}
                   <div 
@@ -153,7 +153,7 @@ const TeamSection: React.FC = () => {
               key={`second-${index}`}
               variants={cardVariants}
               whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="relative w-64 h-[400px] md:h-[330px] flex flex-col items-center"
+              className="relative w-64 h-[380px] md:h-[330px] flex flex-col items-center"
             >
               {/* Main Pill Background */}
               <div
