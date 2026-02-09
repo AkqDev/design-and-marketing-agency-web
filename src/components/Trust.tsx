@@ -100,7 +100,7 @@ const Trust = () => {
         {/* Scrolling Brands Container */}
         <div
           ref={scrollContainerRef}
-          className="flex items-center gap-16 md:gap-24 !py-4 bg-white/90 h-65"
+          className="flex items-center gap-16 md:gap-24 !py-4 bg-white/90 h-35 md:h-65"
           style={{ width: "max-content" }}
         >
           {duplicatedBrands.map((brand, index) => (
@@ -109,13 +109,13 @@ const Trust = () => {
               ref={(el) => {
                 brandRefs.current[index] = el;
               }}
-              className="flex items-center justify-center min-w-[150px] md:min-w-[180px] h-32 px-12 cursor-pointer transition-all duration-300"
+              className="flex items-center justify-center min-w-[120px] md:min-w-[180px] h-[22] md:h-32 px-12 cursor-pointer transition-all duration-300"
             >
               <span className="flex items-center justify-center w-full h-full">
                 <img
                   src={brand.img}
                   alt={`Brand ${index + 1}`}
-                  className="max-h-35 object-contain transform transition-transform duration-300 hover:scale-105"
+                  className="max-h-25 md:max-h-35 object-contain transform transition-transform duration-300 hover:scale-105"
                 />
               </span>
             </div>

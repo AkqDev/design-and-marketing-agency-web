@@ -189,7 +189,7 @@ const Footer: React.FC = () => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-5 right-10 z-50 bg-[#9D0A0A] !p-4 rounded-full shadow-lg md:hidden"
+        className="fixed bottom-5 right-10 z-50 bg-[#9D0A0A] !p-4 rounded-full shadow-lg"
       >
         <FaWhatsapp size={18} className="text-white" />
       </motion.a>
