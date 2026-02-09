@@ -186,7 +186,7 @@ const ServicesSectionComponent1 = () => {
   };
 
   return (
-    <div className="w-full min-h-screen bg-gradient-to-br from-gray-900 to-black !py-12 !px-4 flex justify-center items-center">
+    <div className="w-full min-h-screen !py-12 !px-4 flex justify-center items-center">
       <div className="w-full">
         {/* Heading Section */}
         <div className="text-center !mb-16">

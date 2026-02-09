@@ -1,15 +1,25 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
+import { FiMenu, FiX, FiChevronDown } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import { FaWhatsapp } from "react-icons/fa";
+import { useLanguage } from "../contexts/LanguageContext";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "./ui/dropdown-menu";
 const WHATSAPP_LINK = "https://wa.me/966563203251";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLangOpen, setIsLangOpen] = useState(false);
   const navRef = useRef<HTMLDivElement>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
+  const { language, setLanguage, t } = useLanguage();
 
   // Handle scroll effect
   useEffect(() => {
@@ -20,6 +30,23 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsLangOpen(false);
+      }
+    };
+
+    if (isLangOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isLangOpen]);
+
   // Navbar animation
   const navVariants = {
     hidden: { y: -20, opacity: 0 },
@@ -27,10 +54,10 @@ const Navbar = () => {
   };
 
   const menuItems = [
-    { path: "/", label: "Home" },
-    { path: "/about", label: "About" },
-    { path: "/services", label: "Services" },
-    { path: "/contact", label: "Contact" },
+    { path: "/", label: t.navbar.home },
+    { path: "/about", label: t.navbar.about },
+    { path: "/services", label: t.navbar.services },
+    { path: "/contact", label: t.navbar.contact },
   ];
 
   return (
@@ -91,15 +118,55 @@ const Navbar = () => {
               </ul>
             </nav>
 
+            {/* LANGUAGE DROPDOWN */}
+            <div ref={dropdownRef}>
+              <DropdownMenu>
+                <DropdownMenuTrigger
+                  onClick={() => setIsLangOpen(!isLangOpen)}
+                  className="!ml-6 bg-white/10 backdrop-blur-sm text-white !py-2.5 !px-5 rounded-full inline-flex items-center gap-2 font-nav text-sm hover:bg-white/20 transition-all duration-300 shadow-md hover:shadow-lg"
+                >
+                  <span className="text-lg">{language === "en" ? "🇬🇧" : "🇸🇦"}</span>
+                  <span className="font-medium">{language === "en" ? "English" : "العربية"}</span>
+                  <FiChevronDown className={`transition-transform duration-200 ${isLangOpen ? "rotate-180" : ""}`} />
+                </DropdownMenuTrigger>
+                <DropdownMenuContent isOpen={isLangOpen}>
+                  <DropdownMenuItem
+                    active={language === "en"}
+                    onClick={() => {
+                      setLanguage("en");
+                      setIsLangOpen(false);
+                    }}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="text-xl">🇬🇧</span>
+                      <span className="font-medium">English</span>
+                    </span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem
+                    active={language === "ar"}
+                    onClick={() => {
+                      setLanguage("ar");
+                      setIsLangOpen(false);
+                    }}
+                  >
+                    <span className="flex items-center gap-3">
+                      <span className="text-xl">🇸🇦</span>
+                      <span className="font-medium">العربية</span>
+                    </span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            </div>
+
             {/* DESKTOP WHATSAPP BUTTON */}
             <a
               href={WHATSAPP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="!ml-10 bg-[#9D0A0A] text-white !py-4 !px-8 rounded-full inline-block font-button text-sm hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+              className="!ml-4 bg-[#9D0A0A] text-white !py-4 !px-8 rounded-full inline-block font-button text-sm hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
             >
               <FaWhatsapp className="!mr-2 inline-block" size={22}/>
-              Book an Appointment
+              {t.navbar.bookAppointment}
             </a>
           </div>
 
@@ -176,12 +243,47 @@ const Navbar = () => {
                 </motion.div>
               ))}
 
+              {/* MOBILE LANGUAGE SELECTOR */}
+              <motion.div
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="flex gap-4 !mt-4"
+              >
+                <button
+                  onClick={() => {
+                    setLanguage("en");
+                  }}
+                  className={`!px-6 !py-3 rounded-full font-nav text-sm transition-all duration-300 ${
+                    language === "en"
+                      ? "bg-[#9D0A0A] text-white shadow-lg"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                  }`}
+                >
+                  <span className="!mr-2">🇬🇧</span>
+                  English
+                </button>
+                <button
+                  onClick={() => {
+                    setLanguage("ar");
+                  }}
+                  className={`!px-6 !py-3 rounded-full font-nav text-sm transition-all duration-300 ${
+                    language === "ar"
+                      ? "bg-[#9D0A0A] text-white shadow-lg"
+                      : "bg-white/10 text-white hover:bg-white/20"
+                  }`}
+                >
+                  <span className="!mr-2">🇸🇦</span>
+                  العربية
+                </button>
+              </motion.div>
+
               {/* WHATSAPP BUTTON */}
               <motion.a
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="!mt-8 bg-[#9D0A0A] text-white !px-8 !py-4 rounded-full font-button hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg"
+                className="!mt-4 bg-[#9D0A0A] text-white !px-8 !py-4 rounded-full font-button hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
@@ -189,7 +291,7 @@ const Navbar = () => {
                 whileTap={{ scale: 0.95 }}
               >
                 <FaWhatsapp className="!mr-2 inline-block" size={22} />
-                Book an Appointment
+                {t.navbar.bookAppointment}
               </motion.a>
             </nav>
           </motion.div>

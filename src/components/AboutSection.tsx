@@ -5,10 +5,12 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AboutLogo from "../assets/AboutLogo.png";
 import { Link } from "react-router-dom";
 import { FlipWords } from "./ui/flip-words";
+import { useLanguage } from "../contexts/LanguageContext";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const AboutSection = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLHeadingElement>(null);
@@ -16,7 +18,7 @@ const AboutSection = () => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
 
-  const flipWords = ["Ayyan SignAge", "Ayyan SignAge", "Ayyan SignAge"];
+  const flipWords = [t.about.companyName, t.about.companyName, t.about.companyName];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -108,7 +110,7 @@ const AboutSection = () => {
             ref={titleRef}
             className="text-3xl md:text-5xl font-black tracking-tighter uppercase italic leading-none"
           >
-            Meet{" "}
+            {t.about.meet}{" "}
             <span className="inline-block text-red-600 drop-shadow-[0_0_15px_rgba(220,38,38,0.3)]">
               <FlipWords words={flipWords} duration={2000} />
             </span>
@@ -126,20 +128,18 @@ const AboutSection = () => {
             ref={subtitleRef}
             className="text-3xl font-bold leading-[1.3]"
           >
-            <span className="block font-[poppins]">A 360° Result-Oriented</span>
+            <span className="block font-[poppins]">{t.about.subtitle1}</span>
             <span className="block text-[#D5171C] opacity-80 md:text-5xl font-[poppins] !my-3">
-              Digital Marketing Agency
+              {t.about.subtitle2}
             </span>
           </h2>
 
           <div ref={textRef} className="space-y-4 text-gray-200 max-w-3xl font-[poppins]">
             <p className="text-xl font-medium hidden md:block">
-              At Ayyan SignAge, we promise results.
+              {t.about.promise}
             </p>
             <p className="leading-relaxed text-xl !pt-4 text-white">
-              We are a professional Printing & Advertising company, providing
-              innovative signage and advertising solutions that help brands stand out
-              and create a strong visual impact.
+              {t.about.description}
             </p>
           </div>
 
@@ -150,7 +150,7 @@ const AboutSection = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              More About Us
+              {t.about.button}
             </motion.button>
           </Link>
         </div>

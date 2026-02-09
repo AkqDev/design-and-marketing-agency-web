@@ -3,11 +3,13 @@ import { gsap } from "gsap";
 import herovideo from '../assets/herovideo.mp4';
 import { useState } from "react";
 import { FiArrowRight } from "react-icons/fi";
+import { useLanguage } from "../contexts/LanguageContext";
 
 const WHATSAPP_LINK = "https://wa.me/966563203251";
 
 const Hero = () => {
   const [isMobile, setIsMobile] = useState(false);
+  const { t } = useLanguage();
   const heroRef = useRef<HTMLDivElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
   const subtitleRef = useRef<HTMLParagraphElement>(null);
@@ -129,10 +131,10 @@ const Hero = () => {
             className="text-6xl md:text-7xl lg:text-8xl font-logo font-bold text-white mb-6 leading-tight"
           >
             <span className="block text-shadow-xl hover:text-shadow-red transition-all duration-500">
-              Transform Your
+              {t.hero.titleLine1}
             </span>
             <span className="block text-[#9D0A0A] text-shadow-red gradient-text">
-              Brand Vision
+              {t.hero.titleLine2}
             </span>
           </h1>
 
@@ -141,8 +143,7 @@ const Hero = () => {
             ref={subtitleRef}
             className="text-lg md:text-xl text-gray-300 font-nav max-w-3xl mx-auto mb-12 leading-relaxed text-shadow-md !my-3 !px-3"
           >
-            Create stunning, professional signage that captures attention and drives results. 
-            From concept to installation, we bring your brand to life with cutting-edge design and premium materials.
+            {t.hero.subtitle}
           </p>
 
           {/* CTA Buttons with Enhanced Hover Effects */}
@@ -170,7 +171,7 @@ const Hero = () => {
                 });
               }}
             >
-              Get Free Quote
+              {t.hero.ctaButton}
               <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-300" size={18} />
             </a>
           </div>
