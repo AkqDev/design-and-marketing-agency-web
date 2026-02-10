@@ -95,9 +95,6 @@ const Trust = () => {
 
       {/* Brands Scrolling Section */}
       <div className="relative overflow-hidden w-full">
-        {/* Shadow Overlays */}
-        <div className="absolute left-0 top-0 w-20 md:w-32 h-full bg-gradient-to-r from-black via-black/80 to-transparent z-20 pointer-events-none blur-xl"></div>
-        <div className="absolute right-0 top-0 w-20 md:w-32 h-full bg-gradient-to-l from-black via-black/80 to-transparent z-20 pointer-events-none blur-xl"></div>
 
         {/* Scrolling Brands Container */}
         <div

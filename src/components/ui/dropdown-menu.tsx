@@ -39,12 +39,12 @@ const DropdownMenuContent = React.forwardRef<
           exit={{ opacity: 0, scale: 0.95, y: -10 }}
           transition={{ duration: 0.15 }}
           className={cn(
-            "absolute right-0 mt-2 w-48 origin-top-right rounded-lg bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden",
+            "absolute right-0 !mt-2 w-48 origin-top-right rounded-lg bg-white shadow-xl ring-1 ring-black ring-opacity-5 focus:outline-none z-50 overflow-hidden",
             className
           )}
           {...props}
         >
-          <div className="py-1">{children}</div>
+          <div className="!py-1">{children}</div>
         </motion.div>
       )}
     </AnimatePresence>
@@ -60,7 +60,7 @@ const DropdownMenuItem = React.forwardRef<
     <button
       ref={ref}
       className={cn(
-        "w-full text-left px-4 py-2.5 text-sm transition-colors duration-150",
+        "w-full text-left !px-4 !py-2.5 text-sm transition-colors duration-150",
         active
           ? "bg-[#9D0A0A] text-white"
           : "text-gray-700 hover:bg-gray-100",
