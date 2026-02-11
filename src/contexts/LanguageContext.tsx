@@ -28,6 +28,15 @@ interface Translations {
   services: {
     ourServices: string;
     services: string;
+    bannerDesigns: string;
+    nfcCardsDesigns: string;
+    giftBoxesDesigns: string;
+    broucherAndPamphaletsDesigns: string;
+    visitingCardsDesigns: string;
+    uniformAndTShirtsDesigns: string;
+    companyProfile: string;
+    menuCardsDesigns: string;
+    wallCladding: string;
   };
   servicesPage: {
     our: string;
@@ -98,6 +107,15 @@ const translations: Record<Language, Translations> = {
     services: {
       ourServices: "Our",
       services: "Services",
+      bannerDesigns: "Banner Designs",
+      nfcCardsDesigns: "NFC Cards Designs",
+      giftBoxesDesigns: "Gift Boxes Designs",
+      broucherAndPamphaletsDesigns: "Brochure And Pamphlets Designs",
+      visitingCardsDesigns: "Visiting Cards Designs",
+      uniformAndTShirtsDesigns: "Uniform & T-Shirts Designs",
+      companyProfile: "Company Profile",
+      menuCardsDesigns: "Menu Cards Designs",
+      wallCladding: "Wall Cladding",
     },
     servicesPage: {
       our: "Our",
@@ -166,6 +184,15 @@ const translations: Record<Language, Translations> = {
     services: {
       ourServices: "خدماتنا",
       services: "",
+      bannerDesigns: "تصاميم البانر",
+      nfcCardsDesigns: "تصاميم بطاقات NFC",
+      giftBoxesDesigns: "تصاميم صناديق الهدايا",
+      broucherAndPamphaletsDesigns: "تصاميم البروشور والمنشورات",
+      visitingCardsDesigns: "تصاميم بطاقات الزيارة",
+      uniformAndTShirtsDesigns: "تصاميم الزي الموحد والقمصان",
+      companyProfile: "ملف الشركة",
+      menuCardsDesigns: "تصاميم بطاقات القائمة",
+      wallCladding: "كسوة الجدران",
     },
     servicesPage: {
       our: "خدماتنا",
