@@ -293,13 +293,13 @@ const Navbar = () => {
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: index * 0.1 + 0.2 }}
-                  className="w-full max-w-xs"
+                  className="w-full flex flex-col items-center"
                 >
                   {item.hasDropdown ? (
-                    <div className="w-full">
+                    <div className="w-full flex flex-col items-center">
                       <button
                         onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                        className={`w-full font-nav text-xl transition-colors duration-300 text-shadow-md hover:scale-110 transform flex items-center justify-center gap-2 ${
+                        className={`font-nav text-xl transition-colors duration-300 text-shadow-md hover:scale-110 transform flex items-center justify-center gap-2 ${
                           location.pathname.startsWith('/services')
                             ? "text-[#9D0A0A]"
                             : "hover:text-[#9D0A0A]"
@@ -317,7 +317,7 @@ const Navbar = () => {
                             animate={{ opacity: 1, height: "auto" }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.3 }}
-                            className="!mt-4 space-y-3 overflow-hidden"
+                            className="!mt-4 space-y-3 overflow-hidden w-full max-w-xs"
                           >
                             {serviceItems.map((service, serviceIndex) => (
                               <motion.div
@@ -325,11 +325,12 @@ const Navbar = () => {
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: serviceIndex * 0.05 }}
+                                className="flex justify-center"
                               >
                                 <Link
                                   to={service.path}
                                   onClick={() => setIsOpen(false)}
-                                  className="block text-center !py-2 !px-4 bg-white/10 rounded-lg text-white hover:bg-[#9D0A0A] transition-all duration-200 font-nav text-sm"
+                                  className="block text-center !py-2 !px-4 bg-white/10 rounded-lg text-white hover:bg-[#9D0A0A] transition-all duration-200 font-nav text-sm w-full"
                                 >
                                   {service.label}
                                 </Link>
@@ -343,7 +344,7 @@ const Navbar = () => {
                     <Link
                       to={item.path}
                       onClick={() => setIsOpen(false)}
-                      className={`font-nav text-xl transition-colors duration-300 text-shadow-md hover:scale-110 transform ${
+                      className={`font-nav text-xl transition-colors duration-300 text-shadow-md hover:scale-110 transform text-center ${
                         location.pathname === item.path
                           ? "text-[#9D0A0A]"
                           : "hover:text-[#9D0A0A]"
@@ -360,7 +361,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="flex gap-4 !mt-4"
+                className="flex gap-4 !mt-4 justify-center"
               >
                 <button
                   onClick={() => {
@@ -395,7 +396,7 @@ const Navbar = () => {
                 href={WHATSAPP_LINK}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="!mt-4 bg-[#9D0A0A] text-white !px-8 !py-4 rounded-full font-button hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg"
+                className="!mt-4 bg-[#9D0A0A] text-white !px-8 !py-4 rounded-full font-button hover:bg-black hover:border hover:border-[#9D0A0A] hover:text-[#9D0A0A] transition-all duration-300 shadow-lg flex items-center justify-center"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
