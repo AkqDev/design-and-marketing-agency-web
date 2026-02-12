@@ -33,7 +33,8 @@ const teamMembers: TeamMember[] = [
 const TeamSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
+  // Fixed: Changed from ReturnType<typeof setInterval> to number
+  const autoplayRef = useRef<number>();
 
   useEffect(() => {
     const checkMobile = () => {
@@ -48,7 +49,8 @@ const TeamSection: React.FC = () => {
 
   useEffect(() => {
     if (isMobile) {
-      autoplayRef.current = setInterval(() => {
+      // Using window.setInterval to be explicit about browser environment
+      autoplayRef.current = window.setInterval(() => {
         setCurrentIndex((prevIndex) => 
           prevIndex === teamMembers.length - 1 ? 0 : prevIndex + 1
         );
@@ -57,10 +59,10 @@ const TeamSection: React.FC = () => {
 
     return () => {
       if (autoplayRef.current) {
-        clearInterval(autoplayRef.current);
+        window.clearInterval(autoplayRef.current);
       }
     };
-  }, [isMobile, teamMembers.length]); // Fixed: Added teamMembers.length to dependency array
+  }, [isMobile, teamMembers.length]);
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
