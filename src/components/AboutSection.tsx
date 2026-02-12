@@ -155,7 +155,7 @@ const AboutSection = () => {
           </Link>
         </div>
 
-        {/* Image Content - Displays first on mobile due to flex-col-reverse */}
+        {/* Image Content */}
         <div  className="relative !mt-10 md:mt-0 h-100 md:h-130 ">
           <img
             src={AboutLogo}
