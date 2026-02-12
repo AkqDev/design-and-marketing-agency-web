@@ -33,7 +33,7 @@ const teamMembers: TeamMember[] = [
 const TeamSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  const autoplayRef = useRef<NodeJS.Timeout>();
+  const autoplayRef = useRef<ReturnType<typeof setInterval>>();
 
   useEffect(() => {
     const checkMobile = () => {

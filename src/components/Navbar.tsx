@@ -288,12 +288,12 @@ const Navbar = () => {
 
             {/* MENU ITEMS */}
             <nav className="flex flex-col items-center justify-center gap-6 text-white flex-1">
-              {menuItems.map((item, index) => (
+              {menuItems.map((item, itemIndex) => (
                 <motion.div
                   key={item.path}
                   initial={{ opacity: 0, x: 50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: index * 0.1 + 0.2 }}
+                  transition={{ delay: itemIndex * 0.1 + 0.2 }}
                   className="w-full flex flex-col items-center"
                 >
                   {item.hasDropdown ? (
