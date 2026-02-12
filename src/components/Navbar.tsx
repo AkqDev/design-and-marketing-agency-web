@@ -147,13 +147,13 @@ const Navbar = () => {
                               transition={{ duration: 0.2 }}
                               onMouseEnter={() => setIsServicesOpen(true)}
                               onMouseLeave={() => setIsServicesOpen(false)}
-                              className="absolute top-full left-0 !mt-2 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-white/20 overflow-hidden z-50"
+                              className="absolute top-full left-0 !mt-2 w-80 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-white/20 overflow-hidden z-50"
                             >
                               {serviceItems.map((service, index) => (
                                 <Link
                                   key={service.path}
                                   to={service.path}
-                                  className="block !px-4 !py-3 text-gray-800 hover:bg-[#9D0A0A] hover:text-white transition-all duration-200 font-nav text-sm border-b border-gray-100 last:border-b-0"
+                                  className="block !px-5 !py-3 text-gray-800 hover:bg-[#9D0A0A] hover:text-white transition-all duration-200 font-nav text-sm border-b border-gray-100 last:border-b-0 whitespace-nowrap"
                                 >
                                   {service.label}
                                 </Link>
