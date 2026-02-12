@@ -16,194 +16,80 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
-  bgColor: "#9D0A0A" | "black";
 }
 
-// Define members for first row (5 items) and second row (4 items)
-const firstRowMembers: TeamMember[] = [
-  { name: "Adnan Malick", role: "CEO | Managing Director", image: ayyan, bgColor: "#9D0A0A" },
-  { name: "Malik Ashraf Nawaz", role: "Brand Ambassador", image: ashraf, bgColor: "black" },
-  { name: "M. Khalid Fareed", role: "Senior Business Strategy Planner", image: khalid, bgColor: "#9D0A0A" },
-  { name: "Amina Gulzar", role: "Branding Specialist", image: Amina, bgColor: "black" },
-  { name: "Mohammad Akbar Qureshi", role: "Full-Stack Developer", image: akbar, bgColor: "#9D0A0A" },
+const teamMembers: TeamMember[] = [
+  { name: "Malik M. Ashraf", role: "Brand Ambassador", image: ashraf },
+  { name: "M Khalid Farid", role: "Business Strategist", image: khalid },
+  { name: "Aman Ullah Takhleeq", role: "Digital Marketing Manager", image: aman },
+  { name: "Ms Amina Gulzar", role: "Branding Specialist", image: Amina },
+  { name: "Zulqarnain Bashir", role: "Graphic Designer", image: zulqarnain },
+  { name: "Mohammad Akbar Qureshi", role: "Full-Stack Developer", image: akbar },
+  { name: "Arslan Tahir", role: "Operational Manager", image: arslan },
+  { name: "Shamsa Andaleeb", role: "Graphic Designer", image: shamsa },
 ];
-
-const secondRowMembers: TeamMember[] = [
-  { name: "Arslan Tahir", role: "Operational Incharge", image: arslan, bgColor: "black" },
-  { name: "Zulqarnain Bashir", role: "Graphics Designer", image: zulqarnain, bgColor: "#9D0A0A" },
-  { name: "Aman Ullah Takhleeq", role: "Business Manager", image: aman, bgColor: "black" },
-  { name: "Shamsa Andleeb Akhtar", role: "Graphics Designer", image: shamsa, bgColor: "#9D0A0A" },
-];
-
-// Animation Variants with proper typing
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 },
-  },
-};
-
-const cardVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { 
-      duration: 0.5, 
-      ease: "easeOut" as const
-    } 
-  },
-};
 
 const TeamSection: React.FC = () => {
   return (
-    <div className="w-full h-auto md:min-h-screen bg-gray-100 !py-20 rounded-[30px] overflow-hidden">
-      <motion.div
-        className="!mb-10 text-center"
-        initial={{ opacity: 0, y: -20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2 
-          className="text-4xl md:text-6xl font-black tracking-tight uppercase italic text-gray-900"
-          style={{ textShadow: "2px 4px 10px rgba(0,0,0,0.1)" }}
-        >
-          Our <span className="text-[#9D0A0A]">Team</span>
+    <div className="w-full bg-white font-[poppins] rounded-[30px] !my-10">
+      {/* Header Section */}
+      <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4 !pt-8">
+        <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-black max-w-4xl">
+          Meet<span className="text-[#9D0A0A] !ml-2">Our Team</span>
         </h2>
-      </motion.div>
+      </div>
 
-      <div className="flex flex-col gap-16 !p-10 bg-gray-100">
-        {/* First Row - 5 Members */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {firstRowMembers.map((member, index) => (
-            <motion.div
-              key={`first-${index}`}
-              variants={cardVariants}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="relative w-64 h-[380px] md:h-[330px] flex flex-col items-center"
+      {/* Top Section: Main Leader */}
+      <div className="w-full mx-auto flex flex-col md:flex-row items-center justify-center gap-8 !px-10 !pb-10">
+        <div className="w-64 h-80 border-4 border-gray-800 rounded-xl overflow-hidden shadow-[#9D0A0A] shadow-xl">
+          <img src={ayyan} alt="Adnan Tahir Malick" className="w-full h-full object-cover" />
+        </div>
+        <div className="text-center md:text-left pb-4">
+          <h1 className="text-5xl md:text-6xl font-black text-gray-800 tracking-tight">
+            Adnan Tahir Malick
+          </h1>
+          <div className="bg-[#9D0A0A] text-white text-xl md:text-2xl font-bold !py-2 !px-6 !mt-2 inline-block rounded-sm">
+            Founder | CEO | Managing Director
+          </div>
+        </div>
+      </div>
+
+      {/* Grid Section: Team Members */}
+      <div className="w-full bg-white !py-16 !px-4 rounded-[30px] ">
+        <div className="max-w-7xl !mx-auto grid  md:grid-cols-4 justify-center items-center">
+          {teamMembers.map((member, index) => (
+            <motion.div 
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="flex flex-col items-center"
             >
-              {/* Main Pill Background */}
-              <div
-                className="absolute inset-0 rounded-[100px] !pt-4 transition-all duration-300"
-                style={{ 
-                  backgroundColor: member.bgColor,
-                  boxShadow: "0px 15px 30px rgba(0,0,0,0.3), inset 0px -5px 15px rgba(255,255,255,0.1)"
-                }}
-              >
-                {/* Name & Role Container */}
-                <div className="!my-5 text-center !px-6 !pt-4">
-                  <h3
-                    className="text-xl text-white font-bold font-[poppins] drop-shadow-md"
-                    style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.5)" }}
-                  >
-                    {member.name}
-                  </h3>
-                  <p
-                    className="text-sm opacity-90 text-white font-[poppins] font-medium leading-tight"
-                    style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.3)" }}
-                  >
-                    {member.role}
-                  </p>
-                </div>
+              {/* Oval Image Container */}
+              <div className="w-80 h-100 md:w-60 md:h-85   rounded-full border-2 border-black overflow-hidden bg-[#9D0A0A] shadow-black/80 shadow-lg">
+                {member.image ? (
+                   <img 
+                    src={member.image} 
+                    alt={member.name} 
+                    className="w-full h-full object-cover"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gray-400" /> 
+                )}
               </div>
-
-              {/* Image Container */}
-              <div className="absolute bottom-3 md:bottom-5 w-full flex justify-center">
-                <div className="relative !mb-[-20px]">
-                  {/* White Circular Backdrop/Border effect */}
-                  <div 
-                    className="w-63 h-60 md:h-70 rounded-full p-1 bg-white/10 backdrop-blur-sm shadow-2xl"
-                    style={{ boxShadow: "0px 10px 25px rgba(0,0,0,0.4)" }}
-                  >
-                    <div className="w-full h-full rounded-full overflow-hidden border-4 border-transparent">
-                      <motion.img
-                        initial={{ scale: 1.1 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 1 }}
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                  </div>
-                </div>
+              
+              {/* Text after Image */}
+              <div className="!my-4 text-center">
+                <h3 className="text-[#9D0A0A] font-bold text-lg leading-tight">
+                  {member.name}
+                </h3>
+                <p className="text-black text-xs mt-1 font-medium">
+                  {member.role}
+                </p>
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        {/* Second Row - 4 Members */}
-        <motion.div 
-          className="flex flex-wrap justify-center gap-10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-        >
-          {secondRowMembers.map((member, index) => (
-            <motion.div
-              key={`second-${index}`}
-              variants={cardVariants}
-              whileHover={{ y: -10, transition: { duration: 0.2 } }}
-              className="relative w-64 h-[380px] md:h-[330px] flex flex-col items-center"
-            >
-              {/* Main Pill Background */}
-              <div
-                className="absolute inset-0 rounded-[100px] !pt-4 transition-all duration-300"
-                style={{ 
-                  backgroundColor: member.bgColor,
-                  boxShadow: "0px 15px 30px rgba(0,0,0,0.3), inset 0px -5px 15px rgba(255,255,255,0.1)"
-                }}
-              >
-                {/* Name & Role Container */}
-                <div className="!my-5 text-center !px-6 !pt-4">
-                  <h3
-                    className="text-xl text-white font-bold font-[poppins] drop-shadow-md"
-                    style={{ textShadow: "1px 2px 4px rgba(0,0,0,0.5)" }}
-                  >
-                    {member.name}
-                  </h3>
-                  <p
-                    className="text-sm opacity-90 text-white font-[poppins] font-medium leading-tight"
-                    style={{ textShadow: "1px 1px 3px rgba(0,0,0,0.3)" }}
-                  >
-                    {member.role}
-                  </p>
-                </div>
-              </div>
-
-              {/* Image Container */}
-              <div className="absolute bottom-5 w-full flex justify-center">
-                <div className="relative !mb-[-20px]">
-                  {/* White Circular Backdrop/Border effect */}
-                  <div 
-                    className="w-63 h-60 md:h-70 rounded-full p-1 bg-white/10 backdrop-blur-sm shadow-2xl"
-                    style={{ boxShadow: "0px 10px 25px rgba(0,0,0,0.4)" }}
-                  >
-                    <div className="w-full h-full rounded-full overflow-hidden border-4 border-transparent">
-                      <motion.img
-                        initial={{ scale: 1.1 }}
-                        whileInView={{ scale: 1 }}
-                        transition={{ duration: 1 }}
-                        src={member.image}
-                        alt={member.name}
-                        className="w-full h-full object-cover object-top"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
+        </div>
       </div>
     </div>
   );

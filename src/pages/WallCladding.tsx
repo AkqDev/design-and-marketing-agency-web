@@ -69,7 +69,7 @@ Please provide details about available wall cladding materials, pricing per squa
   return (
     <div className="min-h-screen w-full flex items-center justify-center !p-4 md:!p-6 font-sans text-gray-900 !my-12">
       
-      <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#1A1A1A] rounded-3xl !p-6 md:!p-8 shadow-xl">
+      <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#1A1A1A] rounded-3xl !p-6 md:!p-8  shadow-[#9d0a0a]/35 shadow-xl">
         
         {/* Left Side: Image Gallery */}
         <div className="space-y-6">
@@ -103,7 +103,7 @@ Please provide details about available wall cladding materials, pricing per squa
           </div>
 
           {/* Thumbnail Carousel */}
-          <div className="flex gap-3 md:gap-4 justify-center overflow-x-auto !py-2 !px-4 md:hidden">
+          <div className="flex gap-3 md:gap-4 justify-center overflow-x-auto !py-2 !px-4 ">
             {images.map((img, index) => (
               <button
                 key={index}
@@ -161,7 +161,7 @@ Please provide details about available wall cladding materials, pricing per squa
           <div className="space-y-4 !pt-4 font-[poppins]">
             <div className="flex items-center justify-center md:justify-start space-x-6">
               <div className="flex flex-col items-center">
-                <span className="text-gray-300 !mb-2 text-sm md:text-base">Area (Sq. Meters)</span>
+                <span className="text-gray-300 !mb-2 text-sm md:text-base">Select Quantity</span>
                 <div className="flex items-center space-x-4 bg-[#2A2A2A] rounded-full !p-2">
                   <button 
                     onClick={decreaseQuantity}
@@ -170,7 +170,7 @@ Please provide details about available wall cladding materials, pricing per squa
                   >
                     <FaMinus className="w-4 h-4 text-white" />
                   </button>
-                  <span className="text-xl font-bold text-white min-w-[80px] text-center">{quantity} m²</span>
+                  <span className="text-xl font-bold text-white min-w-[80px] text-center">{quantity}</span>
                   <button 
                     onClick={increaseQuantity}
                     className="!p-2 rounded-full bg-[#8E0808] hover:bg-[#7A0707] transition-colors"
@@ -189,7 +189,7 @@ Please provide details about available wall cladding materials, pricing per squa
                 className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
               >
                 <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-                <span className="text-lg md:text-xl !ml-2">Get Quote for {quantity} m²</span>
+                <span className="text-lg md:text-xl !ml-2">Add To Cart</span>
               </button>
             </div>
           </div>

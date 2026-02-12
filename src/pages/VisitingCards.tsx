@@ -103,7 +103,7 @@ Please provide details about available visiting card options, pricing for ${quan
           </div>
 
           {/* Thumbnail Carousel */}
-          <div className="flex gap-3 md:gap-4 justify-center overflow-x-auto !py-2 !px-4 md:hidden">
+          <div className="flex gap-3 md:gap-4 justify-center overflow-x-auto !py-2 !px-4">
             {images.map((img, index) => (
               <button
                 key={index}
@@ -189,7 +189,7 @@ Please provide details about available visiting card options, pricing for ${quan
                 className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
               >
                 <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-                <span className="text-lg md:text-xl !ml-2">Order {quantity} Visiting Card{quantity > 1 ? 's' : ''}</span>
+                <span className="text-lg md:text-xl !ml-2">Add To Cart</span>
               </button>
             </div>
           </div>

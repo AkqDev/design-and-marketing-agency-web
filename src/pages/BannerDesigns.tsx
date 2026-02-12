@@ -6,7 +6,7 @@ import banner3 from '../assets/banner3.png';
 import banner4 from '../assets/banner4.png';
 
 const BannerDesigns: React.FC = () => {
-  const images = [banner1, banner2, banner3, banner4];
+  const images = [banner2, banner1, banner3, banner4];
   const [activeImage, setActiveImage] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(1);
   
@@ -102,7 +102,7 @@ Please provide details about available customization options, pricing for ${quan
           </div>
 
           {/* Thumbnail Carousel */}
-          <div className="flex gap-3 md:gap-4 justify-center overflow-x-auto !py-2 !px-4 md:hidden">
+          <div className="flex gap-3 md:gap-4 justify-center overflow-x-auto !py-2 !px-4">
             {images.map((img, index) => (
               <button
                 key={index}
@@ -188,7 +188,7 @@ Please provide details about available customization options, pricing for ${quan
                 className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
               >
                 <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-                <span className="text-lg md:text-xl !ml-2">Place The Order</span>
+                <span className="text-lg md:text-xl !ml-2">Add To Cart</span>
               </button>
             </div>
           </div>

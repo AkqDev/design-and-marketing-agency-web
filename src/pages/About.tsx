@@ -1,202 +1,49 @@
-import { useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import AboutLogo from '../assets/AboutLogo.png';
-import VisionMission from '../components/VisionMission';
-gsap.registerPlugin(ScrollTrigger);
+import VisionMission from '../components/VisionMission'
 
 const About = () => {
-  const containerRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLHeadingElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const accentLineRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Image animation - simple fade in
-      gsap.fromTo(imageRef.current, 
-        { 
-          y: 50, 
-          opacity: 0, 
-          scale: 0.95
-        },
-        { 
-          y: 0, 
-          opacity: 1, 
-          scale: 1,
-          duration: 1, 
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: imageRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Title animation with stagger effect
-      gsap.fromTo(titleRef.current, 
-        { 
-          y: 80, 
-          opacity: 0,
-          scale: 0.9
-        },
-        { 
-          y: 0, 
-          opacity: 1,
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-          delay: 0.3,
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 85%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-      // Content paragraphs animation
-      const paragraphs = contentRef.current?.querySelectorAll('p');
-      if (paragraphs) {
-        gsap.fromTo(paragraphs, 
-          { 
-            y: 60, 
-            opacity: 0 
-          },
-          { 
-            y: 0, 
-            opacity: 1,
-            duration: 0.8,
-            ease: "power2.out",
-            stagger: 0.2,
-            delay: 0.6,
-            scrollTrigger: {
-              trigger: contentRef.current,
-              start: "top 80%",
-              toggleActions: "play none none reverse"
-            }
-          }
-        );
-      }
-
-      // Accent line animation
-      gsap.fromTo(accentLineRef.current, 
-        { 
-          scaleX: 0, 
-          opacity: 0 
-        },
-        { 
-          scaleX: 1, 
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          delay: 1,
-          transformOrigin: "left center",
-          scrollTrigger: {
-            trigger: accentLineRef.current,
-            start: "top 90%",
-            toggleActions: "play none none reverse"
-          }
-        }
-      );
-
-    }, containerRef);
-
-    return () => ctx.revert();
-  }, []);
-
   return (
-  <div>
-    <motion.section 
-      ref={containerRef}
-      className="bg-[#000] h-auto flex items-center justify-center !px-8 !py-16 md:!px-16 md:!py-20"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.8 }}
-    >
-      <div className="max-w-7xl w-full grid grid-cols-1 lg:grid-cols-2 gap-16 items-center relative">
+    <div className="w-full h-auto !mx-auto text-white">
+      {/* Added flex and items-center here to center the content block */}
+      <div className="!mx-auto !p-6 md:!p-12 space-y-8 flex flex-col items-center text-center font-[poppins]">
+
+         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full bg-[radial-gradient(circle_at_center,_#3d0a0a_0%,transparent_60%)] opacity-30 pointer-events-none" />
         
-        {/* Left Side: Image Container */}
-        <motion.div 
-          ref={imageRef}
-          className="relative flex justify-center lg:justify-start"
-        >
-          <div className="w-full max-w-[400px] max-h-[430px] aspect-[3/4] overflow-hidden shadow-2xl rounded-2xl">
-            <img 
-              src={AboutLogo} 
-              alt="Designer working at desk" 
-              className="w-full h-full object-cover"
-            />
-          </div>
-        </motion.div>
-
-        {/* Right Side: Content */}
-        <div className="flex flex-col !space-y-12 lg:!pl-12">
-          <motion.h1 
-            ref={titleRef}
-            className="text-6xl md:text-7xl font-black tracking-[-0.03em] leading-[0.75] text-[#9D0A0A] font-[poppins] antialiased text-center md:text-left !mt-3 md:mt-0"
-            style={{ 
-              textShadow: `
-                0 0 10px rgba(231, 0, 11, 0.5),
-                0 0 20px rgba(231, 0, 11, 0.3),
-                0 0 30px rgba(231, 0, 11, 0.2),
-                2px 2px 4px rgba(0, 0, 0, 0.8)
-              `
-            }}
-            whileHover={{ 
-              scale: 1.05,
-              textShadow: `
-                0 0 15px rgba(231, 0, 11, 0.8),
-                0 0 25px rgba(231, 0, 11, 0.5),
-                0 0 35px rgba(231, 0, 11, 0.3),
-                3px 3px 6px rgba(0, 0, 0, 0.9)
-              `
-            }}
-            transition={{ type: "spring", stiffness: 300, damping: 15 }}
-          >
-            About Us
-          </motion.h1>
-
-          <motion.div 
-            ref={contentRef}
-            className="max-w-3xl !space-y-6 text-sm md:text-base leading-relaxed text-gray-100 font-light text-center md:text-left"
-          >
-            <motion.p
-              whileHover={{ x: 10, color: "#f3f4f6" }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="font-[poppins]"
-            >We are a professional Printing & Advertising company, providing
-            innovative signage and advertising solutions that help brands stand out
-             and create a strong visual impact.
-            </motion.p>
-            
-            <motion.p
-              whileHover={{ x: 10, color: "#f3f4f6" }}
-              transition={{ type: "spring", stiffness: 400, damping: 25 }}
-              className="font-[poppins]"
-            >With a strong focus on creativity, precision, and durability, we deliver customized printing and advertising services tailored to each client’s needs. From indoor and outdoor signage to promotional materials and corporate branding, we combine modern technology with expert craftsmanship to ensure outstanding results.
-            </motion.p>
-          </motion.div>
-
-          {/* Bottom Accent Line */}
-          <motion.div 
-            ref={accentLineRef}
-            className="w-20 h-1 bg-[#9D0A0A] !mt-12 self-end rounded-full"
-          />
+        {/* Header Section */}
+        <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4 !pt-8">
+          <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-white/80 max-w-4xl shadow-[#9d0a0a]/20 shadow-xl">
+            Our <span className="text-[#9D0A0A] !ml-2">Story</span>
+          </h2>
         </div>
+
+        {/* Text Section - Now centered via the parent flex container */}
+        <div className="max-w-7xl text-xl md:text-2xl ">
+          <p className="!py-4">
+            I am Adnan Tahir, an entrepreneur passionate about creativity, branding, and professional printing solutions. My journey began in 2016 in collaboration with Mr. M. Ashraf Nawaz (Founder, Barani Science College Talagang), whose mentorship played a key role in shaping my professional direction. We started with Ayyan Media Center, providing digital documentation, design, and printing services to students, schools, and local businesses.
+          </p>
+          <p className="!py-4">
+            Through consistent effort and dedication, I expanded the business in 2018 by installing a Panaflex printing setup in Talagang, transforming the company into Ayyan Printings. With a strong focus on quality signage, panaflex printing, and professional design services, we built a trusted reputation and developed a skilled operational team to serve a growing client base.
+          </p>
+          <p className="!py-4">
+            In 2024, I moved to Saudi Arabia and launched Ayyan Signage Printing & Advertising, expanding our services into digital marketing, SEO, website development, and complete branding solutions. Today, my vision is to provide businesses with all-in-one advertising and printing services under one platform while maintaining creativity, quality, and customer satisfaction.
+          </p>
+        </div>
+
+         <div className="!mt-16 flex flex-col items-center gap-4 font-[poppins] font-bold">
+              <h3 className="text-[#9D0A0A] text-2xl md:text-4xl italic opacity-80 ">
+                  Let's build your brand.
+              </h3>
+              <p className="text-zinc-500 text-base md:text-lg tracking-widest">
+                  Ayyan Signage Printing & Advertising — Saudi Arabia
+              </p>
+          </div>
       </div>
 
-    </motion.section>
-
-    
       <div>
-        <VisionMission />
+        <VisionMission/>
       </div>
-    </div>
-  );
-};
 
-export default About;
+    </div>
+  )
+}
+
+export default About

@@ -14,6 +14,7 @@ import VisitingCards from "./pages/VisitingCards";
 import Uniform from "./pages/Uniform";
 import CompanyProfile from "./pages/CompanyProfile";
 import MenuCards from "./pages/MenuCards";
+import AdvertisingServices from './pages/AdvertisingServices';
 
 
 const App = () => {
@@ -35,6 +36,7 @@ const App = () => {
           <Route path="/services/uniform-designs" element={<Uniform/>} />
           <Route path="/services/company-profile" element={<CompanyProfile/>} />
           <Route path="/services/menu-cards-designs" element={<MenuCards/>} />
+          <Route path="/services/advertising" element={<AdvertisingServices/>} />
         </Routes>
         <Footer/>
       </Router>

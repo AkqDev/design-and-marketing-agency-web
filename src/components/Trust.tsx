@@ -81,7 +81,7 @@ const Trust = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full !py-12 md:!py-24 overflow-hidden md:min-h-[500px] flex flex-col justify-center relative"
+      className="w-full !py-12 md:!py-24 overflow-hidden md:min-h-[500px] flex flex-col justify-center relative "
     >
       {/* Heading Section */}
       <div className="!pb-8 md:!pb-16">
@@ -94,12 +94,12 @@ const Trust = () => {
       </div>
 
       {/* Brands Scrolling Section */}
-      <div className="relative overflow-hidden w-full">
+      <div className="relative overflow-hidden w-full shadow-[#9d0a0a]/75 shadow-xl">
 
         {/* Scrolling Brands Container */}
         <div
           ref={scrollContainerRef}
-          className="flex items-center gap-16 md:gap-24 !py-4 bg-white/90 h-35 md:h-65"
+          className="flex items-center gap-16 md:gap-24 !py-4 bg-white/90  h-35 md:h-65"
           style={{ width: "max-content" }}
         >
           {duplicatedBrands.map((brand, index) => (

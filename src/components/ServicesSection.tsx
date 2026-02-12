@@ -1,36 +1,28 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { useLanguage } from '../contexts/LanguageContext';
+import priting from '../assets/printing.png';
+import designing from '../assets/designing.png';
+import advertising from '../assets/advertising.png'
 
 const services = [
   {
-    title: "UX/UI design",
-    description: "UX/UI design focuses on enhancing user experiences and creating intuitive interfaces that connect people with digital products and services...",
-    img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
-    color: "bg-[#1a1a1a]",
-    path: "/services"
-  },
-  {
-    title: "Framer developer",
-    description: "A Framer developer specializes in building interactive and visually stunning digital experiences using the power of Framer's no-code and code tools...",
-    img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop",
-    color: "bg-[#111111]",
-    path: "/services"
-  },
-  {
-    title: "Web Development",
-    description: "Building responsive, high-performance websites with clean code and modern frameworks to ensure your brand stands out online...",
-    img: "https://images.unsplash.com/photo-1498050108023-c4bafc8c8c84?q=80&w=1000&auto=format&fit=crop",
-    color: "bg-[#0a0a0a]",
-    path: "/services"
-  },
-  {
-    title: "UX/UI design",
-    description: "UX/UI design focuses on enhancing user experiences and creating intuitive interfaces that connect people with digital products and services...",
-    img: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop",
-    color: "bg-[#1a1a1a]",
-    path: "/services"
-  },
+  title: "Designing Services",
+  description: "We create visually compelling and user-focused designs that strengthen your brand identity. Our team delivers modern UI/UX solutions that enhance usability and engagement. Every project is crafted to ensure consistency, creativity, and measurable impact.",
+  img: designing,
+  color: "bg-[#111111]",
+},
+{
+  title: "Printing Services",
+  description: "We provide high-quality printing solutions that elevate your brand’s physical presence. From business cards to large-format materials, every print is produced with precision and clarity. Our focus is on durability, color accuracy, and professional finishing.",
+  img: priting,
+  color: "bg-[#1a1a1a]",
+},
+{
+  title: "Advertising Services",
+  description: "We develop strategic advertising campaigns that connect your brand with the right audience. Our data-driven approach maximizes visibility, engagement, and return on investment. From digital to traditional media, we deliver results that drive growth.",
+  img: advertising,
+  color: "bg-[#0a0a0a]",
+}
 ];
 
 const ServicesSection = () => {
@@ -56,38 +48,25 @@ const ServicesSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className={`${service.color} border border-white/10 rounded-3xl !p-8 md:!p-12 min-h-[400px] shadow-2xl flex flex-col md:flex-row gap-10 items-center overflow-hidden`}
+              className={`${service.color} rounded-2xl !p-8 md:!p-12 min-h-[300px] shadow-2xl flex flex-col md:flex-row gap-10 items-center overflow-hidden`}
             >
               {/* Text Content */}
               <div className="flex-1 space-y-6">
-                <h2 className="text-4xl md:text-5xl font-serif text-white !mb-6">
+                <h2 className="text-3xl md:text-4xl font-serif text-[#9D0A0A] !mb-6 text-center md:text-left font-bold">
                   {service.title}
                 </h2>
-                <div className="h-[1px] bg-white/20 w-full !mb-4" />
-                <p className="text-gray-400 text-lg leading-relaxed">
+                <div className="h-[1px] bg-white/20 w-full !mb-4"/>
+                <p className="text-gray-400 text-lg leading-relaxed text-center md:text-left">
                   {service.description}
                 </p>
-                
-                {/* Added "See design" button */}
-                <Link 
-                  to={service.path} 
-                  className="inline-block group"
-                >
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="bg-[#9D0A0A] text-white font-semibold !py-3 !px-8 rounded-full !mt-4 transition-all duration-300 hover:bg-[#b80d0d] hover:shadow-lg hover:shadow-[#9D0A0A]/30 border border-[#9D0A0A]/20 font-[poppins]"
-                  >Click To See More In Detail
-                  </motion.button>
-                </Link>
               </div>
 
               {/* Image Content */}
-              <div className="flex-1 w-full h-full">
+              <div className="flex-1 w-full h-full ">
                 <img 
                   src={service.img} 
                   alt={service.title}
-                  className="rounded-2xl w-full h-[300px] object-cover border border-white/5"
+                  className="w-full h-[350px] object-contain"
                 />
               </div>
             </motion.div>
