@@ -76,6 +76,7 @@ const Navbar = () => {
     { path: "/services/company-profile", label: t.services.companyProfile },
     { path: "/services/menu-cards-designs", label: t.services.menuCardsDesigns },
     { path: "/services/wall-cladding", label: t.services.wallCladding },
+    { path: "/services/advertising", label: t.services.advertisingServices },
   ];
 
   return (
