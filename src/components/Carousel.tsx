@@ -1,21 +1,25 @@
 import { useState, useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import mockup1 from '../assets/mockup1.png'
+import mockup2 from '../assets/mockup2.png'
+import mockup3 from '../assets/mockup3.png'
+import mockup4 from '../assets/mockup4.png'
+import mockup5 from '../assets/mockup5.png'
+import mockup6 from '../assets/mockup6.png'
+import mockup7 from '../assets/mockup7.png'
+import mockup8 from '../assets/mockup8.png'
+import mockup9 from '../assets/mockup9.png'
 
 const images = [
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
-  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-  "https://images.unsplash.com/photo-1526170315873-3a9d66ee7a94", 
-  "https://images.unsplash.com/photo-1491553895911-0055eca6402d",
-  "https://images.unsplash.com/photo-1560343090-f0409e92791a",
-  "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
-  "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
-  "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
-  "https://images.unsplash.com/photo-1542291026-7eec264c27ff",
-  "https://images.unsplash.com/photo-1526170315873-3a9d66ee7a94",
-  "https://images.unsplash.com/photo-1491553895911-0055eca6402d",
-  "https://images.unsplash.com/photo-1560343090-f0409e92791a",
-  "https://images.unsplash.com/photo-1572635196237-14b3f281503f",
+  mockup1,
+  mockup2,
+  mockup3,
+  mockup4,
+  mockup5,
+  mockup6,
+  mockup7,
+  mockup8,
+  mockup9,
 ];
 
 const Carousel = () => {
