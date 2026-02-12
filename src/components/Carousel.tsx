@@ -62,17 +62,17 @@ const Carousel = () => {
     
     // Improved scaling for smoother transitions
     let scale = 1;
-    if (normalizedDistance === 0) scale = isMobile ? 1 : 1.1; // Active item
-    else if (normalizedDistance === 1) scale = isMobile ? 0.85 : 0.95; // Adjacent items
-    else if (normalizedDistance === 2) scale = isMobile ? 0.75 : 0.85; // Second adjacent
-    else scale = isMobile ? 0.65 : 0.75; // Far items
+    if (normalizedDistance === 0) scale = isMobile ? 1 : 1.1; 
+    else if (normalizedDistance === 1) scale = isMobile ? 0.85 : 0.95; 
+    else if (normalizedDistance === 2) scale = isMobile ? 0.75 : 0.85; 
+    else scale = isMobile ? 0.65 : 0.75; 
     
     // Improved opacity for better visibility of side items
     let opacity = 1;
-    if (normalizedDistance === 0) opacity = 1; // Active item
-    else if (normalizedDistance === 1) opacity = 0.9; // Adjacent items
-    else if (normalizedDistance === 2) opacity = 0.7; // Second adjacent
-    else opacity = 0.4; // Far items
+    if (normalizedDistance === 0) opacity = 1;
+    else if (normalizedDistance === 1) opacity = 0.9;
+    else if (normalizedDistance === 2) opacity = 0.7;
+    else opacity = 0.4;
     
     return {
       transform: `translateX(${x}px) translateZ(${z}px) rotateY(${rotationY}deg) scale(${scale})`,
