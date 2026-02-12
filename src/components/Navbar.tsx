@@ -149,7 +149,7 @@ const Navbar = () => {
                               onMouseLeave={() => setIsServicesOpen(false)}
                               className="absolute top-full left-0 !mt-2 w-80 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-white/20 overflow-hidden z-50"
                             >
-                              {serviceItems.map((service, index) => (
+                              {serviceItems.map((service) => (
                                 <Link
                                   key={service.path}
                                   to={service.path}
@@ -320,12 +320,12 @@ const Navbar = () => {
                             transition={{ duration: 0.3 }}
                             className="!mt-4 space-y-3 overflow-hidden w-full max-w-xs"
                           >
-                            {serviceItems.map((service, serviceIndex) => (
+                            {serviceItems.map((service) => (
                               <motion.div
                                 key={service.path}
                                 initial={{ opacity: 0, x: 20 }}
                                 animate={{ opacity: 1, x: 0 }}
-                                transition={{ delay: serviceIndex * 0.05 }}
+                                transition={{ delay: 0.05 }}
                                 className="flex justify-center"
                               >
                                 <Link
