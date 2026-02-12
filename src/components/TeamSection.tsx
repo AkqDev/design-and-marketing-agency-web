@@ -60,7 +60,7 @@ const TeamSection: React.FC = () => {
         clearInterval(autoplayRef.current);
       }
     };
-  }, [isMobile]);
+  }, [isMobile, teamMembers.length]); // Fixed: Added teamMembers.length to dependency array
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => 
