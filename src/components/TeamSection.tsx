@@ -33,8 +33,8 @@ const teamMembers: TeamMember[] = [
 const TeamSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
-  // Fixed: Changed from ReturnType<typeof setInterval> to number
-  const autoplayRef = useRef<number>();
+  // FIXED: Initialize with undefined to satisfy TypeScript
+  const autoplayRef = useRef<number>(undefined);
 
   useEffect(() => {
     const checkMobile = () => {
