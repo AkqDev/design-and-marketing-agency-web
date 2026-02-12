@@ -47,7 +47,7 @@ const Carousel = () => {
     
     // Responsive radius based on screen size
     const isMobile = windowWidth < 768;
-    const radius = isMobile ? 220 : 380; // Increased radius for better side visibility
+    const radius = isMobile ? 220 : 380; 
     
     // Calculate position on circle
     const x = Math.sin((angle * Math.PI) / 180) * radius;
