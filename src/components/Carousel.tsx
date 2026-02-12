@@ -37,7 +37,7 @@ const Carousel = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % images.length);
-    }, 3000); // Reduced from 3000ms to 2000ms for faster transitions
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
