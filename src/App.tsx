@@ -26,17 +26,17 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          {/* Services Categories of DropDown Menus */}
-          <Route path="/services/banner-designs" element={<BannerDesigns />} />
-          <Route path="/services/nfc-cards-designs" element={<NfcCards />} />
-          <Route path="/services/gift-boxes-designs" element={<GiftBox />} />
-          <Route path="/services/broucher-designs" element={<Broucher />} />
-          <Route path="/services/visiting-cards-designs" element={<VisitingCards />} />
-          <Route path="/services/wall-cladding" element={<WallCladding />} />
-          <Route path="/services/uniform-designs" element={<Uniform/>} />
-          <Route path="/services/company-profile" element={<CompanyProfile/>} />
-          <Route path="/services/menu-cards-designs" element={<MenuCards/>} />
-          <Route path="/services/advertising" element={<AdvertisingServices/>} />
+            {/* Services Categories of DropDown Menus */}
+            <Route path="/services/banner-designs" element={<BannerDesigns />} />
+            <Route path="/services/nfc-cards-designs" element={<NfcCards />} />
+            <Route path="/services/gift-boxes-designs" element={<GiftBox />} />
+            <Route path="/services/broucher-designs" element={<Broucher />} />
+            <Route path="/services/visiting-cards-designs" element={<VisitingCards />} />
+            <Route path="/services/wall-cladding" element={<WallCladding />} />
+            <Route path="/services/uniform-designs" element={<Uniform/>} />
+            <Route path="/services/company-profile" element={<CompanyProfile/>} />
+            <Route path="/services/menu-cards-designs" element={<MenuCards/>} />
+            <Route path="/services/advertising" element={<AdvertisingServices/>} />
         </Routes>
         <Footer/>
       </Router>
