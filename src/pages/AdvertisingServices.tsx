@@ -68,7 +68,7 @@ const AdvertisingServices = () => {
             >
               {/* Text Content */}
               <div className="flex-1 space-y-6">
-                <h2 className="text-4xl md:text-5xl font-serif text-[#9D0A0A] !mb-6 text-center md:text-left">
+                <h2 className="text-4xl md:text-5xl font-[poppins] text-[#9D0A0A] !mb-6 text-center md:text-left">
                   {service.title}
                 </h2>
                 <div className="h-[1px] bg-white/20 w-full !mb-4 "/>
