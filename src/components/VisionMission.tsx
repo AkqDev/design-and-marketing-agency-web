@@ -55,7 +55,7 @@ const VisionMission: React.FC = () => {
               <h2 className="text-3xl font-bold text-[#7D0808] tracking-tight font-[poppins] !mb-2">
                 Our Mission
               </h2>
-              <p className="text-gray-100 leading-relaxed text-base max-w-lg font-[poppins] !px-4 !mb-5">
+              <p className="text-gray-100 leading-relaxed text-base max-w-lg font-[poppins] !px-4 !mb-15">
                 We are committed to achieving outstanding results that meet our clients’ goals, exceed expectations, and build long-term partnerships through consistent quality and exceptional service.
               </p>
             </div>
