@@ -93,7 +93,15 @@
   <!-- Services - Menu Cards -->
   <url>
     <loc>https://ayyansignage-digital.com/services/menu-cards-designs</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Services - Signboard Designs -->
+  <url>
+    <loc>https://ayyansignage-digital.com/services/signboard-designs</loc>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -101,7 +109,7 @@
   <!-- Services - Advertising -->
   <url>
     <loc>https://ayyansignage-digital.com/services/advertising</loc>
-    <lastmod>2026-02-13</lastmod>
+    <lastmod>2026-02-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>

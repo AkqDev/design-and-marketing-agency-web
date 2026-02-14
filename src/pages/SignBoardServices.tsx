@@ -1,26 +1,27 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaWhatsapp, FaChevronLeft, FaChevronRight, FaMinus, FaPlus } from 'react-icons/fa';
-import company1 from '../assets/company1.png';
-import company2 from '../assets/company2.png';
-import company3 from '../assets/company3.png';
-import company4 from '../assets/company4.png';
+import sign1 from '../assets/sign1.png';
+import sign2 from '../assets/sign2.png';
+import sign3 from '../assets/sign3.png';
+import sign4 from '../assets/sign4.png';
+import sign5 from '../assets/sign5.png';
 
-const CompanyProfile: React.FC = () => {
-  const images = [company4, company1, company2, company3];
+const SignBoardServices: React.FC = () => {
+  const images = [sign1, sign2, sign3, sign4, sign5];
   const [activeImage, setActiveImage] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(1);
   
-  const product = {
-    title: "Company Profile Services",
-    description: "Present your business professionally with our comprehensive company profile design services. Ideal for investor meetings, corporate presentations, client pitches, and business development initiatives. We create compelling profiles that showcase your company's strengths and achievements.",
-    features: [
-      "Professional Layout And Branding",
-      "Print And Digital Versions",
-      "Multi-language Support",
-      "Interactive PDF Options",
-      "Corporate Identity Integration"
-    ]
-  };
+const product = {
+  title: "3D SignBoards & Raised Letters",
+  description: "Premium 3D signboards and raised letters designed to enhance your brand visibility. We offer acrylic, stainless steel, and illuminated options with precision cutting and custom finishing for shops, offices, malls, and commercial buildings.",
+  features: [
+    "Acrylic 3D Letters",
+    "Stainless Steel / Metal Letters",
+    "Front-lit and Non-Lit Options",
+    "Precision-Cut Lettering & Signage",
+    "Custom Tailored Design & Installation"
+  ]
+};
 
   const nextSlide = useCallback(() => {
     setActiveImage((prev) => (prev === images.length - 1 ? 0 : prev + 1));
@@ -31,17 +32,18 @@ const CompanyProfile: React.FC = () => {
   };
 
   const handleWhatsAppClick = (): void => {
-    const message = `Hi! I'm interested in company profile design services. Can you provide more information about:
+     const message = `Hi! I'm interested in your 3D SignBoards & Raised Letters.
 
-1. Type Required: [Print/Digital/Both]
-2. Number of Pages:
-3. Languages Needed:
-4. Timeline Requirements:
-5. Corporate Identity Guidelines: [Have Existing/Need Development]
-6. Interactive Features Required:
-7. Budget Range:
+Details:
+• Product: ${product.title}
+• Quantity Required: ${quantity}
+• Preferred Material: [Acrylic / Stainless Steel / Metal]
+• Lighting Option: [Front-Lit / Non-Lit]
+• Installation Location:
+• Required Size:
+• Timeline:
 
-Please provide details about your company profile design process, pricing, sample portfolios, timeline for ${quantity} profile(s), and any customization options available.`;
+Please share pricing details for ${quantity} signboard(s), customization options, production time, and installation charges.`;
 
     const phoneNumber = "966563203251";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
@@ -94,7 +96,7 @@ Please provide details about your company profile design process, pricing, sampl
             
             <img 
               src={images[activeImage]} 
-              alt="Company Profile Design"
+              alt="Premium Banner Design"
               className="w-full h-full object-cover transition-all duration-700 ease-in-out"
               key={activeImage}
               loading="lazy"
@@ -112,11 +114,11 @@ Please provide details about your company profile design process, pricing, sampl
                     ? 'border-[#8E0808] ring-2 ring-[#8E0808]/20' 
                     : 'border-transparent opacity-60 hover:opacity-100'
                 }`}
-                aria-label={`View company profile design ${index + 1}`}
+                aria-label={`View banner design ${index + 1}`}
               >
                 <img 
                   src={img} 
-                  alt={`Company Profile Design ${index + 1}`} 
+                  alt={`Banner Design ${index + 1}`} 
                   className="w-full h-full object-cover" 
                   loading="lazy"
                 />
@@ -199,4 +201,4 @@ Please provide details about your company profile design process, pricing, sampl
   );
 };
 
-export default CompanyProfile;
+export default SignBoardServices;

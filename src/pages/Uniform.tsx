@@ -6,7 +6,7 @@ import uniform3 from '../assets/uniform3.png';
 import uniform4 from '../assets/uniform4.png';
 
 const Uniform: React.FC = () => {
-  const images = [uniform1, uniform2, uniform3, uniform4];
+  const images = [uniform3, uniform4, uniform1, uniform2];
   const [activeImage, setActiveImage] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(1);
   

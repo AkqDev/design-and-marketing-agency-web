@@ -37,6 +37,7 @@ interface Translations {
     companyProfile: string;
     menuCardsDesigns: string;
     wallCladding: string;
+    signBoardDesigns: string;
     advertisingServices: string;
   };
   servicesPage: {
@@ -117,6 +118,7 @@ const translations: Record<Language, Translations> = {
       companyProfile: "Company Profile",
       menuCardsDesigns: "Menu Cards Designs",
       wallCladding: "Wall Cladding",
+      signBoardDesigns: "Signboard Designs",
       advertisingServices: "Advertising Services",
     },
     servicesPage: {
@@ -195,6 +197,7 @@ const translations: Record<Language, Translations> = {
       companyProfile: "ملف الشركة",
       menuCardsDesigns: "تصاميم بطاقات القائمة",
       wallCladding: "كسوة الجدران",
+      signBoardDesigns: "تصاميم اللوحات الإعلانية",
       advertisingServices: "خدمات الإعلان",
     },
     servicesPage: {
