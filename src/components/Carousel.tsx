@@ -9,6 +9,7 @@ import mockup6 from '../assets/mockup6.png'
 import mockup7 from '../assets/mockup7.png'
 import mockup8 from '../assets/mockup8.png'
 import mockup9 from '../assets/mockup9.png'
+import mockup10 from '../assets/mockup10.png'
 
 const images = [
   mockup1,
@@ -20,6 +21,7 @@ const images = [
   mockup7,
   mockup8,
   mockup9,
+  mockup10,
 ];
 
 const Carousel = () => {
