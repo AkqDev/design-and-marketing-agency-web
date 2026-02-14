@@ -6,7 +6,7 @@ import nfc3 from '../assets/nfc3.png';
 import nfc4 from '../assets/nfc4.png';
 
 const NfcCards: React.FC = () => {
-  const images = [nfc1, nfc2, nfc3, nfc4];
+  const images = [nfc3, nfc4, nfc1, nfc2];
   const [activeImage, setActiveImage] = useState<number>(0);
   const [quantity, setQuantity] = useState<number>(1);
   
