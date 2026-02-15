@@ -92,7 +92,7 @@ const TeamSection: React.FC = () => {
             <a href="https://www.facebook.com/ayyansignage" className="!p-2 bg-black text-white rounded-full hover:bg-[#9D0A0A] transition-colors"><Facebook size={24} /></a>
             <a href="https://www.instagram.com/ayyan.signage/" className="!p-2 bg-black text-white rounded-full hover:bg-[#9D0A0A] transition-colors"><Instagram size={24} /></a>
             <a href="https://www.linkedin.com/in/adnan-malickx/" className="!p-2 bg-black text-white rounded-full hover:bg-[#9D0A0A] transition-colors"><Linkedin size={24} /></a>
-            <h1 className="!my-3 font-bold text-xl font-[poppins]">@AyyanSignAge</h1>
+            <h1 className="!py-3 font-bold text-xl font-[poppins]">@AyyanSignAge</h1>
           </div>
         </div>
       </div>

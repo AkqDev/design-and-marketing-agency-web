@@ -64,7 +64,7 @@ const VisionMission: React.FC = () => {
         </div>
 
         {/* RIGHT SIDE (Desktop) | FIRST (Mobile): Image */}
-        <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2">
+        <div className="w-full md:w-1/2 flex justify-center items-center order-1 md:order-2 hidden md:block">
           <div className="relative w-full md:max-w-[450px] max-w-[350px] !p-4">
             {/* Subtle glow behind the image specifically */}
             <div className="absolute inset-0 bg-[#7D0808]/5 blur-3xl rounded-full" />

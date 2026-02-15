@@ -15,15 +15,15 @@ import mockup10 from '../assets/mockup10.png'
 
 const images = [
   { src: mockup1, title: "Brand Identity Design", path: "/brand-identity" },
-  { src: mockup2, title: "Packaging Mockup", path: "/packaging" },
+  { src: mockup2, title: "Company Profile Designs", path: "/services/company-profile" },
   { src: mockup3, title: "Billboard Advertising", path: "/billboard" },
   { src: mockup4, title: "Social Media Campaign", path: "/social-media" },
   { src: mockup5, title: "T-shirts & Uniform designs", path: "/apparel" },
   { src: mockup6, title: "Product Branding", path: "/product-branding" },
   { src: mockup7, title: "Corporate Stationery", path: "/stationery" },
-  { src: mockup8, title: "Gift Boxes Designs", path: "/gift-boxes" },
+  { src: mockup8, title: "Gift Boxes Designs", path: "/services/gift-boxes-designs" },
   { src: mockup9, title: "Outdoor Signage", path: "/signage" },
-  { src: mockup10, title: "Banner Design", path: "/banners" },
+  { src: mockup10, title: "Banner Design", path: "/services/banner-designs" },
 ];
 
 const Carousel = () => {
@@ -85,7 +85,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen font-sans overflow-hidden !py-8">
+    <div className="flex flex-col items-center justify-center min-h-screen font-sans overflow-hidden !pb-8 md:!py-8 ">
       {/* Header Section */}
       <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4">
         <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-white/90 max-w-4xl">
@@ -142,7 +142,7 @@ const Carousel = () => {
             {/* Title at Bottom with Link and Icon */}
             <Link 
               to={item.path}
-              className="absolute bottom-3 left-0 w-full bg-black backdrop-blur-sm text-white text-sm md:text-md font-semibold text-center !p-2 shadow-md shadow-[#9D0A0A]/55 font-[poppins] hover:bg-[#9D0A0A]/40 transition-all flex items-center justify-center gap-2 group/title"
+              className="absolute bottom-2 left-0 w-full bg-black backdrop-blur-sm text-white text-sm md:text-md md:font-semibold text-center !p-2 shadow-md shadow-[#9D0A0A]/55 font-[poppins] hover:bg-[#9D0A0A]/40 transition-all flex items-center justify-center gap-2 group/title"
               onClick={(e) => e.stopPropagation()}
             >
               {item.title} 
