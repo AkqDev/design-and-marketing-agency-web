@@ -136,7 +136,7 @@ const GiftBox: React.FC = () => {
                 id="feature-select"
                 value={selectedFeature}
                 onChange={(e) => setSelectedFeature(e.target.value)}
-                className="w-full max-w-md bg-[#2A2A2A] text-white border border-gray-700 rounded-lg !p-3 focus:ring-2 focus:ring-[#8E0808] focus:outline-none font-[poppins] cursor-pointer"
+                className="w-full max-w-md bg-[#2A2A2A] text-white border border-gray-700 rounded-lg !p-3 focus:ring-2 focus:ring-[#8E0808] focus:outline-none font-[poppins] cursor-pointer !mt-2"
               >
                 {product.features.map((feature, index) => (
                   <option key={index} value={feature}>
