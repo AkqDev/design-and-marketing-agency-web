@@ -117,8 +117,8 @@ const Hero = () => {
           >
             <source src={herovideo} type="video/mp4" />
           </video>
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/70 to-transparent"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/50 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-black/20 to-transparent"></div>
         </div>
       )}
 
