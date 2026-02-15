@@ -1,4 +1,5 @@
 import VisionMission from '../components/VisionMission'
+import AboutServicesSection from '../components/AboutServicesSection'
 
 const About = () => {
   return (
@@ -41,6 +42,11 @@ const About = () => {
       <div>
         <VisionMission/>
       </div>
+
+      <div>
+        <AboutServicesSection/>
+      </div>
+
 
     </div>
   )

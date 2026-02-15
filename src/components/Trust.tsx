@@ -114,7 +114,7 @@ const Trust = () => {
                 <img
                   src={brand.img}
                   alt={`Brand ${index + 1}`}
-                  className="max-h-25 md:max-h-35 object-contain transform transition-transform duration-300 hover:scale-105"
+                  className="max-h-28 md:max-h-40 object-contain transform transition-transform duration-300 hover:scale-105"
                 />
               </span>
             </div>

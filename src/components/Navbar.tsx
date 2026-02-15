@@ -100,7 +100,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="logo"
-              className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
+              className="bg-white/90 backdrop-blur-lg rounded-full !p-1 w-18 h-auto transition-transform duration-300 group-hover:scale-105 !m-3"
             />
             <div className="flex flex-col leading-none !ml-2">
               <h1 className="text-[#9D0A0A] text-xl font-logo font-black tracking-tighter text-shadow-md uppercase">
@@ -267,7 +267,7 @@ const Navbar = () => {
                 <img
                   src={logo}
                   alt="logo"
-                  className="w-16 h-auto transition-transform duration-300 group-hover:scale-105"
+                  className="bg-white/90 backdrop-blur-lg rounded-full !p-1 w-18 h-auto transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="flex flex-col leading-none !ml-3">
                   <h1 className="text-[#9D0A0A] text-xl font-logo font-black tracking-tighter uppercase text-shadow-md">

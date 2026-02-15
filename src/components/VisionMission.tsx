@@ -5,7 +5,7 @@ import mission from '../assets/mission.png';
 const VisionMission: React.FC = () => {
   return (
     /* Wrapper: Relative positioning allows the absolute glow to sit behind the content */
-    <div className="relative min-h-[600px] w-full flex items-center justify-center p-4 overflow-hidden">
+    <div className="relative min-h-[600px] w-full flex items-center justify-center !p-4 overflow-hidden">
       
       {/* Background Shadow / Glow Effect */}
       <div 

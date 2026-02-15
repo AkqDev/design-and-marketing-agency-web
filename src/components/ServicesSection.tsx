@@ -10,21 +10,21 @@ const services = [
     description:
       "We create visually compelling and user-focused designs that strengthen your brand identity. Our team delivers modern UI/UX solutions that enhance usability and engagement. Every project is crafted to ensure consistency, creativity, and measurable impact.",
     img: designing,
-    color: "bg-[#111111]",
+    color: "bg-white",
   },
   {
     title: "Printing Services",
     description:
       "We provide high-quality printing solutions that elevate your brand’s physical presence. From business cards to large-format materials, every print is produced with precision and clarity. Our focus is on durability, color accuracy, and professional finishing.",
     img: priting,
-    color: "bg-[#1a1a1a]",
+    color: "bg-gray-100",
   },
   {
     title: "Advertising Services",
     description:
       "We develop strategic advertising campaigns that connect your brand with the right audience. Our data-driven approach maximizes visibility, engagement, and return on investment. From digital to traditional media, we deliver results that drive growth.",
     img: advertising,
-    color: "bg-[#0a0a0a]",
+    color: "bg-gray-200",
   },
 ];
 
@@ -57,11 +57,11 @@ const ServicesSection = () => {
             >
               {/* Text Content */}
               <div className="flex-1 space-y-6">
-                <h2 className="text-3xl md:text-4xl font-serif text-[#9D0A0A] !mb-6 text-center md:text-left font-bold">
+                <h2 className="text-3xl md:text-5xl text-[#9D0A0A] !mb-6 text-center md:text-left font-bold font-[poppins] font-bold">
                   {service.title}
                 </h2>
-                <div className="h-[1px] bg-white/20 w-full !mb-4" />
-                <p className="text-gray-400 text-lg leading-relaxed text-center md:text-left">
+                <div className="h-[1px] bg-black/20 w-full !mb-4" />
+                <p className="text-black text-lg leading-relaxed text-center md:text-left">
                   {service.description}
                 </p>
               </div>

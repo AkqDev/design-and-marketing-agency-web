@@ -37,7 +37,7 @@ const SEO = ({
     const updateMetaTag = (name: string, content: string, isProperty = false) => {
       const attribute = isProperty ? 'property' : 'name';
       let element = document.querySelector(`meta[${attribute}="${name}"]`);
-      
+    
       if (!element) {
         element = document.createElement('meta');
         element.setAttribute(attribute, name);

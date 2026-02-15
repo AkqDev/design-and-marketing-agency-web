@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
               <img
                 src={logo}
                 alt="logo"
-                className="w-16 h-auto transition-transform duration-300 group-hover:scale-105 !my-3"
+                className="bg-white/90 backdrop-blur-lg rounded-full !p-1 w-18 h-auto transition-transform duration-300 group-hover:scale-105 !my-3"
               />
               <div className="flex flex-col leading-none !ml-3">
                 <h1 className="text-[#9D0A0A] text-xl font-logo font-black tracking-tighter text-shadow-md uppercase">
@@ -164,7 +164,7 @@ const Footer: React.FC = () => {
       >
         <div className="text-sm text-white opacity-80 text-center md:text-left">
           &copy; {new Date().getFullYear()} Ayyan SignAge | Designed & Developed
-          by Akbar Qureshi
+          by StackFlow Development Company
         </div>
 
         <div className="flex space-x-4 !mt-4 md:!mx-2 md:!mt-0">
@@ -191,9 +191,9 @@ const Footer: React.FC = () => {
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
         transition={{ delay: 1 }}
-        className="fixed bottom-5 right-10 z-50 bg-[#9D0A0A] !p-4 rounded-full shadow-lg"
+        className="fixed bottom-5 right-10 z-50 bg-[#20BA60] !p-4 rounded-full shadow-lg"
       >
-        <FaWhatsapp size={18} className="text-white" />
+        <FaWhatsapp size={24} className="text-white" />
       </motion.a>
     </motion.div>
   );

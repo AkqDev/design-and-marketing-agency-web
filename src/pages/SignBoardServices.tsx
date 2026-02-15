@@ -97,7 +97,7 @@ Please share pricing details for ${quantity} signboard(s), customization options
             <img 
               src={images[activeImage]} 
               alt="Premium Banner Design"
-              className="w-full h-full object-cover transition-all duration-700 ease-in-out"
+              className="w-full h-auto object-cover transition-all duration-700 ease-in-out"
               key={activeImage}
               loading="lazy"
             />
