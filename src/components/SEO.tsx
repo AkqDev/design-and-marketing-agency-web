@@ -15,9 +15,9 @@ interface SEOProps {
 }
 
 const SEO = ({ 
-  title = 'Ayyan SignAge | Premium Printing & Advertising Solutions in Saudi Arabia',
-  description = 'Leading printing and advertising company in Saudi Arabia. Professional signage, wall cladding, banner designs, NFC cards, gift boxes, brochures, visiting cards, uniforms, company profiles, menu cards & advertising services. Quality solutions for your business.',
-  keywords = 'signage Saudi Arabia, digital signage, wall cladding, banner printing, NFC cards, gift boxes, brochure design, visiting cards, business cards, uniform printing, company profile design, menu cards, advertising services, printing services Saudi Arabia, branding solutions, corporate branding, custom signage, digital printing, offset printing, large format printing, Ayyan Signage',
+  title = 'Website, Printing & Digital Marketing Services Jeddah | Ayyan Signage',
+  description = 'Ayyan Signage provides website design, company profile design, menu card design, poster & post design, digital marketing, HR forms printing, NFC cards, banners, and corporate branding services in Jeddah, Saudi Arabia. خدمات تصميم المواقع، تصميم ملفات الشركات، تصميم قوائم الطعام، تصميم البوستات، التسويق الرقمي، طباعة استمارات الموارد البشرية، بطاقات NFC، البانرات، والعلامة التجارية للشركات في جدة.',
+  keywords = 'website design Jeddah, web development Saudi Arabia, digital marketing Jeddah, social media marketing Saudi Arabia, SEO services Jeddah, company profile design Jeddah, menu card design Saudi Arabia, brochure design Jeddah, business card printing Saudi Arabia, visiting card printing Jeddah, banner printing Saudi Arabia, poster design Jeddah, flyer design Saudi Arabia, custom gift boxes printing Jeddah, uniform printing Jeddah, HR forms printing Saudi Arabia, NFC cards printing Jeddah, corporate branding Jeddah, advertising services Saudi Arabia, large format printing Jeddah, wall cladding printing Saudi Arabia, custom signage Jeddah, digital signage Saudi Arabia, تصميم مواقع جدة, تطوير مواقع السعودية, التسويق الرقمي جدة, تصميم موقع متجاوب جدة, تصميم ملف الشركة جدة, تصميم قائمة الطعام السعودية, تصميم بروشورات جدة, طباعة بطاقات العمل السعودية, طباعة بطاقات الزيارة جدة, طباعة لافتات السعودية, تصميم ملصقات جدة, تصميم منشورات السعودية, طباعة صناديق هدايا مخصصة جدة, طباعة زي موحد جدة, طباعة استمارات الموارد البشرية السعودية, طباعة بطاقات NFC جدة, العلامة التجارية للشركات جدة, خدمات الإعلان السعودية, الطباعة كبيرة الحجم جدة, تكسية الجدران السعودية, لافتات مخصصة جدة, لوحات رقمية السعودية',
   image = 'https://ayyansignage-digital.com/og-image.jpg',
   type = 'website',
   author = 'Ayyan Signage Digital',
@@ -67,6 +67,7 @@ const SEO = ({
     updateMetaTag('og:type', type, true);
     updateMetaTag('og:site_name', 'Ayyan Signage Digital', true);
     updateMetaTag('og:locale', 'en_US', true);
+    updateMetaTag('og:locale:alternate', 'ar_SA', true);
 
     // Article specific tags
     if (type === 'article' && publishedTime) {

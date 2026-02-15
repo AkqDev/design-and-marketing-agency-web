@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { HiOutlineArrowNarrowRight } from 'react-icons/hi';
 import { useLanguage } from '../contexts/LanguageContext';
 import mockup1 from '../assets/mockup1.png'
 import mockup2 from '../assets/mockup2.png'
@@ -12,16 +14,16 @@ import mockup9 from '../assets/mockup9.png'
 import mockup10 from '../assets/mockup10.png'
 
 const images = [
-  { src: mockup1, title: "Brand Identity Design" },
-  { src: mockup2, title: "Packaging Mockup" },
-  { src: mockup3, title: "Billboard Advertising" },
-  { src: mockup4, title: "Social Media Campaign" },
-  { src: mockup5, title: "T-shirts & Uniform designs" },
-  { src: mockup6, title: "Product Branding" },
-  { src: mockup7, title: "Corporate Stationery" },
-  { src: mockup8, title: "Gift Boxes Designs" },
-  { src: mockup9, title: "Outdoor Signage" },
-  { src: mockup10, title: "Banner Design" },
+  { src: mockup1, title: "Brand Identity Design", path: "/brand-identity" },
+  { src: mockup2, title: "Packaging Mockup", path: "/packaging" },
+  { src: mockup3, title: "Billboard Advertising", path: "/billboard" },
+  { src: mockup4, title: "Social Media Campaign", path: "/social-media" },
+  { src: mockup5, title: "T-shirts & Uniform designs", path: "/apparel" },
+  { src: mockup6, title: "Product Branding", path: "/product-branding" },
+  { src: mockup7, title: "Corporate Stationery", path: "/stationery" },
+  { src: mockup8, title: "Gift Boxes Designs", path: "/gift-boxes" },
+  { src: mockup9, title: "Outdoor Signage", path: "/signage" },
+  { src: mockup10, title: "Banner Design", path: "/banners" },
 ];
 
 const Carousel = () => {
@@ -137,10 +139,15 @@ const Carousel = () => {
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
-            {/* Title at Bottom */}
-            <div className="absolute bottom-3 left-0 w-full bg-black backdrop-blur-sm text-white text-sm md:text-md font-semibold text-center !p-2 shadow-md shadow-[#9D0A0A]/55 font-[poppins] ">
-              {item.title}
-            </div>
+            {/* Title at Bottom with Link and Icon */}
+            <Link 
+              to={item.path}
+              className="absolute bottom-3 left-0 w-full bg-black backdrop-blur-sm text-white text-sm md:text-md font-semibold text-center !p-2 shadow-md shadow-[#9D0A0A]/55 font-[poppins] hover:bg-[#9D0A0A]/40 transition-all flex items-center justify-center gap-2 group/title"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {item.title} 
+              <HiOutlineArrowNarrowRight className="text-white text-lg md:text-xl font-bold transition-transform duration-300 group-hover/title:translate-x-1" />
+            </Link>
 
             {/* Active Indicator */}
             {index === activeIndex && (
