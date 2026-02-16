@@ -14,16 +14,16 @@ import mockup9 from '../assets/mockup9.png'
 import mockup10 from '../assets/mockup10.png'
 
 const images = [
-  { src: mockup1, title: "Brand Identity Design", path: "/brand-identity" },
-  { src: mockup2, title: "Company Profile Designs", path: "/services/company-profile" },
-  { src: mockup3, title: "Billboard Advertising", path: "/billboard" },
-  { src: mockup4, title: "Social Media Campaign", path: "/social-media" },
-  { src: mockup5, title: "T-shirts & Uniform designs", path: "/apparel" },
-  { src: mockup6, title: "Product Branding", path: "/product-branding" },
-  { src: mockup7, title: "Corporate Stationery", path: "/stationery" },
-  { src: mockup8, title: "Gift Boxes Designs", path: "/services/gift-boxes-designs" },
-  { src: mockup9, title: "Outdoor Signage", path: "/signage" },
-  { src: mockup10, title: "Banner Design", path: "/services/banner-designs" },
+  { src: mockup1, title: "Visiting Cards", path: "/services/visiting-cards-designs" },
+  { src: mockup2, title: "Company Profile", path: "/services/company-profile" },
+  { src: mockup3, title: "NFC Cards", path: "/services/nfc-cards-designs" },
+  { src: mockup4, title: "Roll Up Banners", path: "/services/banner-designs" },
+  { src: mockup5, title: "T-shirts & Uniform", path: "/services/uniform-designs" },
+  { src: mockup6, title: "Banner designs", path: "/services/banner-designs" },
+  { src: mockup7, title: "Web Development", path: "/services/advertising" },
+  { src: mockup8, title: "Gift Boxes", path: "/services/gift-boxes-designs" },
+  { src: mockup9, title: "Online Branding", path: "/services/advertising" },
+  { src: mockup10, title: "Standee Designs", path: "/services/banner-designs" },
 ];
 
 const Carousel = () => {
