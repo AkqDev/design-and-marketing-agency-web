@@ -12,6 +12,7 @@ import mockup7 from '../assets/mockup7.png'
 import mockup8 from '../assets/mockup8.png'
 import mockup9 from '../assets/mockup9.png'
 import mockup10 from '../assets/mockup10.png'
+import mockup11 from '../assets/mockup11.png'
 
 const images = [
   { src: mockup1, title: "Visiting Cards", path: "/services/visiting-cards-designs" },
@@ -20,10 +21,11 @@ const images = [
   { src: mockup4, title: "Roll Up Banners", path: "/services/banner-designs" },
   { src: mockup5, title: "T-shirts & Uniform", path: "/services/uniform-designs" },
   { src: mockup6, title: "Banner designs", path: "/services/banner-designs" },
-  { src: mockup7, title: "Web Development", path: "/services/advertising" },
+  { src: mockup7, title: "SignBoard Designs", path: "/services/signboard-designs" },
   { src: mockup8, title: "Gift Boxes", path: "/services/gift-boxes-designs" },
-  { src: mockup9, title: "Online Branding", path: "/services/advertising" },
+  { src: mockup9, title: "Wall Cladding", path: "/services/wall-cladding" },
   { src: mockup10, title: "Standee Designs", path: "/services/banner-designs" },
+  { src: mockup11, title: "Logo Design & Branding", path: "" },
 ];
 
 const Carousel = () => {
