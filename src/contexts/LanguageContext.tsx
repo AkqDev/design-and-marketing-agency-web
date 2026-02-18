@@ -100,10 +100,10 @@ const translations: Record<Language, Translations> = {
     about: {
       meet: "Meet",
       companyName: "Ayyan SignAge",
-      subtitle1: "#1 Printing & Advertising Company",
-      subtitle2: "in Jeddah & Riyadh",
-      promise: "Top printing and advertising services with affordable branding solutions.",
-      description: "We are the leading printing and advertising company in Jeddah & Riyadh, offering signage printing solutions, custom printing, digital marketing, social media services, paid ads, and corporate branding that help businesses stand out.",
+      subtitle1: "A 360° Result-Oriented",
+      subtitle2: "Digital Marketing Agency",
+      promise: "At Ayyan SignAge, we promise results.",
+      description: "We are a professional Printing & Advertising company, providing innovative signage and advertising solutions that help brands stand out and create a strong visual impact.",
       button: "More About Us",
     },
     services: {
@@ -179,10 +179,10 @@ const translations: Record<Language, Translations> = {
     about: {
       meet: "تعرف على",
       companyName: "أيان سيجنيج",
-      subtitle1: "شركة الطباعة والإعلان رقم 1",
-      subtitle2: "في جدة والرياض",
-      promise: "أفضل خدمات الطباعة والإعلان مع حلول العلامات التجارية بأسعار معقولة.",
-      description: "نحن الشركة الرائدة في الطباعة والإعلان في جدة والرياض، نقدم حلول طباعة اللافتات، الطباعة المخصصة، التسويق الرقمي، خدمات وسائل التواصل الاجتماعي، الإعلانات المدفوعة، والعلامات التجارية للشركات التي تساعد الأعمال على التميز.",
+      subtitle1: "وكالة تسويق رقمي",
+      subtitle2: "شاملة وموجهة نحو النتائج",
+      promise: "في أيان سيجنيج، نعدك بالنتائج.",
+      description: "نحن شركة طباعة وإعلان محترفة، نقدم حلول لافتات وإعلانات مبتكرة تساعد العلامات التجارية على التميز وخلق تأثير بصري قوي.",
       button: "المزيد عنا",
     },
     services: {
