@@ -14,6 +14,8 @@ import mockup9 from '../assets/mockup9.png'
 import mockup10 from '../assets/mockup10.png'
 import mockup11 from '../assets/mockup11.png'
 
+
+// Carousel images
 const images = [
   { src: mockup1, title: "Visiting Cards", path: "/services/visiting-cards-designs" },
   { src: mockup2, title: "Company Profile", path: "/services/company-profile" },
