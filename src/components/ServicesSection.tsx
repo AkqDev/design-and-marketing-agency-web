@@ -3,9 +3,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import priting from '../assets/printing.png';
 import designing from '../assets/designing.png';
 import advertising from '../assets/advertising.png';
-import marketing from '../assets/marketing.png';
-import web from '../assets/web.png';
-import seo from '../assets/seo.png';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
