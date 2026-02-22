@@ -1,7 +1,10 @@
 import VisionMission from '../components/VisionMission'
 import AboutServicesSection from '../components/AboutServicesSection'
+import { useLanguage } from '../contexts/LanguageContext'
 
 const About = () => {
+  const { t } = useLanguage();
+  
   return (
     <div className="w-full h-auto !mx-auto text-white">
       {/* Added flex and items-center here to center the content block */}
@@ -12,29 +15,29 @@ const About = () => {
         {/* Header Section */}
         <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4 !pt-8">
           <h2 className="text-4xl md:text-5xl font-black tracking-tighter uppercase italic text-white/80 max-w-4xl shadow-[#9d0a0a]/20 shadow-xl">
-            Our <span className="text-[#9D0A0A] !ml-2">Story</span>
+            {t.about.ourStory} <span className="text-[#9D0A0A] !ml-2">{t.about.story}</span>
           </h2>
         </div>
 
         {/* Text Section - Now centered via the parent flex container */}
         <div className="max-w-7xl text-xl md:text-2xl ">
           <p className="!py-4">
-            I am Adnan Tahir, an entrepreneur passionate about creativity, branding, and professional printing solutions. My journey began in 2016 in collaboration with Mr. M. Ashraf Nawaz (Founder, Barani Science College Talagang), whose mentorship played a key role in shaping my professional direction. We started with Ayyan Media Center, providing digital documentation, design, and printing services to students, schools, and local businesses.
+            {t.about.paragraph1}
           </p>
           <p className="!py-4">
-            Through consistent effort and dedication, I expanded the business in 2018 by installing a Panaflex printing setup in Talagang, transforming the company into Ayyan Printings. With a strong focus on quality signage, panaflex printing, and professional design services, we built a trusted reputation and developed a skilled operational team to serve a growing client base.
+            {t.about.paragraph2}
           </p>
           <p className="!py-4">
-            In 2024, I moved to Saudi Arabia and launched Ayyan Signage Printing & Advertising, expanding our services into digital marketing, SEO, website development, and complete branding solutions. Today, my vision is to provide businesses with all-in-one advertising and printing services under one platform while maintaining creativity, quality, and customer satisfaction.
+            {t.about.paragraph3}
           </p>
         </div>
 
          <div className="!mt-16 flex flex-col items-center gap-4 font-[poppins] font-bold">
               <h3 className="text-[#9D0A0A] text-2xl md:text-4xl italic opacity-80 ">
-                  Let's build your brand.
+                  {t.about.buildBrand}
               </h3>
               <p className="text-zinc-500 text-base md:text-lg tracking-widest">
-                  Ayyan Signage Printing & Advertising — Saudi Arabia
+                  {t.about.location}
               </p>
           </div>
       </div>

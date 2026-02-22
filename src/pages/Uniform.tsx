@@ -1,27 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaWhatsapp, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 import uniform1 from '../assets/uniform1.png';
 import uniform2 from '../assets/uniform2.png';
 import uniform3 from '../assets/uniform3.png';
 import uniform4 from '../assets/uniform4.png';
 
 const Uniform: React.FC = () => {
+  const { t } = useLanguage();
   const images = [uniform3, uniform4, uniform1, uniform2];
   const [activeImage, setActiveImage] = useState<number>(0);
   
   const product = {
-    title: "T-Shirts & Uniforms",
-    description: "Brand your team with custom apparel that speaks quality. Perfect for corporate identity, events, and promotional campaigns. We create durable, comfortable uniforms that represent your brand professionally while ensuring team comfort and functionality.",
+    title: t.productPages.uniformTitle,
+    description: t.productPages.uniformDescription,
     features: [
-      "Custom T-Shirt Printing",
-      "Corporate Uniforms",
-      "Embroidery Services",
-      "Premium Fabric Options",
-      "Bulk Order Discounts"
+      t.productPages.uniformFeature1,
+      t.productPages.uniformFeature2,
+      t.productPages.uniformFeature3,
+      t.productPages.uniformFeature4,
+      t.productPages.uniformFeature5,
     ]
   };
 
-  // State for the selected apparel feature/type
   const [selectedFeature, setSelectedFeature] = useState<string>(product.features[0]);
 
   const nextSlide = useCallback(() => {
@@ -33,9 +34,7 @@ const Uniform: React.FC = () => {
   };
 
   const handleWhatsAppClick = (): void => {
-    // Dynamic simplified message based on dropdown selection
-    const message = `Can I get more info about the T-Shirts & Uniforms: ${selectedFeature}?`;
-    
+    const message = `${t.productPages.canIGetMoreInfo} ${t.productPages.uniformTitle}: ${selectedFeature}?`;
     const phoneNumber = "966563203251";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -50,13 +49,11 @@ const Uniform: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center !p-4 md:!p-6 font-sans text-gray-900 !my-12">
-      
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#1A1A1A] rounded-3xl !p-6 md:!p-8 shadow-xl">
         
         {/* Left Side: Image Gallery */}
         <div className="space-y-6">
           <div className="relative bg-gray-200 rounded-2xl overflow-hidden aspect-square flex items-center justify-center group w-full max-w-[500px] mx-auto">
-            
             <button 
               onClick={prevSlide} 
               className="absolute left-2 md:left-4 !p-2 md:!p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all z-20 opacity-100"
@@ -116,10 +113,9 @@ const Uniform: React.FC = () => {
               {product.description}
             </p>
 
-            {/* Features List (Desktop) */}
             <div className="!pt-2 hidden md:block">
               <h3 className="text-lg md:text-xl font-semibold text-white !my-3 md:!my-4 font-[poppins]">
-                Service Options:
+                {t.productPages.serviceOptions}
               </h3>
               <ul className="space-y-2 md:space-y-3 max-w-md !mx-auto md:!mx-0">
                 {product.features.map((feature, index) => (
@@ -133,10 +129,9 @@ const Uniform: React.FC = () => {
               </ul>
             </div>
 
-            {/* Dropdown Selection */}
             <div className="space-y-3 !pt-4">
               <label htmlFor="feature-select" className="block text-gray-300 text-sm md:text-base font-[poppins]">
-                Select Primary Requirement:
+                {t.productPages.selectPrimaryRequirement}
               </label>
               <select 
                 id="feature-select"
@@ -159,7 +154,7 @@ const Uniform: React.FC = () => {
               className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
             >
               <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">Add To Cart</span>
+              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">{t.productPages.addToCart}</span>
             </button>
           </div>
         </div>

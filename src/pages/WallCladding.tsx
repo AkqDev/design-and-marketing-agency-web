@@ -1,27 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaWhatsapp, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 import cladding1 from '../assets/cladding1.png';
 import cladding2 from '../assets/cladding2.png';
 import cladding3 from '../assets/cladding3.png';
 import cladding4 from '../assets/cladding4.png';
 
 const WallCladding: React.FC = () => {
+  const { t } = useLanguage();
   const images = [cladding1, cladding2, cladding3, cladding4];
   const [activeImage, setActiveImage] = useState<number>(0);
   
   const product = {
-    title: "Wall Cladding Services",
-    description: "Transform your spaces with premium wall cladding solutions. We provide durable, stylish, and weather-resistant cladding materials perfect for interior and exterior applications. Enhance aesthetics and protection for residential, commercial, and industrial properties.",
+    title: t.productPages.wallCladdingTitle,
+    description: t.productPages.wallCladdingDescription,
     features: [
-      "Interior & Exterior Cladding",
-      "Weather-Resistant Materials",
-      "Custom Design Options",
-      "Easy Installation Systems",
-      "Fire-Retardant Options"
+      t.productPages.wallCladdingFeature1,
+      t.productPages.wallCladdingFeature2,
+      t.productPages.wallCladdingFeature3,
+      t.productPages.wallCladdingFeature4,
+      t.productPages.wallCladdingFeature5,
     ]
   };
 
-  // State for the selected cladding feature/type
   const [selectedFeature, setSelectedFeature] = useState<string>(product.features[0]);
 
   const nextSlide = useCallback(() => {
@@ -33,8 +34,7 @@ const WallCladding: React.FC = () => {
   };
 
   const handleWhatsAppClick = (): void => {
-    const message = `Can I get more info about the Wall Cladding Services: ${selectedFeature}?`;
-    
+    const message = `${t.productPages.canIGetMoreInfo} ${t.productPages.wallCladdingTitle}: ${selectedFeature}?`;
     const phoneNumber = "966563203251";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -49,13 +49,11 @@ const WallCladding: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center !p-4 md:!p-6 font-sans text-gray-900 !my-12">
-      
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#1A1A1A] rounded-3xl !p-6 md:!p-8 shadow-[#9d0a0a]/35 shadow-xl">
         
         {/* Left Side: Image Gallery */}
         <div className="space-y-6">
           <div className="relative bg-gray-200 rounded-2xl overflow-hidden aspect-square flex items-center justify-center group w-full max-w-[500px] mx-auto">
-            
             <button 
               onClick={prevSlide} 
               className="absolute left-2 md:left-4 !p-2 md:!p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all z-20"
@@ -115,10 +113,9 @@ const WallCladding: React.FC = () => {
               {product.description}
             </p>
 
-            {/* Features List (Desktop Only) */}
             <div className="!pt-2 hidden md:block">
               <h3 className="text-lg md:text-xl font-semibold text-white !my-3 md:!my-4 font-[poppins]">
-                Cladding Benefits:
+                {t.productPages.claddingBenefits}
               </h3>
               <ul className="space-y-2 md:space-y-3 max-w-md !mx-auto md:!mx-0">
                 {product.features.map((feature, index) => (
@@ -132,10 +129,9 @@ const WallCladding: React.FC = () => {
               </ul>
             </div>
 
-            {/* Dropdown Selection */}
             <div className="space-y-3 !pt-4">
               <label htmlFor="feature-select" className="block text-gray-300 text-sm md:text-base font-[poppins]">
-                Select Cladding Interest:
+                {t.productPages.selectCladdingInterest}
               </label>
               <select 
                 id="feature-select"
@@ -158,7 +154,7 @@ const WallCladding: React.FC = () => {
               className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
             >
               <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">Add To Cart</span>
+              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">{t.productPages.addToCart}</span>
             </button>
           </div>
         </div>

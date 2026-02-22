@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaWhatsapp, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 import sign1 from '../assets/sign1.png';
 import sign2 from '../assets/sign2.png';
 import sign3 from '../assets/sign3.png';
@@ -7,22 +8,22 @@ import sign4 from '../assets/sign4.png';
 import sign5 from '../assets/sign5.png';
 
 const SignBoardServices: React.FC = () => {
+  const { t } = useLanguage();
   const images = [sign1, sign2, sign3, sign4, sign5];
   const [activeImage, setActiveImage] = useState<number>(0);
   
   const product = {
-    title: "3D SignBoards & Raised Letters",
-    description: "Premium 3D signboards and raised letters designed to enhance your brand visibility. We offer acrylic, stainless steel, and illuminated options with precision cutting and custom finishing for shops, offices, malls, and commercial buildings.",
+    title: t.productPages.signBoardTitle,
+    description: t.productPages.signBoardDescription,
     features: [
-      "Acrylic 3D Letters",
-      "Stainless Steel / Metal Letters",
-      "Front-lit and Non-Lit Options",
-      "Precision-Cut Lettering & Signage",
-      "Custom Tailored Design & Installation"
+      t.productPages.signBoardFeature1,
+      t.productPages.signBoardFeature2,
+      t.productPages.signBoardFeature3,
+      t.productPages.signBoardFeature4,
+      t.productPages.signBoardFeature5,
     ]
   };
 
-  // State for the selected feature from the dropdown
   const [selectedFeature, setSelectedFeature] = useState<string>(product.features[0]);
 
   const nextSlide = useCallback(() => {
@@ -34,9 +35,7 @@ const SignBoardServices: React.FC = () => {
   };
 
   const handleWhatsAppClick = (): void => {
-    // Standardized simplified message focusing on the selection
-    const message = `Can I get more info about the 3D SignBoards & Raised Letters: ${selectedFeature}?`;
-    
+    const message = `${t.productPages.canIGetMoreInfo} ${t.productPages.signBoardTitle}: ${selectedFeature}?`;
     const phoneNumber = "966563203251";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -51,13 +50,11 @@ const SignBoardServices: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center !p-4 md:!p-6 font-sans text-gray-900 !my-12">
-      
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#1A1A1A] rounded-3xl !p-6 md:!p-8 shadow-xl">
         
         {/* Left Side: Image Gallery */}
         <div className="space-y-6">
           <div className="relative bg-gray-200 rounded-2xl overflow-hidden aspect-square flex items-center justify-center group w-full max-w-[500px] mx-auto">
-            
             <button 
               onClick={prevSlide} 
               className="absolute left-2 md:left-4 !p-2 md:!p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all z-20"
@@ -111,10 +108,9 @@ const SignBoardServices: React.FC = () => {
               {product.description}
             </p>
 
-            {/* Features List (Desktop) */}
             <div className="!pt-2 hidden md:block">
               <h3 className="text-lg md:text-xl font-semibold text-white !my-3 font-[poppins]">
-                Service Features:
+                {t.productPages.serviceFeatures}
               </h3>
               <ul className="space-y-2 max-w-md !mx-auto md:!mx-0">
                 {product.features.map((feature, index) => (
@@ -128,10 +124,9 @@ const SignBoardServices: React.FC = () => {
               </ul>
             </div>
 
-            {/* Dropdown Selection */}
             <div className="space-y-3 !pt-4">
               <label htmlFor="feature-select" className="block text-gray-300 text-sm md:text-base font-[poppins]">
-                Select Primary Signage Type:
+                {t.productPages.selectPrimarySignageType}
               </label>
               <select 
                 id="feature-select"
@@ -154,7 +149,7 @@ const SignBoardServices: React.FC = () => {
               className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
             >
               <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">Add To Cart</span>
+              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">{t.productPages.addToCart}</span>
             </button>
           </div>
         </div>

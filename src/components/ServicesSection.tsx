@@ -3,33 +3,33 @@ import { useLanguage } from '../contexts/LanguageContext';
 import priting from '../assets/printing.png';
 import designing from '../assets/designing.png';
 import advertising from '../assets/advertising.png';
-
-const services = [
-  {
-    title: "Designing Services",
-    description:
-      "We create visually compelling and user-focused designs that strengthen your brand identity. Our team delivers modern UI/UX solutions that enhance usability and engagement. Every project is crafted to ensure consistency, creativity, and measurable impact.",
-    img: designing,
-    color: "bg-white",
-  },
-  {
-    title: "Printing Services",
-    description:
-      "We provide high-quality printing solutions that elevate your brand’s physical presence. From business cards to large-format materials, every print is produced with precision and clarity. Our focus is on durability, color accuracy, and professional finishing.",
-    img: priting,
-    color: "bg-gray-100",
-  },
-  {
-    title: "Advertising Services",
-    description:
-      "We develop strategic advertising campaigns that connect your brand with the right audience. Our data-driven approach maximizes visibility, engagement, and return on investment. From digital to traditional media, we deliver results that drive growth.",
-    img: advertising,
-    color: "bg-gray-200",
-  },
-];
+import marketing from '../assets/marketing.png';
+import web from '../assets/web.png';
+import seo from '../assets/seo.png';
 
 const ServicesSection = () => {
   const { t } = useLanguage();
+
+  const services = [
+    {
+      title: t.servicesPage.designingServices,
+      description: t.servicesPage.designingDescription,
+      img: designing,
+      color: "bg-white",
+    },
+    {
+      title: t.servicesPage.printingServices,
+      description: t.servicesPage.printingDescription,
+      img: priting,
+      color: "bg-gray-50",
+    },
+    {
+      title: t.servicesPage.advertisingServices,
+      description: t.servicesPage.advertisingDescription,
+      img: advertising,
+      color: "bg-gray-100",
+    },
+  ];
 
   return (
     <section className="bg-black !pt-20 !px-4 md:!px-10 min-h-screen flex flex-col items-center justify-center">

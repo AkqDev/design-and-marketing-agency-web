@@ -1,27 +1,28 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { FaWhatsapp, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
+import { useLanguage } from '../contexts/LanguageContext';
 import banner1 from '../assets/banner1.png';
 import banner2 from '../assets/banner2.png';
 import banner3 from '../assets/banner3.png';
 import banner4 from '../assets/banner4.png';
 
 const BannerDesigns: React.FC = () => {
+  const { t } = useLanguage();
   const images = [banner2, banner1, banner3, banner4];
   const [activeImage, setActiveImage] = useState<number>(0);
   
   const product = {
-    title: "Premium Banners",
-    description: "Stand out with high-quality banners for any occasion. From trade shows to outdoor advertising, we deliver durable and eye-catching displays that capture attention and communicate your message effectively.",
+    title: t.productPages.bannerTitle,
+    description: t.productPages.bannerDescription,
     features: [
-      "Premium Flex Banners (High GSM)",
-      "Vinyl Banners (Indoor & Outdoor)",
-      "One Way Vision (Perforated)",
-      "Retractable Banner Stands",
-      "Weather-Resistant Materials"
+      t.productPages.bannerFeature1,
+      t.productPages.bannerFeature2,
+      t.productPages.bannerFeature3,
+      t.productPages.bannerFeature4,
+      t.productPages.bannerFeature5,
     ]
   };
 
-  // State for the selected feature from the dropdown
   const [selectedFeature, setSelectedFeature] = useState<string>(product.features[0]);
 
   const nextSlide = useCallback(() => {
@@ -33,9 +34,7 @@ const BannerDesigns: React.FC = () => {
   };
 
   const handleWhatsAppClick = (): void => {
-    // Clean message containing only the selected feature
-    const message = `Can I get more info about the premium banner: ${selectedFeature}?`;
-    
+    const message = `${t.productPages.canIGetMoreInfo} premium banner: ${selectedFeature}?`;
     const phoneNumber = "966563203251";
     const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
@@ -50,13 +49,11 @@ const BannerDesigns: React.FC = () => {
 
   return (
     <div className="min-h-screen w-full flex items-center justify-center !p-4 md:!p-6 font-sans text-gray-900 !my-12">
-      
       <div className="max-w-[1200px] w-full grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center bg-[#1A1A1A] rounded-3xl !p-6 md:!p-8 shadow-xl">
         
         {/* Left Side: Image Gallery */}
         <div className="space-y-6">
           <div className="relative bg-gray-200 rounded-2xl overflow-hidden aspect-square flex items-center justify-center group w-full max-w-[500px] mx-auto">
-            
             <button 
               onClick={prevSlide} 
               className="absolute left-2 md:left-4 !p-2 md:!p-3 bg-white/90 rounded-full shadow-lg hover:bg-white transition-all z-20 opacity-100"
@@ -110,10 +107,9 @@ const BannerDesigns: React.FC = () => {
               {product.description}
             </p>
 
-            {/* RESTORED FEATURES LIST DISPLAY */}
             <div className="!pt-2 hidden md:block">
               <h3 className="text-lg md:text-xl font-semibold text-white !my-3 font-[poppins]">
-                Key Features:
+                {t.productPages.keyFeatures}
               </h3>
               <ul className="space-y-2 max-w-md !mx-auto md:!mx-0">
                 {product.features.map((feature, index) => (
@@ -127,10 +123,9 @@ const BannerDesigns: React.FC = () => {
               </ul>
             </div>
 
-            {/* SELECTION DROPDOWN */}
             <div className="space-y-3 !pt-4">
               <label htmlFor="feature-select" className="block text-gray-300 text-sm md:text-base font-[poppins]">
-                Select Preferred Service:
+                {t.productPages.selectPreferredService}
               </label>
               <select 
                 id="feature-select"
@@ -153,7 +148,7 @@ const BannerDesigns: React.FC = () => {
               className="w-full max-w-md !mx-auto md:!mx-0 bg-[#8E0808] hover:bg-[#7A0707] text-white !py-3 md:!py-4 rounded-full shadow-xl transform active:scale-[0.98] transition-all flex items-center justify-center space-x-2 group"
             >
               <FaWhatsapp className="w-5 h-5 md:w-6 md:h-6 group-hover:scale-110 transition-transform" />
-              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">Add To Cart</span>
+              <span className="text-lg md:text-xl font-semibold !ml-2 font-[poppins]">{t.productPages.addToCart}</span>
             </button>
           </div>
         </div>

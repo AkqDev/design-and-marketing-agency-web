@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Facebook, Instagram, Linkedin } from "lucide-react";
+import { useLanguage } from "../contexts/LanguageContext";
 
 // Asset Imports
 import ayyan from "../assets/ayyan.png";
@@ -33,6 +34,7 @@ const teamMembers: TeamMember[] = [
 ];
 
 const TeamSection: React.FC = () => {
+  const { t } = useLanguage();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(false);
   const autoplayRef = useRef<number | undefined>(undefined);
@@ -72,7 +74,7 @@ const TeamSection: React.FC = () => {
       {/* Header Section */}
       <div className="flex flex-col items-center !mb-8 md:!mb-12 z-10 !px-4 !pt-8 relative">
         <h2 className="text-4xl md:text-5xl font-black text-center tracking-tighter uppercase italic text-black max-w-4xl">
-          Meet<span className="text-[#9D0A0A] !ml-2">Our Team</span>
+          {t.team.meet}<span className="text-[#9D0A0A] !ml-2">{t.team.our} {t.team.team}</span>
         </h2>
       </div>
 

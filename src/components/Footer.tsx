@@ -84,11 +84,7 @@ const Footer: React.FC = () => {
             </Link>
 
             <p className="text-sm leading-relaxed opacity-90 md:!pl-5 !mt-3">
-              We are a professional printing and advertising company, delivering
-              creative, precise, and durable signage and branding solutions.
-              From indoor and outdoor signage to promotional materials, we
-              combine modern technology with expert craftsmanship to help
-              brands stand out.
+              {t.footer.description}
             </p>
           </div>
         </motion.div>
@@ -163,8 +159,7 @@ const Footer: React.FC = () => {
         className="max-w-[1400px] flex-col md:flex-row mx-auto flex justify-between items-center !mt-4 !px-4 md:!px-10 bg-[#0B0A0A] rounded-3xl !py-4"
       >
         <div className="text-sm text-white opacity-80 text-center md:text-left">
-          &copy; {new Date().getFullYear()} Ayyan SignAge | Designed & Developed
-          by StackFlow Development Company
+          &copy; {new Date().getFullYear()} {t.footer.copyright}
         </div>
 
         <div className="flex space-x-4 !mt-4 md:!mx-2 md:!mt-0">

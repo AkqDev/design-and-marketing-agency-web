@@ -245,6 +245,47 @@ const Navbar = () => {
             <FiMenu size={22} />
           </button>
         </div>
+
+        {/* Services Bar */}
+        <div className="w-full flex justify-center items-center bg-gradient-to-r from-[#9D0A0A] via-[#b91c1c] to-[#9D0A0A] border-y border-white/20 shadow-lg overflow-hidden w-full">
+          <div className="max-w-[1200px] mx-auto">
+            {/* Desktop View - Centered Grid */}
+            <div className="hidden md:flex items-center justify-center flex-wrap gap-x-6 gap-y-2 !py-3 !px-6">
+              {serviceItems.map((service, index) => (
+                <div key={service.path} className="flex items-center">
+                  <Link
+                    to={service.path}
+                    className="text-white text-sm font-semibold tracking-wide hover:text-black hover:scale-105 transition-all duration-200 whitespace-nowrap"
+                  >
+                    {service.label}
+                  </Link>
+                  {index !== serviceItems.length - 1 && (
+                    <span className="!ml-6 text-white/40 font-light">|</span>
+                  )}
+                </div>
+              ))}
+            </div>
+
+            {/* Mobile View - Horizontal Scroll */}
+            <div className="md:hidden overflow-x-auto scrollbar-hide !py-3 !px-4">
+              <div className="flex items-center gap-4 min-w-max">
+                {serviceItems.map((service, index) => (
+                  <div key={service.path} className="flex items-center gap-4">
+                    <Link
+                      to={service.path}
+                      className="text-white text-xs font-semibold tracking-wide hover:text-black transition-colors duration-200 whitespace-nowrap !px-3 !py-1.5 bg-white/10 rounded-full hover:bg-white/20"
+                    >
+                      {service.label}
+                    </Link>
+                    {index !== serviceItems.length - 1 && (
+                      <span className="text-white/40 font-light">•</span>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </motion.div>
 
       {/* MOBILE SIDEBAR */}

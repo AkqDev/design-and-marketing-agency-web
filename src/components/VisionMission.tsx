@@ -1,8 +1,11 @@
 import React from 'react';
 import { HiOutlineLightBulb, HiOutlineRocketLaunch } from 'react-icons/hi2';
 import mission from '../assets/mission.png';
+import { useLanguage } from '../contexts/LanguageContext';
 
 const VisionMission: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     /* Wrapper: Relative positioning allows the absolute glow to sit behind the content */
     <div className="relative min-h-[600px] w-full flex items-center justify-center !p-4 overflow-hidden">
@@ -32,10 +35,10 @@ const VisionMission: React.FC = () => {
             {/* Content */}
             <div className="space-y-2 flex flex-col items-center md:items-start">
               <h2 className="text-3xl font-bold text-[#7D0808] tracking-tight font-[poppins] !mb-2">
-                Our Vision
+                {t.visionMission.ourVision} {t.visionMission.vision}
               </h2>
               <p className="text-gray-100 leading-relaxed text-base max-w-lg font-[poppins] !py-2 !px-4">
-                To be a leading provider of innovative printing and advertising solutions, recognized for exceptional quality, creativity, and reliability in a competitive market.
+                {t.visionMission.visionDescription}
               </p>
             </div>
           </div>
@@ -53,10 +56,10 @@ const VisionMission: React.FC = () => {
             {/* Content */}
             <div className="space-y-2 flex flex-col items-center md:items-start">
               <h2 className="text-3xl font-bold text-[#7D0808] tracking-tight font-[poppins] !mb-2">
-                Our Mission
+                {t.visionMission.ourMission} {t.visionMission.mission}
               </h2>
               <p className="text-gray-100 leading-relaxed text-base max-w-lg font-[poppins] !px-4 !mb-15">
-                We are committed to achieving outstanding results that meet our clients’ goals, exceed expectations, and build long-term partnerships through consistent quality and exceptional service.
+                {t.visionMission.missionDescription}
               </p>
             </div>
           </div>
