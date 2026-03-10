@@ -128,7 +128,7 @@ const OurCategories: React.FC = () => {
       </motion.div>
       
       <motion.div 
-        className="flex flex-nowrap items-start justify-start lg:justify-center gap-8 overflow-x-auto pb-8 scrollbar-hide"
+        className="flex flex-col md:flex-row md:flex-nowrap items-center justify-center gap-8 md:overflow-x-auto pb-8 scrollbar-hide"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
@@ -137,7 +137,7 @@ const OurCategories: React.FC = () => {
         {categories.map((item, index) => (
           <motion.div 
             key={index} 
-            className="group flex flex-col items-center flex-shrink-0"
+            className="group flex flex-col items-center flex-shrink-0 w-full md:w-auto"
             variants={cardVariants}
             whileHover={{ 
               y: -10,
