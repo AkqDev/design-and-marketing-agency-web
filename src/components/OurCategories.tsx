@@ -52,7 +52,7 @@ const OurCategories: React.FC = () => {
       y: 0,
       transition: {
         duration: 0.8,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as const
       }
     }
   };
@@ -69,7 +69,7 @@ const OurCategories: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.6,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as const
       }
     }
   };
@@ -81,7 +81,7 @@ const OurCategories: React.FC = () => {
       scale: 1,
       transition: {
         duration: 0.5,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
@@ -93,7 +93,7 @@ const OurCategories: React.FC = () => {
       opacity: 1,
       transition: {
         duration: 0.7,
-        ease: [0.6, -0.05, 0.01, 0.99]
+        ease: [0.6, -0.05, 0.01, 0.99] as const
       }
     }
   };
@@ -106,7 +106,7 @@ const OurCategories: React.FC = () => {
       transition: {
         duration: 0.5,
         delay: 0.2,
-        ease: "easeOut"
+        ease: "easeOut" as const
       }
     }
   };
