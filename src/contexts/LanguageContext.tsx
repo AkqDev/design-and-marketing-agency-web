@@ -211,6 +211,19 @@ interface Translations {
     messagePlaceholder: string;
     submitButton: string;
   };
+  categories: {
+    ourProfessional: string;
+    servicePackages: string;
+    package: string;
+    package01Title: string;
+    package01Description: string;
+    package02Title: string;
+    package02Description: string;
+    package03Title: string;
+    package03Description: string;
+    package04Title: string;
+    package04Description: string;
+  };
 }
 
 const translations: Record<Language, Translations> = {
@@ -230,10 +243,10 @@ const translations: Record<Language, Translations> = {
     },
     about: {
       meet: "Meet",
-      companyName: "Ayyan SignAge",
+      companyName: "Ayyan Signage",
       subtitle1: "A 360° Result-Oriented",
       subtitle2: "Digital Marketing Agency",
-      promise: "At Ayyan SignAge, we promise results.",
+      promise: "At Ayyan Signage, we promise results.",
       description: "We are a professional Printing & Advertising company, providing innovative signage and advertising solutions that help brands stand out and create a strong visual impact.",
       button: "More About Us",
       ourStory: "Our",
@@ -407,7 +420,7 @@ const translations: Record<Language, Translations> = {
       about: "About",
       services: "Services",
       contactUs: "Contact Us",
-      copyright: "Ayyan SignAge | Designed & Developed by StackFlow Development Company",
+      copyright: "Ayyan Signage | Designed & Developed by StackFlow Development Company",
       description: "We are a professional printing and advertising company, delivering creative, precise, and durable signage and branding solutions. From indoor and outdoor signage to promotional materials, we combine modern technology with expert craftsmanship to help brands stand out",
     },
     contact: {
@@ -422,6 +435,19 @@ const translations: Record<Language, Translations> = {
       emailPlaceholder: "Enter Your Email",
       messagePlaceholder: "How can we help you?",
       submitButton: "Submit Message via WhatsApp",
+    },
+    categories: {
+      ourProfessional: "Our Professional",
+      servicePackages: "Service Packages",
+      package: "Package",
+      package01Title: "Web Development & SEO",
+      package01Description: "Custom web solutions optimized for search engines to drive organic traffic.",
+      package02Title: "Digital Marketing",
+      package02Description: "Comprehensive social growth across Facebook, Instagram, Snapchat, TikTok, YouTube, Twitter, and LinkedIn.",
+      package03Title: "Branding & Signage",
+      package03Description: "End-to-end design, high-quality printing, and professional fitting services.",
+      package04Title: "Company Profile",
+      package04Description: "Essential corporate identity including professional Logo, Letterhead, and Visiting Cards.",
     },
   },
   ar: {
@@ -440,19 +466,19 @@ const translations: Record<Language, Translations> = {
     },
     about: {
       meet: "تعرف على",
-      companyName: "أيان سيجنيج",
+      companyName: "أيان سيجناج",
       subtitle1: "وكالة تسويق رقمي",
       subtitle2: "شاملة وموجهة نحو النتائج",
-      promise: "في أيان سيجنيج، نعدك بالنتائج.",
+      promise: "في أيان سيجناج، نعدك بالنتائج.",
       description: "نحن شركة طباعة وإعلان محترفة، نقدم حلول لافتات وإعلانات مبتكرة تساعد العلامات التجارية على التميز وخلق تأثير بصري قوي.",
       button: "المزيد عنا",
       ourStory: "قصتنا",
       story: "",
       paragraph1: "أنا عدنان طاهر، رائد أعمال شغوف بالإبداع والعلامات التجارية وحلول الطباعة الاحترافية. بدأت رحلتي في عام 2016 بالتعاون مع السيد م. أشرف نواز (مؤسس كلية باراني للعلوم تلاغانغ)، الذي لعب إرشاده دوراً رئيسياً في تشكيل مساري المهني. بدأنا بمركز أيان للإعلام، حيث قدمنا خدمات التوثيق الرقمي والتصميم والطباعة للطلاب والمدارس والشركات المحلية.",
       paragraph2: "من خلال الجهد المستمر والتفاني، قمت بتوسيع العمل في عام 2018 من خلال تركيب معدات طباعة بانافلكس في تلاغانغ، وتحويل الشركة إلى أيان للطباعة. مع التركيز القوي على اللافتات عالية الجودة وطباعة البانافلكس وخدمات التصميم الاحترافية، بنينا سمعة موثوقة وطورنا فريق عمل ماهر لخدمة قاعدة عملاء متنامية.",
-      paragraph3: "في عام 2024، انتقلت إلى المملكة العربية السعودية وأطلقت أيان سيجنيج للطباعة والإعلان، موسعاً خدماتنا لتشمل التسويق الرقمي وتحسين محركات البحث وتطوير المواقع الإلكترونية وحلول العلامات التجارية الكاملة. اليوم، رؤيتي هي تزويد الشركات بخدمات إعلانية وطباعة شاملة تحت منصة واحدة مع الحفاظ على الإبداع والجودة ورضا العملاء.",
+      paragraph3: "في عام 2024، انتقلت إلى المملكة العربية السعودية وأطلقت أيان سيجناج للطباعة والإعلان، موسعاً خدماتنا لتشمل التسويق الرقمي وتحسين محركات البحث وتطوير المواقع الإلكترونية وحلول العلامات التجارية الكاملة. اليوم، رؤيتي هي تزويد الشركات بخدمات إعلانية وطباعة شاملة تحت منصة واحدة مع الحفاظ على الإبداع والجودة ورضا العملاء.",
       buildBrand: "لنبني علامتك التجارية.",
-      location: "أيان سيجنيج للطباعة والإعلان — المملكة العربية السعودية",
+      location: "أيان سيجناج للطباعة والإعلان — المملكة العربية السعودية",
     },
     visionMission: {
       ourVision: "رؤيتنا",
@@ -617,7 +643,7 @@ const translations: Record<Language, Translations> = {
       about: "من نحن",
       services: "الخدمات",
       contactUs: "اتصل بنا",
-      copyright: "أيان سيجنيج | تصميم وتطوير شركة ستاك فلو للتطوير",
+      copyright: "أيان سيجناج | تصميم وتطوير شركة ستاك فلو للتطوير",
       description: "نحن شركة طباعة وإعلان محترفة، نقدم حلول لافتات وعلامات تجارية إبداعية ودقيقة ومتينة. من اللافتات الداخلية والخارجية إلى المواد الترويجية، نجمع بين التكنولوجيا الحديثة والحرفية المتخصصة لمساعدة العلامات التجارية على التميز",
     },
     contact: {
@@ -632,6 +658,19 @@ const translations: Record<Language, Translations> = {
       emailPlaceholder: "أدخل بريدك الإلكتروني",
       messagePlaceholder: "كيف يمكننا مساعدتك؟",
       submitButton: "إرسال الرسالة عبر واتساب",
+    },
+    categories: {
+      ourProfessional: "باقاتنا الاحترافية",
+      servicePackages: "للخدمات",
+      package: "الباقة",
+      package01Title: "تطوير المواقع وتحسين محركات البحث",
+      package01Description: "حلول ويب مخصصة محسّنة لمحركات البحث لجذب الزيارات العضوية.",
+      package02Title: "التسويق الرقمي",
+      package02Description: "نمو شامل عبر وسائل التواصل الاجتماعي: فيسبوك، إنستغرام، سناب شات، تيك توك، يوتيوب، تويتر، ولينكد إن.",
+      package03Title: "العلامة التجارية واللافتات",
+      package03Description: "تصميم شامل، طباعة عالية الجودة، وخدمات تركيب احترافية.",
+      package04Title: "ملف الشركة",
+      package04Description: "الهوية المؤسسية الأساسية تشمل الشعار الاحترافي، الترويسة، وبطاقات الزيارة.",
     },
   },
 };

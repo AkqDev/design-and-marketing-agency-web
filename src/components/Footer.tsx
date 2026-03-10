@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
   const socialLinks = [
     {
       icon: FaInstagram,
-      url: "https://www.instagram.com/ayyan.signage/",
+      url: "https://www.instagram.com/ayyan.signage?utm_source=ig_web_button_share_sheet&igsh=ODdmZWVhMTFiMw==",
     },
     {
       icon: FaFacebookF,
@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
   const contactLinks = [
     {
       icon: <FiMail size={18} />,
-      text: "ayyan.signtech.sa@gmail.com",
-      link: "mailto:ayyan.signtech.sa@gmail.com",
+      text: "sales@ayyansignage-digital.com",
+      link: "mailto:sales@ayyansignage-digital.com",
     },
     {
       icon: <FiPhone size={18} />,
@@ -105,6 +105,7 @@ const Footer: React.FC = () => {
               {[
                 { name: t.footer.home, path: "/" },
                 { name: t.footer.about, path: "/about" },
+                { name: "Portacabins", path: "/porta-cabins" },
                 { name: t.footer.contactUs, path: "/contact" },
               ].map((item) => (
                 <li key={item.name}>

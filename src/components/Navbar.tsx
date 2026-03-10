@@ -63,6 +63,7 @@ const Navbar = () => {
     { path: "/", label: t.navbar.home },
     { path: "/about", label: t.navbar.about },
     { path: "", label: t.navbar.services, hasDropdown: true },
+    { path: "/porta-cabins", label: "Portacabins" },
     { path: "/contact", label: t.navbar.contact },
   ];
 
@@ -126,7 +127,7 @@ const Navbar = () => {
                           className={` relative font-nav text-base transition-colors duration-300 text-shadow-sm flex items-center gap-1 ${
                             location.pathname.startsWith('/services')
                               ? "text-[#9D0A0A]"
-                              : "hover:text-gray-200"
+                               : "hover:text-gray-200"
                           }`}
                         >
                           {item.label}
@@ -247,15 +248,15 @@ const Navbar = () => {
         </div>
 
         {/* Services Bar */}
-        <div className="w-full flex justify-center items-center bg-gradient-to-r from-[#9D0A0A] via-[#b91c1c] to-[#9D0A0A] border-y border-white/20 shadow-lg overflow-hidden w-full">
-          <div className="max-w-[1200px] mx-auto">
+        <div className="w-full flex justify-center items-center bg-black md:bg-gradient-to-r md:from-gray-800 md:via-gray-700 md:to-gray-800 border-y border-white/20 shadow-lg overflow-hidden">
+          <div className="max-w-[1200px] mx-auto w-full">
             {/* Desktop View - Centered Grid */}
             <div className="hidden md:flex items-center justify-center flex-wrap gap-x-6 gap-y-2 !py-3 !px-6">
               {serviceItems.map((service, index) => (
                 <div key={service.path} className="flex items-center">
                   <Link
                     to={service.path}
-                    className="text-white text-sm font-semibold tracking-wide hover:text-black hover:scale-105 transition-all duration-200 whitespace-nowrap"
+                    className="text-white text-sm font-semibold tracking-wide transition-opacity duration-200 whitespace-nowrap hover:opacity-80"
                   >
                     {service.label}
                   </Link>
@@ -270,15 +271,15 @@ const Navbar = () => {
             <div className="md:hidden overflow-x-auto scrollbar-hide !py-3 !px-4">
               <div className="flex items-center gap-4 min-w-max">
                 {serviceItems.map((service, index) => (
-                  <div key={service.path} className="flex items-center gap-4">
+                  <div key={service.path} className="flex items-center">
                     <Link
                       to={service.path}
-                      className="text-white text-xs font-semibold tracking-wide hover:text-black transition-colors duration-200 whitespace-nowrap !px-3 !py-1.5 bg-white/10 rounded-full hover:bg-white/20"
+                      className="text-[#9D0A0A] text-xs font-semibold tracking-wide hover:text-white transition-colors duration-200 whitespace-nowrap"
                     >
                       {service.label}
                     </Link>
                     {index !== serviceItems.length - 1 && (
-                      <span className="text-white/40 font-light">•</span>
+                      <span className="!ml-4 text-white/40 font-light">|</span>
                     )}
                   </div>
                 ))}

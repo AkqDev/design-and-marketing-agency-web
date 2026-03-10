@@ -16,6 +16,7 @@ import CompanyProfile from "./pages/CompanyProfile";
 import MenuCards from "./pages/MenuCards";
 import AdvertisingServices from './pages/AdvertisingServices';
 import SignBoardServices from './pages/SignBoardServices';
+import Portacabins from './pages/Portacabins';
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/porta-cabins" element={<Portacabins />} />
             {/* Services Categories of DropDown Menus */}
             <Route path="/services/banner-designs" element={<BannerDesigns />} />
             <Route path="/services/nfc-cards-designs" element={<NfcCards />} />
