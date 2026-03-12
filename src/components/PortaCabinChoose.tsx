@@ -41,7 +41,7 @@ const PortaCabinChoose = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex-1 !space-y-8"
+          className="flex-1 !space-y-8 text-center lg:text-left"
         >
           <header className="!space-y-4">
             <motion.h4 
@@ -69,7 +69,7 @@ const PortaCabinChoose = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-white !text-lg !leading-relaxed !max-w-xl"
+            className="text-white !text-lg !leading-relaxed !max-w-xl mx-auto lg:mx-0"
           >
             Our modular construction approach delivers high-quality 
             portable buildings with unmatched speed and precision. 
