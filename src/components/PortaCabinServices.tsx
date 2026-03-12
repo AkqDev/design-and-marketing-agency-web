@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { FaWhatsapp } from 'react-icons/fa';
 import porta1 from '../assets/PortaCabinsServicesImgs/porta1.png';

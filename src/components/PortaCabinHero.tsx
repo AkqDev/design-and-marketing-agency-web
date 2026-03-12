@@ -6,10 +6,6 @@ import PortaHero1 from '../assets/PortaHero1.png'
 import PortaHero2 from '../assets/PortaHero2.png'
 import PortaHero3 from '../assets/PortaHero3.png'
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-
 const PortaCabinHero: React.FC = () => {
   // Using the imported local assets
   const backgroundImages = [PortaHero1, PortaHero2, PortaHero3];
