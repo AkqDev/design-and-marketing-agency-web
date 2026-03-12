@@ -1,33 +1,44 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import category1 from '../assets/category1.png'
+import category2 from '../assets/category2.png'
+import category3 from '../assets/category3.png'
+import category4 from '../assets/category4.png'
 
 interface Category {
   titleKey: 'package01Title' | 'package02Title' | 'package03Title' | 'package04Title';
   descriptionKey: 'package01Description' | 'package02Description' | 'package03Description' | 'package04Description';
   img: string;
+  link: string;
 }
 
 const categories: Category[] = [
   { 
     titleKey: 'package01Title', 
     descriptionKey: 'package01Description',
-    img: '' 
+    img: category1,
+    link: '/services/advertising'
   },
   { 
     titleKey: 'package02Title', 
     descriptionKey: 'package02Description',
-    img: '' 
+    img:category2,
+    link: '/services/advertising'
   },
   { 
     titleKey: 'package03Title', 
     descriptionKey: 'package03Description',
-    img: '' 
+    img: category3,
+    link: '/services/signboard-designs'
   },
   { 
     titleKey: 'package04Title', 
     descriptionKey: 'package04Description',
-    img: '' 
+    img: category4,
+    link: '/services/company-profile'
   },
 ];
 
@@ -152,24 +163,34 @@ const OurCategories: React.FC = () => {
               {t.categories.package} 0{index + 1}
             </motion.span>
 
-            {/* Image Container */}
-            <motion.div 
-              className="w-[250px] h-[250px] rounded-full shadow-[#9D0A0A]/55 overflow-hidden shadow-lg transition-all duration-500"
-              variants={imageVariants}
-              whileHover={{ 
-                scale: 1.05,
-                boxShadow: "0 20px 40px rgba(157, 10, 10, 0.4)",
-                transition: { duration: 0.3 }
-              }}
-            >
-              <motion.img 
-                src={item.img} 
-                alt={t.categories[item.titleKey]} 
-                className="w-full h-full object-cover"
-                whileHover={{ scale: 1.15 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-              />
-            </motion.div>
+            {/* Image Container with Link */}
+            <Link to={item.link}>
+              <motion.div 
+                className="w-[250px] h-[250px] rounded-full shadow-[#9D0A0A]/55 overflow-hidden shadow-lg transition-all duration-500 cursor-pointer relative"
+                variants={imageVariants}
+                whileHover={{ 
+                  scale: 1.05,
+                  boxShadow: "0 20px 40px rgba(157, 10, 10, 0.4)",
+                  transition: { duration: 0.3 }
+                }}
+              >
+                <motion.img 
+                  src={item.img} 
+                  alt={t.categories[item.titleKey]} 
+                  className="w-full h-full object-cover"
+                  whileHover={{ scale: 1.15 }}
+                  transition={{ duration: 0.5, ease: "easeOut" }}
+                />
+                {/* Arrow Icon Overlay */}
+                <motion.div 
+                  className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  initial={{ opacity: 0 }}
+                  whileHover={{ opacity: 1 }}
+                >
+                  <ArrowRight className="w-12 h-12 text-white" />
+                </motion.div>
+              </motion.div>
+            </Link>
             
             {/* Content Section */}
             <motion.div 
@@ -193,6 +214,18 @@ const OurCategories: React.FC = () => {
               >
                 {t.categories[item.descriptionKey]}
               </motion.p>
+              
+              {/* Arrow Link Button */}
+              <Link to={item.link}>
+                <motion.div 
+                  className="flex items-center justify-center !mt-4 text-[#9D0A0A] hover:text-white transition-colors duration-300 cursor-pointer"
+                  whileHover={{ x: 5 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  <span className="font-logo text-sm font-semibold mr-2">View Details</span>
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </Link>
             </motion.div>
           </motion.div>
         ))}

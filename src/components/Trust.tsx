@@ -81,7 +81,7 @@ const Trust = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full !py-12 md:!py-24 overflow-hidden md:min-h-[700px] flex flex-col justify-center relative "
+      className="w-full !py-24 !pt-34 overflow-hidden md:min-h-[700px] flex flex-col justify-center relative "
     >
       {/* Heading Section */}
       <div className="!pb-8 md:!pb-16">

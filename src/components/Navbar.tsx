@@ -248,7 +248,7 @@ const Navbar = () => {
         </div>
 
         {/* Services Bar */}
-        <div className="w-full flex justify-center items-center bg-black md:bg-gradient-to-r md:from-gray-800 md:via-gray-700 md:to-gray-800 border-y border-white/20 shadow-lg overflow-hidden">
+        <div className="w-full flex justify-center items-center bg-black md:bg-[#9D0A0A] border-y border-white/20 shadow-lg overflow-hidden">
           <div className="max-w-[1200px] mx-auto w-full">
             {/* Desktop View - Centered Grid */}
             <div className="hidden md:flex items-center justify-center flex-wrap gap-x-6 gap-y-2 !py-3 !px-6">
